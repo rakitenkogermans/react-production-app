@@ -5,18 +5,18 @@ import {
     Route,
     RouterProvider,
 } from "react-router-dom";
-import {AboutPageLazy} from "./pages/AboutPage/AboutPage.lazy";
-import {Root} from "./Root";
-import {MainPageLazy} from "./pages/MainPage/MainPage.lazy";
 import './styles/index.scss';
-import {useTheme} from "./theme/useTheme";
-import {classNames} from "./helpers/classNames";
+import {useTheme} from "app/providers/ThemeProvider";
+import {classNames} from "shared/lib/classNames";
+import {Root} from "./Root";
+import {AboutPage} from "pages/AboutPage";
+import {MainPage} from "pages/MainPage";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
             <Route path="/" element={<Root />}>
-                <Route index element={<MainPageLazy/>}/>
-                <Route path="/about" element={<AboutPageLazy/>}/>
+                <Route index element={<MainPage/>}/>
+                <Route path="/about" element={<AboutPage/>}/>
             </Route>
     ));
 

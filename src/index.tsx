@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
-import { App } from './App';
-import {ThemeProvider} from "./theme/ThemeProvider";
+import { App } from 'app/App';
+import {ThemeProvider} from "app/providers/ThemeProvider";
 
 const container = document.getElementById('root') as HTMLElement;
 
