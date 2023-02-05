@@ -1,12 +1,17 @@
 import {Outlet} from 'react-router-dom';
 import {Navbar} from "widgets/Navbar";
+import {Sidebar} from "widgets/Sidebar";
 
 const Layout = () => {
     return (
-        <div>
+        <>
             <Navbar />
-            <Outlet />
-        </div>
+            <div className="content-page">
+                <Sidebar/>
+                <Outlet />
+            </div>
+        </>
+
     );
 };
 
