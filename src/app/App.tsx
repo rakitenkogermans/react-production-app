@@ -5,11 +5,10 @@ import {classNames} from "shared/lib/classNames";
 import {AppRouter} from "app/providers/router";
 
 const App: FC = () => {
-    const {theme, toggleTheme} = useTheme();
+    const {theme} = useTheme();
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <button onClick={toggleTheme}>Theme</button>
             <AppRouter/>
         </div>
     );
