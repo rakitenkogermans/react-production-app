@@ -1,24 +1,8 @@
-import {FC, Suspense} from 'react';
-import {
-    createBrowserRouter,
-    createRoutesFromElements,
-    Route,
-    RouterProvider,
-} from "react-router-dom";
+import {FC} from 'react';
 import './styles/index.scss';
 import {useTheme} from "app/providers/ThemeProvider";
 import {classNames} from "shared/lib/classNames";
-import {Root} from "./Root";
-import {AboutPage} from "pages/AboutPage";
-import {MainPage} from "pages/MainPage";
-
-const router = createBrowserRouter(
-    createRoutesFromElements(
-            <Route path="/" element={<Root />}>
-                <Route index element={<MainPage/>}/>
-                <Route path="/about" element={<AboutPage/>}/>
-            </Route>
-    ));
+import {AppRouter} from "app/providers/router";
 
 const App: FC = () => {
     const {theme, toggleTheme} = useTheme();
@@ -26,9 +10,7 @@ const App: FC = () => {
     return (
         <div className={classNames('app', {}, [theme])}>
             <button onClick={toggleTheme}>Theme</button>
-            <Suspense fallback={<div>Loading...</div>}>
-                <RouterProvider router={router} />
-            </Suspense>
+            <AppRouter/>
         </div>
     );
 };
