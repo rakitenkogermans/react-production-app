@@ -17,7 +17,7 @@ export const buildLoaders = ({isDev}: BuildOptions): webpack.RuleSetRule[] => {
                         {
                             locales: ['en', 'lv'],
                             nsSeparator: '_',
-                            outputPath: 'extractedTranslations/{{locale}}/{{ns}}.json',
+                            outputPath: 'public/locales/{{locale}}/{{ns}}.json',
                             keyAsDefaultValue: true,
                             discardOldKeys: true,
                         }

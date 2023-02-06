@@ -10,6 +10,7 @@ i18n
     .use(initReactI18next)
     .init({
         fallbackLng: 'en',
+        supportedLngs: ['en', 'lv'],
         debug: __IS_DEV__,
 
         interpolation: {
@@ -18,7 +19,7 @@ i18n
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json',
         },
-        // nsSeparator: '_'
+        nsSeparator: '_'
     });
 
 export default i18n;

@@ -7,7 +7,7 @@ const MainPage: FC<MainPageProps> = () => {
     const {t} = useTranslation('main');
     return (
         <div>
-            {t('Main page')}
+            {t('main_Main page')}
         </div>
     );
 };
