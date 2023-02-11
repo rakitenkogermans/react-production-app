@@ -1,4 +1,4 @@
-type Mods = Record<string, string | boolean>
+type Mods = Record<string, string | boolean>;
 
 export const classNames = (cls: string, mods: Mods = {}, otherClasses: string[] = []): string => {
     return [
@@ -8,4 +8,4 @@ export const classNames = (cls: string, mods: Mods = {}, otherClasses: string[] 
             .map(([className]) => className),
         ...otherClasses.filter(Boolean)
     ].join(' ');
-}
+};

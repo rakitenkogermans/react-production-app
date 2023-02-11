@@ -1,12 +1,12 @@
-import {FC, Suspense} from 'react';
-import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";
-import {Layout} from "app/Layout";
-import {routeConfig} from "shared/config/routeConfig/routeConfig";
+import { Suspense } from 'react';
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import { Layout } from 'app/Layout';
+import { routeConfig } from 'shared/config/routeConfig/routeConfig';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route element={<Layout />}>
-            {Object.values(routeConfig).map(({element, path}) => (
+            {Object.values(routeConfig).map(({ element, path }) => (
                 <Route key={path} path={path} element={<Suspense fallback={<div>Loading...</div>}>
                     <div className="page-wrapper">
                         {element}
@@ -17,12 +17,10 @@ const router = createBrowserRouter(
     )
 );
 
-type AppRoutesProps = {};
-
-const AppRouter: FC<AppRoutesProps> = () => {
+const AppRouter = () => {
     return (
         <RouterProvider router={router} />
     );
 };
 
-export {AppRouter};
+export { AppRouter };

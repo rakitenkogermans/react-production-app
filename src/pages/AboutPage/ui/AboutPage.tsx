@@ -1,10 +1,7 @@
-import {FC} from 'react';
-import {useTranslation} from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
-type AboutPageProps = {};
-
-const AboutPage: FC<AboutPageProps> = () => {
-    const {t} = useTranslation('about');
+const AboutPage = () => {
+    const { t } = useTranslation('about');
     return (
         <div>
             {t('about_About us')}
@@ -12,4 +9,4 @@ const AboutPage: FC<AboutPageProps> = () => {
     );
 };
 
-export {AboutPage};
+export { AboutPage };

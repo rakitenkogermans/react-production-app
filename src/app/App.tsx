@@ -1,11 +1,11 @@
-import {FC, Suspense} from 'react';
+import { type FC, Suspense } from 'react';
 import './styles/index.scss';
-import {useTheme} from "app/providers/ThemeProvider";
-import {classNames} from "shared/lib/classNames";
-import {AppRouter} from "app/providers/router";
+import { useTheme } from 'app/providers/ThemeProvider';
+import { classNames } from 'shared/lib/classNames';
+import { AppRouter } from 'app/providers/router';
 
 const App: FC = () => {
-    const {theme} = useTheme();
+    const { theme } = useTheme();
 
     return (
         <div className={classNames('app', {}, [theme])}>
@@ -16,4 +16,4 @@ const App: FC = () => {
     );
 };
 
-export {App};
+export { App };
