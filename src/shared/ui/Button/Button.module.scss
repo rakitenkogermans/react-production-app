@@ -1,19 +1,18 @@
 .Button {
-  cursor: pointer;
-  color: var(--button-text-color);
+    cursor: pointer;
+    color: var(--button-text-color);
 }
 
 .clear {
-  padding: 0;
-  border: none;
-  background: none;
-  outline: none;
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
 }
 
 .lang {
-  background: var(--button-color);
-  padding: 10px 25px;
-
-  border-radius: 5px;
-  border: 1px solid var(--headline-color);
+    background: var(--button-color);
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: 1px solid var(--headline-color);
 }

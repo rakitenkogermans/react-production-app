@@ -4,29 +4,29 @@
 @import "./themes/dark";
 
 html {
-  font-size: 62.5%;
-  /* 62.5% of the base size of 16px = 10px.*/
+    font-size: 62.5%;
+
+    /* 62.5% of the base size of 16px = 10px. */
 }
 
 body {
-  font-size: 1.6rem;
-  /* reset 10*1.6 = 16px, to make sure you do not get any 10px around */
+    font-size: 1.6rem;
+
+    /* reset 10*1.6 = 16px, to make sure you do not get any 10px around */
 }
 
 .app {
-  font: var(--font-m);
-
-  background: var(--bg-color);
-  color: var(--headline-color);
-
-  min-height: 100vh;
+    font: var(--font-m);
+    background: var(--bg-color);
+    color: var(--headline-color);
+    min-height: 100vh;
 }
 
 .content-page {
-  display: flex;
+    display: flex;
 }
 
 .page-wrapper {
-  flex-grow: 1;
-  padding: 20px;
+    flex-grow: 1;
+    padding: 20px;
 }
