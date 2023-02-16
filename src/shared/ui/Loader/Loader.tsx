@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './Loader.module.scss';
+import './Loader.scss';
 
 interface LoaderProps {
     className?: string
@@ -8,7 +8,7 @@ interface LoaderProps {
 
 const Loader: FC<LoaderProps> = ({ className = '' }) => {
     return (
-        <span className={classNames(cls.loader)}></span>
+        <span className={classNames('loader')}></span>
     );
 };
 
