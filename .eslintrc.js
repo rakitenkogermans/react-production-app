@@ -37,5 +37,14 @@ module.exports = {
         '@typescript-eslint/strict-boolean-expressions': 'off',
         '@typescript-eslint/naming-convention': 'off',
         'i18next/no-literal-string': ['error', { markupOnly: true }]
+        // 'react/jsx-wrap-multilines': ['error', {
+        //     declaration: 'parens-new-line',
+        //     assignment: 'parens-new-line',
+        //     return: 'parens-new-line',
+        //     arrow: 'parens-new-line',
+        //     condition: 'ignore',
+        //     logical: 'ignore',
+        //     prop: 'ignore'
+        // }]
     }
 };
