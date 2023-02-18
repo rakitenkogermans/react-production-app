@@ -8,7 +8,11 @@ interface LoaderProps {
 
 const Loader: FC<LoaderProps> = ({ className = '' }) => {
     return (
-        <span className={classNames('loader')}></span>
+        <div className="lds-facebook">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     );
 };
 

@@ -13,13 +13,12 @@
 .lang {
     background: var(--button-color);
     color: var(--button-text-color);
-    padding: 10px 25px;
-    border-radius: 5px;
+    padding: 1.5rem 2.5rem;
     border: 1px solid var(--headline-color);
 }
 
 .outline {
-    padding: 10px 15px;
+    padding: 1.5rem 2.5rem;
     border: 1px solid var(--secondary-color);
     color: var(--headline-color);
     background: none;
