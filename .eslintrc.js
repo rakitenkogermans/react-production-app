@@ -28,6 +28,7 @@ module.exports = {
         'react/jsx-uses-react': 'off',
         'react/react-in-jsx-scope': 'off',
         'no-unused-vars': 'warn',
+        '@typescript-eslint/no-unused-vars': 'warn',
         '@typescript-eslint/explicit-function-return-type': 'off',
         'react/button-has-type': 'error',
         semi: ['error', 'always'],
