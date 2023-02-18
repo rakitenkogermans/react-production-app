@@ -34,7 +34,9 @@ module.exports = {
         '@typescript-eslint/semi': ['error', 'always'],
         '@typescript-eslint/strict-boolean-expressions': 'off',
         '@typescript-eslint/naming-convention': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid'] }]
+        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
+        '@typescript-eslint/consistent-type-assertions': 'off',
+        'react/display-name': 'off'
         // 'react/jsx-wrap-multilines': ['error', {
         //     declaration: 'parens-new-line',
         //     assignment: 'parens-new-line',

@@ -1,6 +1,6 @@
 .Button {
     cursor: pointer;
-    color: var(--button-text-color);
+    color: var(--headline-color);
 }
 
 .clear {
@@ -12,7 +12,15 @@
 
 .lang {
     background: var(--button-color);
+    color: var(--button-text-color);
     padding: 10px 25px;
     border-radius: 5px;
     border: 1px solid var(--headline-color);
+}
+
+.outline {
+    padding: 10px 15px;
+    border: 1px solid var(--secondary-color);
+    color: var(--headline-color);
+    background: none;
 }

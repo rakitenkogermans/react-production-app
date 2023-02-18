@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
+import { type FC } from 'react';
 
-const MainPage = () => {
+const MainPage: FC = () => {
     const { t } = useTranslation('main');
     return (
         <div>

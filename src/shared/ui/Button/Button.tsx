@@ -4,7 +4,8 @@ import cls from './Button.module.scss';
 
 export enum ThemeButton {
     CLEAR = 'clear',
-    LANG = 'lang'
+    LANG = 'lang',
+    OUTLINE = 'outline'
 }
 
 type ButtonProps = {
