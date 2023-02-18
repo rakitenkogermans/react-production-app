@@ -1,5 +1,5 @@
 import type webpack from 'webpack';
-import { BuildPaths } from '../build/types/config';
+import { type BuildPaths } from '../build/types/config';
 import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { buildSvgLoader } from '../build/loaders/buildSvgLoader';
@@ -10,15 +10,15 @@ export default ({ config }: { config: webpack.Configuration }) => {
         html: '',
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src')
-    }
+    };
 
     config.resolve?.modules?.push(paths.src);
     config.resolve?.extensions?.push('.ts', '.tsx');
 
     if (config.module) {
         config.module.rules = config.module.rules?.map((rule: webpack.RuleSetRule) => {
-            if (/svg/.test(rule.test as string)) {
-                return { ...rule, exclude: /\.svg$/i};
+            if ((rule.test as string).includes('svg')) {
+                return { ...rule, exclude: /\.svg$/i };
             }
             return rule;
         });
@@ -27,5 +27,5 @@ export default ({ config }: { config: webpack.Configuration }) => {
     config.module?.rules?.push(buildSvgLoader());
     config.module?.rules?.push(buildCssLoader(true));
 
-    return config
-}
+    return config;
+};
