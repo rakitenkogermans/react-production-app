@@ -15,8 +15,7 @@ const Navbar: FC<NavbarProps> = ({ className = '' }) => {
         <div className={classNames(cls.Navbar, {}, [className])}>
 
             <div className={cls.links}>
-                <AppLink theme={AppLinkTheme.PRIMARY} to={'/'}>{t('Main')}</AppLink>
-                <AppLink theme={AppLinkTheme.PRIMARY} to={'/about'}>{t('About')}</AppLink>
+
             </div>
         </div>
     );
