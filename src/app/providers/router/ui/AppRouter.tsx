@@ -1,5 +1,10 @@
 import { Suspense } from 'react';
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import {
+    createBrowserRouter,
+    createRoutesFromElements,
+    Route,
+    RouterProvider
+} from 'react-router-dom';
 import { Layout } from 'app/Layout';
 import { routeConfig } from 'shared/config/routeConfig/routeConfig';
 import { PageLoader } from 'widgets/PageLoader';

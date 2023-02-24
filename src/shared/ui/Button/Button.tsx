@@ -23,7 +23,14 @@ type ButtonProps = {
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
-    const { className = '', children, theme = ButtonTheme.CLEAR, square = false, size = ButtonSize.M, ...otherProps } = props;
+    const {
+        className = '',
+        children,
+        theme = ButtonTheme.CLEAR,
+        square = false,
+        size = ButtonSize.M,
+        ...otherProps
+    } = props;
 
     const mods: Record<string, boolean> = {
         [cls.square]: square
