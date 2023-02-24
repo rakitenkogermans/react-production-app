@@ -56,7 +56,7 @@ const Sidebar: FC<SidebarProps> = ({ className = '' }) => {
                 >
                     <AboutIcon className={cls.icon}/>
                     <span className={cls.link}>
-                        {t('Abou')}
+                        {t('About')}
                     </span>
                 </AppLink>
             </div>

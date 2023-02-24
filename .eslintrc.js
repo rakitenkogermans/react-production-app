@@ -18,7 +18,8 @@ module.exports = {
     plugins: [
         'react',
         '@typescript-eslint',
-        'i18next'
+        'i18next',
+        'react-hooks'
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -37,22 +38,17 @@ module.exports = {
         '@typescript-eslint/naming-convention': 'off',
         'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
         '@typescript-eslint/consistent-type-assertions': 'off',
-        'react/display-name': 'off'
-        // 'react/jsx-wrap-multilines': ['error', {
-        //     declaration: 'parens-new-line',
-        //     assignment: 'parens-new-line',
-        //     return: 'parens-new-line',
-        //     arrow: 'parens-new-line',
-        //     condition: 'ignore',
-        //     logical: 'ignore',
-        //     prop: 'ignore'
-        // }]
+        'react/display-name': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
+        'max-len': ['error', { code: 100 }]
     },
     overrides: [
         {
-            files: ['**/src/**/*.test.{ts,tsx}'],
+            files: ['**/src/**/*.{test,stories}.{ts,tsx}', './.eslintrc.js'],
             rules: {
-                'i18next/no-literal-string': 'off'
+                'i18next/no-literal-string': 'off',
+                'max-len': 'off'
             }
         }
     ]
