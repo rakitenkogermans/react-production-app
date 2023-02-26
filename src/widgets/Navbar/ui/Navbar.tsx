@@ -30,9 +30,9 @@ const Navbar: FC<NavbarProps> = ({ className = '' }) => {
                 isOpen={isAuthModal}
                 onClose={onToggleModal}
             >
-                {t('Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
+                {'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
                     'Atque delectus distinctio eaque eius exercitationem laudantium perspiciatis ' +
-                    'quibusdam saepe sapiente veritatis.')}
+                    'quibusdam saepe sapiente veritatis.'}
             </Modal>
         </div>
     );
