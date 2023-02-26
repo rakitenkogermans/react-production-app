@@ -13,11 +13,17 @@ const router = createBrowserRouter(
     createRoutesFromElements(
         <Route element={<Layout />}>
             {Object.values(routeConfig).map(({ element, path }) => (
-                <Route key={path} path={path} element={<Suspense fallback={<PageLoader />}>
-                    <div className="page-wrapper">
-                        {element}
-                    </div>
-                </Suspense>} />
+                <Route
+                    key={path}
+                    path={path}
+                    element={
+                        <Suspense fallback={<PageLoader />}>
+                            <div className="page-wrapper">
+                                {element}
+                            </div>
+                        </Suspense>
+                    }
+                />
             ))}
         </Route>
     )

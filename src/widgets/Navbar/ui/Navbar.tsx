@@ -19,13 +19,16 @@ const Navbar: FC<NavbarProps> = ({ className = '' }) => {
 
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
-            <Button theme={ButtonTheme.OUTLINE} className={cls.links} onClick={onToggleModal}>
+            <Button
+                theme={ButtonTheme.OUTLINE}
+                className={cls.links}
+                onClick={onToggleModal}
+            >
                 {t('Login')}
             </Button>
             <Modal
                 isOpen={isAuthModal}
                 onClose={onToggleModal}
-
             >
                 {t('Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
                     'Atque delectus distinctio eaque eius exercitationem laudantium perspiciatis ' +

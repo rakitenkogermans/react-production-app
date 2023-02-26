@@ -22,8 +22,10 @@ module.exports = {
         'react-hooks'
     ],
     rules: {
+        'react/jsx-max-props-per-line': [2, { maximum: 1 }],
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
+        'react/jsx-first-prop-new-line': ['error', 'multiline'],
         indent: [2, 4],
         '@typescript-eslint/indent': [2, 4],
         'react/jsx-uses-react': 'off',
@@ -41,7 +43,8 @@ module.exports = {
         'react/display-name': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
-        'max-len': ['error', { code: 100, ignoreComments: true }]
+        'max-len': ['error', { code: 100, ignoreComments: true }],
+        'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'proportional-always', beforeClosing: 'proportional-always' }]
     },
     overrides: [
         {

@@ -44,7 +44,7 @@ const Sidebar: FC<SidebarProps> = ({ className = '' }) => {
                     to={RoutePath.main}
                     className={cls.item}
                 >
-                    <MainIcon className={cls.icon}/>
+                    <MainIcon className={cls.icon} />
                     <span className={cls.link}>
                         {t('Main')}
                     </span>
@@ -54,7 +54,7 @@ const Sidebar: FC<SidebarProps> = ({ className = '' }) => {
                     to={RoutePath.about}
                     className={cls.item}
                 >
-                    <AboutIcon className={cls.icon}/>
+                    <AboutIcon className={cls.icon} />
                     <span className={cls.link}>
                         {t('About')}
                     </span>

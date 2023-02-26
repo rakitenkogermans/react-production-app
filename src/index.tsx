@@ -5,6 +5,7 @@ import { ThemeProvider } from 'app/providers/ThemeProvider';
 // import i18n (needs to be bundled ;))
 import './shared/config/i18n/i18n';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
+import { StoreProvider } from 'app/providers/StoreProvider';
 
 const container = document.getElementById('root') as HTMLDivElement;
 
@@ -13,9 +14,11 @@ const root = createRoot(container);
 
 // render app to root
 root.render(
-    <ErrorBoundary>
-        <ThemeProvider>
-            <App />
-        </ThemeProvider>
-    </ErrorBoundary>
+    <StoreProvider>
+        <ErrorBoundary>
+            <ThemeProvider>
+                <App />
+            </ThemeProvider>
+        </ErrorBoundary>
+    </StoreProvider>
 );
