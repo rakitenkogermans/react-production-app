@@ -3,6 +3,7 @@ import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { THEME } from '../../src/app/providers/ThemeProvider';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
+import { I18nDecorator } from '../../src/shared/config/storybook/I18nDecorator/I18nDecorator';
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -14,6 +15,22 @@ export const parameters = {
     }
 };
 
+export const globalTypes = {
+    locale: {
+        name: 'Locale',
+        description: 'Internationalization locale',
+        toolbar: {
+            icon: 'globe',
+            items: [
+                { value: 'en', title: 'English' },
+                { value: 'lv', title: 'Latviski' }
+            ],
+            showName: true
+        }
+    }
+};
+
+addDecorator(I18nDecorator);
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(THEME.LIGHT));
 addDecorator(RouterDecorator);
