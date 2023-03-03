@@ -7,9 +7,12 @@ import { buildSvgLoader } from '../build/loaders/buildSvgLoader';
 export default ({ config }: { config: webpack.Configuration }) => {
     const paths: BuildPaths = {
         build: '',
+        buildLocales: '',
         html: '',
         entry: '',
-        src: path.resolve(__dirname, '..', '..', 'src')
+        src: path.resolve(__dirname, '..', '..', 'src'),
+        public: '',
+        publicLocales: ''
     };
 
     config.resolve?.modules?.push(paths.src);

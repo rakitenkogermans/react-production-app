@@ -3,8 +3,11 @@ export type BuildMode = 'production' | 'development';
 export interface BuildPaths {
     entry: string
     build: string
+    buildLocales: string
     html: string
     src: string
+    public: string
+    publicLocales: string
 }
 
 export interface BuildEnv {
