@@ -1,0 +1,12 @@
+import { type DeepPartial } from '@reduxjs/toolkit';
+import { type StateSchema } from 'app/providers/StoreProvider';
+import { getLoginUsername } from './getLoginUsername';
+
+describe('getLoginUsername', () => {
+    test('should return login username', () => {
+        const state: DeepPartial<StateSchema> = {
+            loginForm: { username: 'qwerty', password: '12345678', error: 'error', isLoading: false }
+        };
+        expect(getLoginUsername(state as StateSchema)).toEqual('qwerty');
+    });
+});
