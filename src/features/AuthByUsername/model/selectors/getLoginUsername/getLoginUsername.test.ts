@@ -5,8 +5,8 @@ import { getLoginUsername } from './getLoginUsername';
 describe('getLoginUsername', () => {
     test('should return login username', () => {
         const state: DeepPartial<StateSchema> = {
-            loginForm: { username: 'qwerty', password: '12345678', error: 'error', isLoading: false }
+            loginForm: { username: 'qwerty' }
         };
-        expect(getLoginUsername(state as StateSchema)).toEqual('qwerty');
+        expect(getLoginUsername(state as StateSchema)).toBe('qwerty');
     });
 });
