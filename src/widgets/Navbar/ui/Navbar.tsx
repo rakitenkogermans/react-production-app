@@ -53,10 +53,10 @@ const Navbar: FC<NavbarProps> = ({ className = '' }) => {
             >
                 {t('Login')}
             </Button>
-            <LoginModal
+            {isAuthModal && <LoginModal
                 isOpen={isAuthModal}
                 onClose={onCloseModal}
-            />
+            />}
         </div>
     );
 };
