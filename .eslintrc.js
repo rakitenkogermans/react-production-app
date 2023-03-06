@@ -45,7 +45,8 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'max-len': ['error', { code: 120, ignoreComments: true }],
         'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'proportional-always', beforeClosing: 'proportional-always' }],
-        '@typescript-eslint/no-dynamic-delete': 'off'
+        '@typescript-eslint/no-dynamic-delete': 'off',
+        '@typescript-eslint/no-misused-promises': 'off'
     },
     overrides: [
         {
