@@ -1,6 +1,7 @@
 {
   "About": "Par mums",
   "Authorization form": "Autorizācijas forma",
+  "Invalid username or password": "Invalid username or password",
   "Language": "English",
   "Language Code": "EN",
   "Login": "Pieteikties",
@@ -10,5 +11,6 @@
   "Reload page": "Reload page",
   "Something went wrong": "Ir noticis kaut kas neparedzēts",
   "Type Password": "Ievadiet Paroli",
-  "Type Username": "Ievadiet Lietotājvārdu"
+  "Type Username": "Ievadiet Lietotājvārdu",
+  "Profile": "Profils"
 }
