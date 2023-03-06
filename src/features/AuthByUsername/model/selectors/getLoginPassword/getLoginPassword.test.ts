@@ -8,4 +8,9 @@ describe('getLoginPassword', () => {
         };
         expect(getLoginPassword(state as StateSchema)).toBe('12345678');
     });
+
+    test('should work with empty state', () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(getLoginPassword(state as StateSchema)).toBe('');
+    });
 });

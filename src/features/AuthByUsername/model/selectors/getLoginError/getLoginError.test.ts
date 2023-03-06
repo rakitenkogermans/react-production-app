@@ -8,4 +8,9 @@ describe('getLoginError', () => {
         };
         expect(getLoginError(state as StateSchema)).toBe('error');
     });
+
+    test('should work with empty state', () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(getLoginError(state as StateSchema)).toBe(undefined);
+    });
 });

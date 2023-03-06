@@ -1,10 +1,10 @@
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './LoginForm.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import { useSelector, useStore } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
@@ -51,7 +51,7 @@ const LoginForm = memo(({ className = '' }: LoginFormProps) => {
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('Authorization form') ?? ''} />
                 {error && <Text
-                    text={error}
+                    text={t('Invalid username or password') ?? ''}
                     theme={TextTheme.ERROR}
                 />}
                 <Input

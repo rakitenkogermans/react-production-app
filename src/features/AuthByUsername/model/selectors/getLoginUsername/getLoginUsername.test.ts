@@ -8,4 +8,9 @@ describe('getLoginUsername', () => {
         };
         expect(getLoginUsername(state as StateSchema)).toBe('qwerty');
     });
+
+    test('should work with empty state', () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(getLoginUsername(state as StateSchema)).toBe('');
+    });
 });
