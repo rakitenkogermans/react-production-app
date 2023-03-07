@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { type FC, memo } from 'react';
+import { memo } from 'react';
 
-const AboutPage: FC = memo(() => {
+const AboutPage = memo(() => {
     const { t } = useTranslation('about');
     return (
         <div>

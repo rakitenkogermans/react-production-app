@@ -4,7 +4,14 @@ import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { buildSvgLoader } from '../build/loaders/buildSvgLoader';
 
-export default ({ config }: { config: webpack.Configuration }) => {
+import { type Configuration as WebpackConfiguration } from 'webpack';
+import { type Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
+
+interface Configuration extends WebpackConfiguration {
+    devServer?: WebpackDevServerConfiguration
+}
+
+export default ({ config }: { config: Configuration }) => {
     const paths: BuildPaths = {
         build: '',
         buildLocales: '',
@@ -19,6 +26,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     config.resolve?.extensions?.push('.ts', '.tsx');
 
     if (config.module) {
+        // @ts-ignore
         config.module.rules = config.module.rules?.map((rule: webpack.RuleSetRule) => {
             if (String(rule.test).includes('svg')) {
                 return { ...rule, exclude: /\.svg$/i };

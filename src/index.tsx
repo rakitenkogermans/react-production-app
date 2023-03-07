@@ -15,13 +15,13 @@ const root = createRoot(container);
 
 // render app to root
 root.render(
-    <BrowserRouter>
-        <StoreProvider>
-            <ErrorBoundary>
-                <ThemeProvider>
-                    <App />
-                </ThemeProvider>
-            </ErrorBoundary>
-        </StoreProvider>
-    </BrowserRouter>
+    // <BrowserRouter>
+    <StoreProvider>
+        <ErrorBoundary>
+            <ThemeProvider>
+                <App />
+            </ThemeProvider>
+        </ErrorBoundary>
+    </StoreProvider>
+    // </BrowserRouter>
 );

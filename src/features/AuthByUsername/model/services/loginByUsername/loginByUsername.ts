@@ -23,7 +23,6 @@ export const loginByUsername =
                     throw new Error();
                 }
 
-                // extra.navigate('/about');
                 localStorage.setItem(LOCAL_STORAGE_USER_KEY, JSON.stringify(response.data));
                 dispatch(userActions.setAuthData(response.data));
 

@@ -29,5 +29,5 @@ withError.decorators = [StoreDecorator({
 export const Loading = Template.bind({});
 Loading.args = {};
 Loading.decorators = [StoreDecorator({
-    loginForm: { username: 'qwerty', password: '12345678', isLoading: true }
+    loginForm: { isLoading: true }
 })];
