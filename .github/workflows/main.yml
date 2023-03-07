@@ -33,7 +33,7 @@ jobs:
         run: yarn run test:unit
         if: always()
       - name: build storybook
-        run: yarn run storybook:build
+        run: yarn run storybook:build:ci
         if: always()
       - name: screenshot testing
         run: yarn run test:ui:ci
