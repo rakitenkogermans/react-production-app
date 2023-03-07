@@ -6,6 +6,7 @@ import { ThemeProvider } from 'app/providers/ThemeProvider';
 import './shared/config/i18n/i18n';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { StoreProvider } from 'app/providers/StoreProvider';
+import { BrowserRouter } from 'react-router-dom';
 
 const container = document.getElementById('root') as HTMLDivElement;
 
@@ -14,11 +15,13 @@ const root = createRoot(container);
 
 // render app to root
 root.render(
-    <StoreProvider>
-        <ErrorBoundary>
-            <ThemeProvider>
-                <App />
-            </ThemeProvider>
-        </ErrorBoundary>
-    </StoreProvider>
+    <BrowserRouter>
+        <StoreProvider>
+            <ErrorBoundary>
+                <ThemeProvider>
+                    <App />
+                </ThemeProvider>
+            </ErrorBoundary>
+        </StoreProvider>
+    </BrowserRouter>
 );

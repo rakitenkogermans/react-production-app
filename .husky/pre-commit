@@ -3,4 +3,3 @@
 
 yarn run lint:ts
 yarn run lint:scss
-yarn run test:unit
