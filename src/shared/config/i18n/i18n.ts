@@ -18,8 +18,7 @@ void i18n
         },
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json'
-        },
-        nsSeparator: '_'
+        }
     });
 
 export default i18n;

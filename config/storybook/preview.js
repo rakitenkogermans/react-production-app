@@ -15,22 +15,31 @@ export const parameters = {
     }
 };
 
-export const globalTypes = {
-    locale: {
-        name: 'Locale',
-        description: 'Internationalization locale',
-        toolbar: {
-            icon: 'globe',
-            items: [
-                { value: 'en', title: 'English' },
-                { value: 'lv', title: 'Latviski' }
-            ],
-            showName: true
+let globalTypes;
+if (process.env.STORYBOOK_LOCALES) {
+    globalTypes = {
+        locale: {
+            name: 'Locale',
+            description: 'Internationalization locale',
+            toolbar: {
+                icon: 'globe',
+                items: [
+                    { value: 'en', title: 'English' },
+                    { value: 'lv', title: 'Latviski' }
+                ],
+                showName: true
+            }
         }
-    }
-};
+    };
 
-addDecorator(I18nDecorator);
+    addDecorator(I18nDecorator);
+}
+
+export { globalTypes };
+
+console.log('===============================================================================');
+console.log(process.env.STORYBOOK_LOCALES);
+console.log('===============================================================================');
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(THEME.LIGHT));
 addDecorator(RouterDecorator);
