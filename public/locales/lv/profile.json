@@ -2,5 +2,13 @@
   "Profile": "Profils",
   "Edit": "Rediģēt",
   "Your name": "Your name",
-  "Your lastname": "Your lastname"
+  "Your lastname": "Your lastname",
+  "Something went wrong while loading Profile": "Something went wrong while loading Profile",
+  "Try again later": "Try again later",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Your city": "Your city",
+  "Your age": "Your age",
+  "Type Username": "Type Username",
+  "Avatar link": "Avatar link"
 }
