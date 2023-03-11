@@ -9,6 +9,7 @@ interface CountrySelectProps {
     value?: Country
     onChange?: (value: Country) => void
     readonly?: boolean
+    id?: string
 }
 
 const options = [
@@ -19,7 +20,7 @@ const options = [
     { value: Country.Lithuania, content: Country.Lithuania }
 ];
 
-const CountrySelect = memo(({ className, value, onChange, readonly }: CountrySelectProps) => {
+const CountrySelect = memo(({ className, value, onChange, readonly, id }: CountrySelectProps) => {
     const { t } = useTranslation();
 
     const onChangeHandler = useCallback((value: string) => {
@@ -34,6 +35,7 @@ const CountrySelect = memo(({ className, value, onChange, readonly }: CountrySel
             onChange={onChangeHandler}
             className={classNames('', {}, [className])}
             readonly={readonly}
+            id={id}
         />
     );
 });

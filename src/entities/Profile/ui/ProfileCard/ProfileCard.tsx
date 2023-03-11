@@ -85,6 +85,7 @@ const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeFirstname}
                     readonly={readonly}
+                    id={'firstname'}
                 />
                 <Input
                     value={data?.lastname}
@@ -92,6 +93,7 @@ const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeLastname}
                     readonly={readonly}
+                    id={'lastname'}
                 />
                 <Input
                     value={data?.age}
@@ -99,6 +101,7 @@ const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeAge}
                     readonly={readonly}
+                    id={'age'}
                 />
                 <Input
                     value={data?.city}
@@ -106,6 +109,7 @@ const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeCity}
                     readonly={readonly}
+                    id={'city'}
                 />
                 <Input
                     value={data?.username}
@@ -113,6 +117,7 @@ const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeUsername}
                     readonly={readonly}
+                    id={'username'}
                 />
                 <Input
                     value={data?.avatar}
@@ -120,16 +125,19 @@ const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeAvatar}
                     readonly={readonly}
+                    id={'avatar'}
                 />
                 <CurrencySelect
                     value={data?.currency}
                     onChange={onChangeCurrency}
                     readonly={readonly}
+                    id={'currency'}
                 />
                 <CountrySelect
                     value={data?.country}
                     onChange={onChangeCountry}
                     readonly={readonly}
+                    id={'country'}
                 />
             </div>
         </div>
