@@ -3,7 +3,6 @@ import { memo, useCallback, useEffect } from 'react';
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
     fetchProfileData,
-    getProfileData,
     getProfileError,
     getProfileIsLoading, profileActions,
     ProfileCard,
@@ -12,7 +11,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader';
+import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm/getProfileForm';
 import { type Currency } from 'entities/Currency';

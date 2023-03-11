@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './CountrySelect.module.scss';
 import { Select } from 'shared/ui/Select/Select';
 import { Country } from '../../model/types/country';
 import { useTranslation } from 'react-i18next';
@@ -33,7 +32,7 @@ const CountrySelect = memo(({ className, value, onChange, readonly }: CountrySel
             options={options}
             value={value}
             onChange={onChangeHandler}
-            className={classNames(cls.CountrySelect, {}, [className])}
+            className={classNames('', {}, [className])}
             readonly={readonly}
         />
     );

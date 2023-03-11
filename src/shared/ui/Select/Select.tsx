@@ -19,7 +19,9 @@ interface SelectProps {
 }
 
 const Select = memo(({ className, label, id, name, value, options, readonly, onChange }: SelectProps) => {
-    const mods: Mods = {};
+    const mods: Mods = {
+        [cls.readonly]: readonly
+    };
 
     const optionsList = useMemo(() => {
         return options?.map((opt) => (
