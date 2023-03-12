@@ -1,8 +1,5 @@
 import { useContext } from 'react';
-import {
-    THEME,
-    ThemeContext
-} from 'app/providers/ThemeProvider/lib/ThemeContext';
+import { THEME, ThemeContext } from 'app/providers/ThemeProvider/lib/ThemeContext';
 import { LOCAL_STORAGE_THEME_KEY } from 'shared/const/localstorage';
 
 interface UseThemeReturn {
@@ -14,7 +11,18 @@ export const useTheme = (): UseThemeReturn => {
     const { theme = THEME.LIGHT, setTheme } = useContext(ThemeContext);
 
     const toggleTheme = () => {
-        const newTheme = theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT;
+        let newTheme: THEME;
+
+        if (theme === THEME.DARK) {
+            newTheme = THEME.LIGHT;
+        } else if (theme === THEME.LIGHT) {
+            newTheme = THEME.YELLOW;
+        } else if (theme === THEME.YELLOW) {
+            newTheme = THEME.DARK;
+        } else {
+            newTheme = THEME.LIGHT;
+        }
+
         if (setTheme) {
             setTheme(newTheme);
         }
