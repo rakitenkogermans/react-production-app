@@ -4,11 +4,13 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from 'app/providers/router';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { userActions } from 'entities/User';
+import { getUserInitialized, userActions } from 'entities/User';
+import { useSelector } from 'react-redux';
 
 const App: FC = () => {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
+    const initialized = useSelector(getUserInitialized);
 
     useEffect(() => {
         dispatch(userActions.initAuthData());
@@ -17,7 +19,7 @@ const App: FC = () => {
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
-                <AppRouter />
+                {initialized && <AppRouter />}
             </Suspense>
         </div>
     );
