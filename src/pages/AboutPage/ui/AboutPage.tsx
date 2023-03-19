@@ -10,4 +10,4 @@ const AboutPage = memo(() => {
     );
 });
 
-export { AboutPage };
+export default AboutPage;

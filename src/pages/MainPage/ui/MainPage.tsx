@@ -10,4 +10,4 @@ const MainPage = memo(() => {
     );
 });
 
-export { MainPage };
+export default MainPage;

@@ -125,4 +125,4 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
     );
 });
 
-export { ProfilePage };
+export default ProfileCard;
