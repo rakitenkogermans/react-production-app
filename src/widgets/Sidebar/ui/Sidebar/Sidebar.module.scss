@@ -2,9 +2,7 @@
     height: calc(100vh - var(--navbar-height));
     width: var(--sidebar-width);
     background: var(--bg-color);
-    position: sticky;
-    top: var(--navbar-height);
-    z-index: 9;
+    position: relative;
     transition: width 0.4s ease-in-out;
     border-right: 1px solid var(--secondary-color);
 }

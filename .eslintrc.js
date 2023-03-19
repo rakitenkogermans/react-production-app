@@ -53,7 +53,8 @@ module.exports = {
         '@typescript-eslint/no-misused-promises': 'off',
         '@typescript-eslint/no-invalid-void-type': 'off',
         '@typescript-eslint/prefer-ts-expect-error': 'off',
-        '@typescript-eslint/ban-ts-comment': 'off'
+        '@typescript-eslint/ban-ts-comment': 'off',
+        '@typescript-eslint/no-floating-promises': 'off'
     },
     overrides: [
         {
