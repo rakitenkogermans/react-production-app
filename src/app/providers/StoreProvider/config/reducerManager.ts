@@ -2,7 +2,7 @@ import {
     combineReducers,
     type AnyAction,
     type Reducer,
-    type ReducersMapObject
+    type ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { type ReducerManager, type StateSchema, type StateSchemaKey } from './StateSchema';
 
@@ -48,6 +48,6 @@ export const createReducerManager = (initialReducers: ReducersMapObject<StateSch
             keysToRemove.push(key);
 
             combinedReducer = combineReducers(reducers);
-        }
+        },
     };
 };

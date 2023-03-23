@@ -12,8 +12,8 @@ export default {
     title: 'pages/ProfilePage',
     component: ProfilePage,
     argTypes: {
-        backgroundColor: { control: 'color' }
-    }
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof ProfilePage>;
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
@@ -30,9 +30,9 @@ Light.decorators = ([StoreDecorator({
             firstname: 'qwerty',
             lastname: 'qwerty',
             city: 'Riga',
-            avatar: AvatarImg
-        }
-    }
+            avatar: AvatarImg,
+        },
+    },
 })]);
 
 export const Dark = Template.bind({});
@@ -47,7 +47,7 @@ Dark.decorators = ([ThemeDecorator(THEME.DARK), StoreDecorator({
             firstname: 'qwerty',
             lastname: 'qwerty',
             city: 'Riga',
-            avatar: AvatarImg
-        }
-    }
+            avatar: AvatarImg,
+        },
+    },
 })]);

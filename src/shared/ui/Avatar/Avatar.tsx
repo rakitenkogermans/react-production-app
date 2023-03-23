@@ -14,7 +14,7 @@ const Avatar = memo(({ className, src, size, alt }: AvatarProps) => {
 
     const styles = useMemo<CSSProperties>(() => ({
         width: size ?? 100,
-        height: size ?? 100
+        height: size ?? 100,
     }), [size]);
 
     return (

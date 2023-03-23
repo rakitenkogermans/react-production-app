@@ -10,10 +10,10 @@ export const buildBabelLoader = ({ isDev }: BuildOptions) => (
                 presets: ['@babel/preset-env'],
                 plugins: [
                     [
-                        isDev && require.resolve('react-refresh/babel')
-                    ]
-                ].filter(Boolean)
-            }
-        }
+                        isDev && require.resolve('react-refresh/babel'),
+                    ],
+                ].filter(Boolean),
+            },
+        },
     }
 );

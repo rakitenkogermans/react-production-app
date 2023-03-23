@@ -17,7 +17,7 @@ const options = [
     { value: Country.Belgium, content: Country.Belgium },
     { value: Country.Estonia, content: Country.Estonia },
     { value: Country.Latvia, content: Country.Latvia },
-    { value: Country.Lithuania, content: Country.Lithuania }
+    { value: Country.Lithuania, content: Country.Lithuania },
 ];
 
 const CountrySelect = memo(({ className, value, onChange, readonly, id }: CountrySelectProps) => {

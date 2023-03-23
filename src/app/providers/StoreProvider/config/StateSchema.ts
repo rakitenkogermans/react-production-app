@@ -6,7 +6,7 @@ import {
     type CombinedState, type Dispatch,
     type EnhancedStore,
     type Reducer,
-    type ReducersMapObject
+    type ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { type ProfileSchema } from 'entities/Profile';
 import { type AxiosInstance } from 'axios';

@@ -19,7 +19,7 @@ export default ({ config }: { config: Configuration }) => {
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src'),
         public: '',
-        publicLocales: ''
+        publicLocales: '',
     };
 
     config.resolve?.modules?.push(paths.src);
@@ -41,7 +41,7 @@ export default ({ config }: { config: Configuration }) => {
     config.plugins?.push(new webpack.DefinePlugin({
         __IS_DEV__: JSON.stringify(true),
         __API__: JSON.stringify(''),
-        __PROJECT__: JSON.stringify('storybook')
+        __PROJECT__: JSON.stringify('storybook'),
     }));
 
     return config;

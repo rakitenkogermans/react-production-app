@@ -1,7 +1,7 @@
 export enum ArticleBlockType {
     CODE = 'CODE',
     IMAGE = 'IMAGE',
-    TEXT = 'TEXT',
+    TEXT = 'TEXT'
 }
 
 export interface ArticleBlockBase {
@@ -31,7 +31,7 @@ export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlo
 export enum ArticleType {
     IT = 'IT',
     SCIENCE = 'SCIENCE',
-    ECONOMICS = 'ECONOMICS',
+    ECONOMICS = 'ECONOMICS'
 }
 
 export interface Article {

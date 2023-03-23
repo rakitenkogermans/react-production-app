@@ -5,7 +5,7 @@ import {
     useCallback,
     useEffect,
     useRef,
-    useState
+    useState,
 } from 'react';
 import { classNames, type Mods } from '../../lib/classNames/classNames';
 import cls from './Modal.module.scss';
@@ -68,7 +68,7 @@ const Modal: FC<ModalProps> = (props) => {
 
     const mods: Mods = {
         [cls.opened]: isOpen,
-        [cls.isClosing]: isClosing
+        [cls.isClosing]: isClosing,
     };
 
     if (lazy && !isMounted) {

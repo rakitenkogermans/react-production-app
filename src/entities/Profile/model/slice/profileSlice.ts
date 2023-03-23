@@ -8,7 +8,7 @@ const initialState: ProfileSchema = {
     isLoading: false,
     data: undefined,
     form: undefined,
-    error: undefined
+    error: undefined,
 };
 
 export const profileSlice = createSlice({
@@ -26,9 +26,9 @@ export const profileSlice = createSlice({
         updateProfile: (state, action: PayloadAction<Profile>) => {
             state.form = {
                 ...state.form,
-                ...action.payload
+                ...action.payload,
             };
-        }
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -60,7 +60,7 @@ export const profileSlice = createSlice({
                 state.isLoading = false;
                 state.validateError = action.payload;
             });
-    }
+    },
 });
 
 export const { actions: profileActions } = profileSlice;

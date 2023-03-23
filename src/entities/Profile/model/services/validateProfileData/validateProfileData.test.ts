@@ -11,7 +11,7 @@ const data = {
     firstname: 'qwerty',
     lastname: 'qwerty',
     city: 'Riga',
-    avatar: ''
+    avatar: '',
 };
 
 describe('validateProfileData.test', () => {
@@ -25,7 +25,7 @@ describe('validateProfileData.test', () => {
         const result = validateProfileData({ ...data, firstname: '', lastname: '' });
 
         expect(result).toEqual([
-            ValidateProfileError.INCORRECT_USER_DATA
+            ValidateProfileError.INCORRECT_USER_DATA,
         ]);
     });
 
@@ -33,7 +33,7 @@ describe('validateProfileData.test', () => {
         const result = validateProfileData({ ...data, age: 0 });
 
         expect(result).toEqual([
-            ValidateProfileError.INCORRECT_AGE
+            ValidateProfileError.INCORRECT_AGE,
         ]);
     });
 
@@ -41,7 +41,7 @@ describe('validateProfileData.test', () => {
         const result = validateProfileData({ ...data, country: undefined });
 
         expect(result).toEqual([
-            ValidateProfileError.INCORRECT_COUNTRY
+            ValidateProfileError.INCORRECT_COUNTRY,
         ]);
     });
 
@@ -49,7 +49,7 @@ describe('validateProfileData.test', () => {
         const result = validateProfileData(undefined);
 
         expect(result).toEqual([
-            ValidateProfileError.NO_DATA
+            ValidateProfileError.NO_DATA,
         ]);
     });
 
@@ -59,7 +59,7 @@ describe('validateProfileData.test', () => {
         expect(result).toEqual([
             ValidateProfileError.INCORRECT_USER_DATA,
             ValidateProfileError.INCORRECT_AGE,
-            ValidateProfileError.INCORRECT_COUNTRY
+            ValidateProfileError.INCORRECT_COUNTRY,
         ]);
     });
 });

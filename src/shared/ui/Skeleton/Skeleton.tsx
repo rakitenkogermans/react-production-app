@@ -14,13 +14,13 @@ export const Skeleton = memo((props: SkeletonProps) => {
         className,
         height,
         width,
-        border
+        border,
     } = props;
 
     const styles: CSSProperties = {
         width,
         height,
-        borderRadius: border
+        borderRadius: border,
     };
 
     return (

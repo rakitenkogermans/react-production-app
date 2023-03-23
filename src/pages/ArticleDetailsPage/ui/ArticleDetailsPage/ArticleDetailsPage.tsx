@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './ArticleDetailsPage.module.scss';
 import { memo } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
@@ -15,13 +14,13 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
 
     if (!id) {
         return (
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <div className={classNames('', {}, [className])}>
                 {t('Article not found')}
             </div>
         );
     }
     return (
-        <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        <div className={classNames('', {}, [className])}>
             <ArticleDetails id={id} />
         </div>
     );

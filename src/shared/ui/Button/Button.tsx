@@ -13,7 +13,7 @@ export enum ButtonTheme {
 export enum ButtonSize {
     M = 'size_m',
     L = 'size_l',
-    XL = 'size_xl',
+    XL = 'size_xl'
 }
 
 type ButtonProps = {
@@ -37,7 +37,7 @@ const Button = memo((props: PropsWithChildren<ButtonProps>) => {
 
     const mods: Mods = {
         [cls.square]: square,
-        [cls.disabled]: disabled
+        [cls.disabled]: disabled,
     };
 
     return (

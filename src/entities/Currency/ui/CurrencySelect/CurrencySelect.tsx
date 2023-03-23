@@ -15,7 +15,7 @@ interface CurrencySelectProps {
 const options = [
     { value: Currency.EUR, content: Currency.EUR },
     { value: Currency.USD, content: Currency.USD },
-    { value: Currency.LTL, content: Currency.LTL }
+    { value: Currency.LTL, content: Currency.LTL },
 ];
 
 const CurrencySelect = memo(({ className, value, onChange, readonly, id }: CurrencySelectProps) => {

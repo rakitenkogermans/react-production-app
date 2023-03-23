@@ -5,5 +5,5 @@ import { THEME } from './lib/ThemeContext';
 export {
     ThemeProvider,
     useTheme,
-    THEME
+    THEME,
 };

@@ -9,8 +9,8 @@ export default {
     title: 'widgets/Navbar',
     component: Navbar,
     argTypes: {
-        backgroundColor: { control: 'color' }
-    }
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof Navbar>;
 
 const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
@@ -18,23 +18,23 @@ const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
 export const LoggedInLight = Template.bind({});
 LoggedInLight.args = {};
 LoggedInLight.decorators = [StoreDecorator({
-    user: { authData: { username: 'qwerty', id: '1' } }
+    user: { authData: { username: 'qwerty', id: '1' } },
 })];
 
 export const LoggedInDark = Template.bind({});
 LoggedInDark.args = {};
 LoggedInDark.decorators = [ThemeDecorator(THEME.DARK), StoreDecorator({
-    user: { authData: { username: 'qwerty', id: '1' } }
+    user: { authData: { username: 'qwerty', id: '1' } },
 })];
 
 export const LoggedOutLight = Template.bind({});
 LoggedOutLight.args = {};
 LoggedOutLight.decorators = [StoreDecorator({
-    user: { authData: undefined }
+    user: { authData: undefined },
 })];
 
 export const LoggedOutDark = Template.bind({});
 LoggedOutDark.args = {};
 LoggedOutDark.decorators = [ThemeDecorator(THEME.DARK), StoreDecorator({
-    user: { authData: undefined }
+    user: { authData: undefined },
 })];

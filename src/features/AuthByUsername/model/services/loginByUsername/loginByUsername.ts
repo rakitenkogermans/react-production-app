@@ -16,7 +16,7 @@ export const loginByUsername =
 
             try {
                 const response = await extra.api.post<User>('/login', {
-                    username, password
+                    username, password,
                 });
 
                 if (!response.data) {

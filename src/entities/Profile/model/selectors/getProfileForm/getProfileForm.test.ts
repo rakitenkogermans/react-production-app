@@ -13,13 +13,13 @@ describe('getProfileForm', () => {
             firstname: 'qwerty',
             lastname: 'qwerty',
             city: 'Riga',
-            avatar: ''
+            avatar: '',
         };
 
         const state: DeepPartial<StateSchema> = {
             profile: {
-                form
-            }
+                form,
+            },
         };
 
         expect(getProfileForm(state as StateSchema)).toEqual(form);

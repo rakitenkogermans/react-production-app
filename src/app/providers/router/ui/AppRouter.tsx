@@ -3,7 +3,7 @@ import {
     createBrowserRouter,
     createRoutesFromElements,
     Route,
-    RouterProvider
+    RouterProvider,
 } from 'react-router-dom';
 import { Layout } from 'app/Layout';
 import { routeConfig } from 'shared/config/routeConfig/routeConfig';

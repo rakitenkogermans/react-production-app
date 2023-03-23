@@ -11,7 +11,7 @@ const data = {
     firstname: 'qwerty',
     lastname: 'qwerty',
     city: 'Riga',
-    avatar: ''
+    avatar: '',
 };
 
 describe('profileSlice.test', () => {
@@ -42,7 +42,7 @@ describe('profileSlice.test', () => {
             profileReducer(
                 state as ProfileSchema,
                 profileActions.updateProfile({
-                    username: '123456'
+                    username: '123456',
                 })))
             .toEqual({ form: { username: '123456' } });
     });
@@ -69,7 +69,7 @@ describe('profileSlice.test', () => {
                 validateError: undefined,
                 readonly: true,
                 form: data,
-                data
+                data,
             });
     });
 });

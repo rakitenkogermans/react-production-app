@@ -20,14 +20,14 @@ export const buildWebpackConfig = (options: BuildOptions): Configuration => {
             path: paths.build,
             filename: '[name].[contenthash].js',
             publicPath: '/',
-            clean: true
+            clean: true,
         },
         plugins: buildPlugins(options),
         module: {
-            rules: buildLoaders(options)
+            rules: buildLoaders(options),
         },
         resolve: buildResolvers(options),
         devtool: isDev ? 'inline-source-map' : false,
-        devServer: isDev ? buildDevServer(options) : undefined
+        devServer: isDev ? buildDevServer(options) : undefined,
     };
 };

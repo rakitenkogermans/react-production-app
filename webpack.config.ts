@@ -10,7 +10,7 @@ export default (env: BuildEnv) => {
         buildLocales: path.resolve(__dirname, 'dist', 'locales'),
         src: path.resolve(__dirname, 'src'),
         public: path.resolve(__dirname, 'public'),
-        publicLocales: path.resolve(__dirname, 'public', 'locales')
+        publicLocales: path.resolve(__dirname, 'public', 'locales'),
     };
 
     const mode = env.mode || 'development';
@@ -24,6 +24,6 @@ export default (env: BuildEnv) => {
         isDev,
         port: PORT,
         apiUrl,
-        project: 'frontend'
+        project: 'frontend',
     });
 };

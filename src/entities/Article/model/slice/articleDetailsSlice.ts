@@ -7,7 +7,7 @@ import { type Article } from 'entities/Article';
 const initialState: ArticleDetailsSchema = {
     isLoading: false,
     data: undefined,
-    error: undefined
+    error: undefined,
 };
 
 export const articleDetailsSlice = createSlice({
@@ -30,7 +30,7 @@ export const articleDetailsSlice = createSlice({
                 state.isLoading = false;
                 state.error = action.payload;
             });
-    }
+    },
 
 });
 

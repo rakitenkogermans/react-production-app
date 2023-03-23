@@ -10,8 +10,8 @@ export default {
     title: 'entities/ProfileCard',
     component: ProfileCard,
     argTypes: {
-        backgroundColor: { control: 'color' }
-    }
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof ProfileCard>;
 
 const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
@@ -26,16 +26,16 @@ Primary.args = {
         firstname: 'qwerty',
         lastname: 'qwerty',
         city: 'Riga',
-        avatar: AvatarImg
-    }
+        avatar: AvatarImg,
+    },
 };
 
 export const withError = Template.bind({});
 withError.args = {
-    error: 'true'
+    error: 'true',
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
-    isLoading: true
+    isLoading: true,
 };

@@ -12,15 +12,15 @@ const data = {
     firstname: 'qwerty',
     lastname: 'qwerty',
     city: 'Riga',
-    avatar: ''
+    avatar: '',
 };
 
 describe('updateProfileData.test', () => {
     test('success', async () => {
         const thunk = new TestAsynkThunk(updateProfileData, {
             profile: {
-                form: data
-            }
+                form: data,
+            },
         });
         thunk.api.put.mockReturnValue(Promise.resolve({ data }));
 
@@ -34,8 +34,8 @@ describe('updateProfileData.test', () => {
     test('failed', async () => {
         const thunk = new TestAsynkThunk(updateProfileData, {
             profile: {
-                form: data
-            }
+                form: data,
+            },
         });
         thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
 
@@ -43,22 +43,22 @@ describe('updateProfileData.test', () => {
 
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toEqual([
-            ValidateProfileError.SERVER_ERROR
+            ValidateProfileError.SERVER_ERROR,
         ]);
     });
 
     test('validate error', async () => {
         const thunk = new TestAsynkThunk(updateProfileData, {
             profile: {
-                form: { ...data, firstname: '' }
-            }
+                form: { ...data, firstname: '' },
+            },
         });
 
         const result = await thunk.callThunk();
 
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toEqual([
-            ValidateProfileError.INCORRECT_USER_DATA
+            ValidateProfileError.INCORRECT_USER_DATA,
         ]);
     });
 });

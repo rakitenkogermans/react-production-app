@@ -6,7 +6,7 @@ import {
     getProfileError,
     getProfileIsLoading, getProfileValidateErrors, profileActions,
     ProfileCard,
-    profileReducer, ValidateProfileError
+    profileReducer, ValidateProfileError,
 } from 'entities/Profile';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -19,7 +19,7 @@ import { type Country } from 'entities/Country/model/types/country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 const reducers: ReducersList = {
-    profile: profileReducer
+    profile: profileReducer,
 };
 
 interface ProfilePageProps {
@@ -41,7 +41,7 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
         [ValidateProfileError.NO_DATA]: t('Data is not specified'),
         [ValidateProfileError.INCORRECT_USER_DATA]: t('Firstname and lastname is required'),
         [ValidateProfileError.INCORRECT_COUNTRY]: t('Incorrect country'),
-        [ValidateProfileError.INCORRECT_AGE]: t('Incorrect age')
+        [ValidateProfileError.INCORRECT_AGE]: t('Incorrect age'),
     };
 
     useEffect(() => {
@@ -125,4 +125,4 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
     );
 });
 
-export default ProfileCard;
+export default ProfilePage;

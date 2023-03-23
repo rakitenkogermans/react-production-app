@@ -15,14 +15,14 @@ export const createReduxStore = (
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
-        user: userReducer
+        user: userReducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);
 
     const extraArg: ThunkExtraArg = {
         api: $api,
-        navigate
+        navigate,
     };
 
     const store = configureStore({
@@ -31,9 +31,9 @@ export const createReduxStore = (
         preloadedState: initialState,
         middleware: getDefaultMiddleware => getDefaultMiddleware({
             thunk: {
-                extraArgument: extraArg
-            }
-        })
+                extraArgument: extraArg,
+            },
+        }),
     });
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

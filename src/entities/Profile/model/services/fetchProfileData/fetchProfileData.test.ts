@@ -11,7 +11,7 @@ const data = {
     firstname: 'qwerty',
     lastname: 'qwerty',
     city: 'Riga',
-    avatar: ''
+    avatar: '',
 };
 
 describe('fetchProfileData.test', () => {

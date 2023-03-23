@@ -7,12 +7,12 @@ describe('getProfileValidateErrors', () => {
         const validateError = [
             ValidateProfileError.SERVER_ERROR,
             ValidateProfileError.INCORRECT_AGE,
-            ValidateProfileError.NO_DATA
+            ValidateProfileError.NO_DATA,
         ];
         const state: DeepPartial<StateSchema> = {
             profile: {
-                validateError
-            }
+                validateError,
+            },
         };
 
         expect(getProfileValidateErrors(state as StateSchema)).toEqual(validateError);

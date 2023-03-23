@@ -2,28 +2,28 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
-        jest: true
+        jest: true,
     },
     extends: [
         'plugin:react/recommended',
         'standard-with-typescript',
-        'plugin:i18next/recommended'
+        'plugin:i18next/recommended',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
-            jsx: true
+            jsx: true,
         },
         ecmaVersion: 'latest',
         sourceType: 'module',
         tsconfigRootDir: __dirname,
-        project: ['./tsconfig.json']
+        project: ['./tsconfig.json'],
     },
     plugins: [
         'react',
         '@typescript-eslint',
         'i18next',
-        'react-hooks'
+        'react-hooks',
     ],
     rules: {
         'react/jsx-max-props-per-line': [2, { maximum: 1 }],
@@ -54,15 +54,30 @@ module.exports = {
         '@typescript-eslint/no-invalid-void-type': 'off',
         '@typescript-eslint/prefer-ts-expect-error': 'off',
         '@typescript-eslint/ban-ts-comment': 'off',
-        '@typescript-eslint/no-floating-promises': 'off'
+        '@typescript-eslint/no-floating-promises': 'off',
+        'comma-dangle': ['error', {
+            arrays: 'always-multiline',
+            objects: 'always-multiline',
+            imports: 'always-multiline',
+            exports: 'always-multiline',
+            functions: 'never',
+        }],
+        '@typescript-eslint/comma-dangle': ['error', {
+            arrays: 'always-multiline',
+            objects: 'always-multiline',
+            imports: 'always-multiline',
+            exports: 'always-multiline',
+            functions: 'never',
+        }],
+        // 'array-bracket-spacing': 'off',
     },
     overrides: [
         {
             files: ['**/src/**/*.{test,stories}.{ts,tsx}', './.eslintrc.js'],
             rules: {
                 'i18next/no-literal-string': 'off',
-                'max-len': 'off'
-            }
-        }
-    ]
+                'max-len': 'off',
+            },
+        },
+    ],
 };

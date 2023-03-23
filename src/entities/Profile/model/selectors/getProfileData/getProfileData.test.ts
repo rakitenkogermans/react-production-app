@@ -13,13 +13,13 @@ describe('getProfileData', () => {
             firstname: 'qwerty',
             lastname: 'qwerty',
             city: 'Riga',
-            avatar: ''
+            avatar: '',
         };
 
         const state: DeepPartial<StateSchema> = {
             profile: {
-                data
-            }
+                data,
+            },
         };
 
         expect(getProfileData(state as StateSchema)).toEqual(data);
