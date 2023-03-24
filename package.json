@@ -21,7 +21,7 @@
     "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "storybook": "STORYBOOK_LOCALES=true start-storybook -p 6006 -c ./config/storybook -s ./public",
     "storybook:build": "STORYBOOK_LOCALES=true build-storybook -c ./config/storybook -s public",
-    "storybook:build:ci": "build-storybook -c ./config/storybook",
+    "storybook:build:ci": "build-storybook -c ./config/storybook -s ./public",
     "prepare": "husky install"
   },
   "license": "MIT",

@@ -108,14 +108,23 @@
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "ADMIN",
+      "avatar": "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kZXJ8ZW58MHx8MHx8&w=1000&q=80"
+    },
+    {
+      "id": "2",
+      "username": "goduser",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
     }
   ],
   "profile": {
     "firstname": "Germans",
     "lastname": "Rk",
     "age": 24,
-    "currency": "EUR",
+    "currency": "USD",
     "country": "Latvia",
     "city": "Riga",
     "username": "admin",

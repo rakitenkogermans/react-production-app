@@ -16,7 +16,7 @@ export const parameters = {
 };
 
 let globalTypes;
-if (process.env.STORYBOOK_LOCALES) {
+if (!!process.env.STORYBOOK_LOCALES) {
     globalTypes = {
         locale: {
             name: 'Locale',
@@ -32,14 +32,20 @@ if (process.env.STORYBOOK_LOCALES) {
         }
     };
 
+    // import('../../src/shared/config/storybook/I18nDecorator/I18nDecorator').then(({ I18nDecorator }) => {
+    //     addDecorator(I18nDecorator);
+    // });
+
     addDecorator(I18nDecorator);
+
 }
 
 export { globalTypes };
 
 console.log('===============================================================================');
-console.log(process.env.STORYBOOK_LOCALES);
+console.log(!!(process.env.STORYBOOK_LOCALES));
 console.log('===============================================================================');
+addDecorator(I18nDecorator);
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(THEME.LIGHT));
 addDecorator(RouterDecorator);
