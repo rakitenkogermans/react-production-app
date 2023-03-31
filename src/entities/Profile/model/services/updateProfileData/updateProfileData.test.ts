@@ -13,6 +13,7 @@ const data = {
     lastname: 'qwerty',
     city: 'Riga',
     avatar: '',
+    id: '1',
 };
 
 describe('updateProfileData.test', () => {

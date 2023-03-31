@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -18,6 +18,10 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     fetchCommentsByArticleId,
 } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { AddCommentForm } from 'features/addCommentForm';
+import {
+    addCommentForArticle,
+} from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -39,6 +43,10 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
         dispatch(fetchCommentsByArticleId(id));
     });
 
+    const onSendComment = useCallback((text: string) => {
+        dispatch(addCommentForArticle(text));
+    }, [dispatch]);
+
     if (!id) {
         return (
             <div className={classNames('', {}, [className])}>
@@ -58,6 +66,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
                     className={cls.commentTitle}
                     title={t('Comments') ?? ''}
                 />
+                <AddCommentForm onSendComment={onSendComment} />
                 <CommentList
                     comments={comments}
                     isLoading={commentsIsLoading}

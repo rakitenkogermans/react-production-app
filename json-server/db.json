@@ -102,6 +102,18 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "jijiujiujiuj",
+      "id": "EjGpz0Q"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "ggg",
+      "id": "hfPAzxV"
     }
   ],
   "users": [
@@ -110,7 +122,7 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kZXJ8ZW58MHx8MHx8&w=1000&q=80"
+      "avatar": "https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg"
     },
     {
       "id": "2",
@@ -120,14 +132,28 @@
       "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
     }
   ],
-  "profile": {
-    "firstname": "Germans",
-    "lastname": "Rk",
-    "age": 24,
-    "currency": "USD",
-    "country": "Latvia",
-    "city": "Riga",
-    "username": "admin",
-    "avatar": "https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Germans",
+      "lastname": "Rk",
+      "age": 24,
+      "currency": "EUR",
+      "country": "Latvia",
+      "city": "Riga",
+      "username": "admin",
+      "avatar": "https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg"
+    },
+    {
+      "id": "2",
+      "firstname": "Rrrrr",
+      "lastname": "Gggg",
+      "age": 24,
+      "currency": "USD",
+      "country": "Latvia",
+      "city": "Riga",
+      "username": "goduser",
+      "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
+    }
+  ]
 }
