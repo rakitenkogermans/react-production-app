@@ -1,9 +1,20 @@
-import { fetchArticleById } from './fetchArticleById';
-import { TestAsynkThunk } from 'shared/lib/tests/TestAsynkThunk/TestAsynkThunk';
-import { type Article } from 'entities/Article';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import React from 'react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-const data: Article = {
+import { ArticleListItem } from './ArticleListItem';
+import { type Article, ArticleBlockType, ArticleType, ArticleView } from 'entities/Article/model/types/article';
+
+export default {
+    title: 'entities/Article/ArticleListItem',
+    component: ArticleListItem,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof ArticleListItem>;
+
+const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
+
+const article: Article = {
     id: '1',
     title: 'Javascript news',
     subtitle: "What's new in JS for 2022?",
@@ -81,22 +92,14 @@ const data: Article = {
     ],
 };
 
-describe('fetchArticleById.test', () => {
-    test('success', async () => {
-        const thunk = new TestAsynkThunk(fetchArticleById);
-        thunk.api.get.mockReturnValue(Promise.resolve({ data }));
-        const result = await thunk.callThunk('1');
+export const Grid = Template.bind({});
+Grid.args = {
+    article,
+    view: ArticleView.GRID,
+};
 
-        expect(thunk.api.get).toHaveBeenCalled();
-        expect(result.meta.requestStatus).toBe('fulfilled');
-        expect(result.payload).toEqual(data);
-    });
-
-    test('failed', async () => {
-        const thunk = new TestAsynkThunk(fetchArticleById);
-        thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-        const result = await thunk.callThunk('1');
-
-        expect(result.meta.requestStatus).toBe('rejected');
-    });
-});
+export const List = Template.bind({});
+List.args = {
+    article,
+    view: ArticleView.LIST,
+};

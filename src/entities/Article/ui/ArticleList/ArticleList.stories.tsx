@@ -1,9 +1,21 @@
-import { fetchArticleById } from './fetchArticleById';
-import { TestAsynkThunk } from 'shared/lib/tests/TestAsynkThunk/TestAsynkThunk';
-import { type Article } from 'entities/Article';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import React from 'react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-const data: Article = {
+import { ArticleList } from './ArticleList';
+import { ArticleBlockType, ArticleType, ArticleView } from 'entities/Article/model/types/article';
+import { type Article } from 'entities/Article';
+
+export default {
+    title: 'entities/Article/ArticleList',
+    component: ArticleList,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof ArticleList>;
+
+const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+
+const article: Article = {
     id: '1',
     title: 'Javascript news',
     subtitle: "What's new in JS for 2022?",
@@ -81,22 +93,40 @@ const data: Article = {
     ],
 };
 
-describe('fetchArticleById.test', () => {
-    test('success', async () => {
-        const thunk = new TestAsynkThunk(fetchArticleById);
-        thunk.api.get.mockReturnValue(Promise.resolve({ data }));
-        const result = await thunk.callThunk('1');
+export const LoadingList = Template.bind({});
+LoadingList.args = {
+    articles: [],
+    isLoading: true,
+    view: ArticleView.LIST,
+};
 
-        expect(thunk.api.get).toHaveBeenCalled();
-        expect(result.meta.requestStatus).toBe('fulfilled');
-        expect(result.payload).toEqual(data);
-    });
+export const LoadingGrid = Template.bind({});
+LoadingGrid.args = {
+    articles: [],
+    isLoading: true,
+    view: ArticleView.GRID,
+};
 
-    test('failed', async () => {
-        const thunk = new TestAsynkThunk(fetchArticleById);
-        thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-        const result = await thunk.callThunk('1');
+export const Grid = Template.bind({});
+Grid.args = {
+    articles: new Array(9)
+        .fill(0)
+        .map((item, index) => ({
+            ...article,
+            id: String(index),
+        })),
+    isLoading: false,
+    view: ArticleView.GRID,
+};
 
-        expect(result.meta.requestStatus).toBe('rejected');
-    });
-});
+export const List = Template.bind({});
+List.args = {
+    articles: new Array(9)
+        .fill(0)
+        .map((item, index) => ({
+            ...article,
+            id: String(index),
+        })),
+    isLoading: false,
+    view: ArticleView.LIST,
+};

@@ -23,6 +23,12 @@ const article: Article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1546,
     createdAt: '26.02.2023',
+    user: {
+        id: '1',
+        username: 'admin',
+        avatar:
+            'https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg',
+    },
     type: [
         ArticleType.IT,
     ],
