@@ -28,13 +28,13 @@ const getSkeletons = (view: ArticleView) => (
 const ArticleList = memo((props: ArticleListProps) => {
     const { className, articles, view = ArticleView.GRID, isLoading } = props;
 
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
+    // if (isLoading) {
+    //     return (
+    //         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+    //             {getSkeletons(view)}
+    //         </div>
+    //     );
+    // }
 
     const renderArticle = (article: Article) => (
         <ArticleListItem
@@ -51,6 +51,7 @@ const ArticleList = memo((props: ArticleListProps) => {
                 ? articles.map(renderArticle)
                 : null
             }
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

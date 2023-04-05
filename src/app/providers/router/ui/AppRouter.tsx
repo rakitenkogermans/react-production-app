@@ -16,9 +16,7 @@ const router = createBrowserRouter(
             {Object.values(routeConfig).map(({ element, path, authOnly }) => {
                 const el = (
                     <Suspense fallback={<PageLoader />}>
-                        <div className="page-wrapper">
-                            {element}
-                        </div>
+                        {element}
                     </Suspense>
                 );
 

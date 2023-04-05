@@ -2,7 +2,7 @@
     cursor: pointer;
     padding: 1.5rem 2.5rem;
     color: var(--headline-color);
-    transition: all 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 
     &:hover {
         opacity: 0.8;
