@@ -147,7 +147,6 @@ const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     return (
         <DynamicModuleLoader
             reducers={reducers}
-            removeAfterUnmount={true}
         >
             <div className={classNames(cls.ArticleDetails, {}, [className])}>
                 {content}

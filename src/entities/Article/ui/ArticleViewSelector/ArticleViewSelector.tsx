@@ -35,7 +35,6 @@ const ArticleViewSelector = memo(({ className, view, onViewClick }: ArticleViewS
                 <Button
                     key={viewType.view}
                     onClick={onClick(viewType.view)}
-
                 >
                     <Icon
                         Svg={viewType.icon}

@@ -66,7 +66,6 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     return (
         <DynamicModuleLoader
             reducers={reducers}
-            removeAfterUnmount={true}
         >
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <Button
