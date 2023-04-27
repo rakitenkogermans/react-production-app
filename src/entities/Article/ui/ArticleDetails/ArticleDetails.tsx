@@ -22,6 +22,8 @@ import { type ArticleBlock, ArticleBlockType } from 'entities/Article/model/type
 import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleImageBlockComponent } from 'entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleCodeBlockComponent } from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
 
 interface ArticleDetailsProps {
     className?: string
@@ -73,11 +75,9 @@ const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         return null;
     }, []);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(id));
-        }
-    }, [dispatch, id]);
+    useInitialEffect(() => {
+        dispatch(fetchArticleById(id));
+    });
 
     let content;
 
@@ -147,6 +147,7 @@ const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     return (
         <DynamicModuleLoader
             reducers={reducers}
+            removeAfterUnmount={false}
         >
             <div className={classNames(cls.ArticleDetails, {}, [className])}>
                 {content}
