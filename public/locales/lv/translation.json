@@ -18,5 +18,12 @@
   "Select country": "Select country",
   "No comments": "No comments",
   "Add a comment": "Add a comment",
-  "Send": "Send"
+  "Send": "Send",
+  "Date created": "Date created",
+  "Title": "Title",
+  "Views": "Views",
+  "Ascending": "Ascending",
+  "Descending": "Descending",
+  "Sort BY": "Sort BY",
+  "Order": "Order"
 }

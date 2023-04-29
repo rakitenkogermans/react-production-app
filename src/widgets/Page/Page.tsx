@@ -51,7 +51,14 @@ const Page = (props: PageProps) => {
         >
             <div className={cls.container}>
                 {children}
-                <div ref={triggerRef} />
+                {onScrollEnd
+                    ? (
+                        <div
+                            className={cls.trigger}
+                            ref={triggerRef}
+                        />
+                    )
+                    : null}
             </div>
         </section>
     );

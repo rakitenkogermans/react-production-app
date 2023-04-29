@@ -5,6 +5,8 @@ import { type Article } from 'entities/Article';
 import { ArticleView } from 'entities/Article/model/types/article';
 import { ArticleListItem } from 'entities/Article/ui/ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
+import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
+import { useTranslation } from 'react-i18next';
 
 interface ArticleListProps {
     className?: string
@@ -27,6 +29,7 @@ const getSkeletons = (view: ArticleView) => (
 
 const ArticleList = memo((props: ArticleListProps) => {
     const { className, articles, view = ArticleView.GRID, isLoading } = props;
+    const { t } = useTranslation('articles');
 
     // if (isLoading) {
     //     return (
@@ -44,6 +47,16 @@ const ArticleList = memo((props: ArticleListProps) => {
             key={article.id}
         />
     );
+
+    if (!isLoading && !articles.length) {
+        return (
+            <Text
+                size={TextSize.L}
+                title={t('Articles not found') ?? ''}
+                align={TextAlign.CENTER}
+            />
+        );
+    }
 
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
