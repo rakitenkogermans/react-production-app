@@ -27,6 +27,9 @@ import {
     fetchArticleRecommendations,
 } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
+import {
+    ArticleDetailsPageHeader,
+} from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -39,7 +42,6 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article-details');
     const { id } = useParams<{ id: string }>();
-    const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
@@ -55,10 +57,6 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
 
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
-
     if (!id) {
         return (
             <Page className={classNames('', {}, [className])}>
@@ -72,12 +70,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
             reducers={reducers}
         >
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <Button
-                    theme={ButtonTheme.OUTLINE}
-                    onClick={onBackToList}
-                >
-                    {t('Back to list') ?? ''}
-                </Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text
                     size={TextSize.L}

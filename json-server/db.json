@@ -2046,7 +2046,7 @@
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "articleId": "1",
@@ -2086,13 +2086,13 @@
     },
     {
       "articleId": "6",
-      "userId": "1",
+      "userId": "2",
       "text": "What's new in Kotlin",
       "id": "bIFFZDa"
     },
     {
       "articleId": "7",
-      "userId": "1",
+      "userId": "2",
       "text": "Scala",
       "id": "nTM7TI2"
     }
@@ -2107,7 +2107,7 @@
     },
     {
       "id": "2",
-      "username": "goduser",
+      "username": "user",
       "password": "123",
       "role": "USER",
       "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
@@ -2133,7 +2133,7 @@
       "currency": "USD",
       "country": "Latvia",
       "city": "Riga",
-      "username": "goduser",
+      "username": "user",
       "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
     }
   ]
