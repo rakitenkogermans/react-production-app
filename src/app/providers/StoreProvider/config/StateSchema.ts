@@ -3,17 +3,19 @@ import { type UserSchema } from 'entities/User';
 import { type LoginSchema } from 'features/AuthByUsername';
 import {
     type AnyAction,
-    type CombinedState, type Dispatch,
+    type CombinedState,
     type EnhancedStore,
     type Reducer,
     type ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { type ProfileSchema } from 'entities/Profile';
 import { type AxiosInstance } from 'axios';
-import { type To } from '@remix-run/router';
-import { type NavigateOptions } from 'react-router';
 import { type ArticleDetailsSchema } from 'entities/Article';
-import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import {
+    type ArticleDetailsCommentsSchema,
+    type ArticleDetailsPageSchema,
+    type ArticleDetailsRecommendationsSchema,
+} from 'pages/ArticleDetailsPage';
 import { type AddCommentFormSchema } from 'features/addCommentForm';
 import { type ArticlesPageSchema } from 'pages/ArticlesPage';
 import { type UISchema } from 'features/UI';
@@ -27,9 +29,11 @@ export interface StateSchema {
     loginForm?: LoginSchema
     profile?: ProfileSchema
     articleDetails?: ArticleDetailsSchema
-    articleDetailsComments?: ArticleDetailsCommentsSchema
+    // articleDetailsComments?: ArticleDetailsCommentsSchema
+    // articleDetailsRecommendations?: ArticleDetailsRecommendationsSchema
     addCommentForm?: AddCommentFormSchema
     articlesPage?: ArticlesPageSchema
+    articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;

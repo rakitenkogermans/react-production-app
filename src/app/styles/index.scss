@@ -25,3 +25,17 @@ body {
 .content-page {
     display: flex;
 }
+
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--tertiary-color);
+    border-radius: 20px;
+}
