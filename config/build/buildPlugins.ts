@@ -19,6 +19,13 @@ export const buildPlugins = ({ paths, isDev, apiUrl, project }: BuildOptions): w
             __API__: JSON.stringify(apiUrl),
             __PROJECT__: JSON.stringify(project),
         }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: paths.publicLocales, to: paths.buildLocales,
+                },
+            ],
+        }),
     ];
 
     if (isDev) {
@@ -26,16 +33,6 @@ export const buildPlugins = ({ paths, isDev, apiUrl, project }: BuildOptions): w
         plugins.push(new webpack.HotModuleReplacementPlugin());
         plugins.push(new BundleAnalyzerPlugin({
             openAnalyzer: false,
-        }));
-    }
-
-    if (!isDev) {
-        plugins.push(new CopyPlugin({
-            patterns: [
-                {
-                    from: paths.publicLocales, to: paths.buildLocales,
-                },
-            ],
         }));
     }
 

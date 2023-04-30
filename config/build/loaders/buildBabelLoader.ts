@@ -9,9 +9,17 @@ export const buildBabelLoader = ({ isDev }: BuildOptions) => (
             options: {
                 presets: ['@babel/preset-env'],
                 plugins: [
-                    [
-                        isDev && require.resolve('react-refresh/babel'),
-                    ],
+                    // [
+                    //     'i18next-extract',
+                    //     {
+                    //         locales: ['en', 'lv'],
+                    //         nsSeparator: '_',
+                    //         outputPath: 'public/locales/{{locale}}/{{ns}}.json',
+                    //         keyAsDefaultValue: true,
+                    //         discardOldKeys: true,
+                    //     },
+                    // ],
+                    isDev && require.resolve('react-refresh/babel'),
                 ].filter(Boolean),
             },
         },
