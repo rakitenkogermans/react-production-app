@@ -11,7 +11,7 @@ import { getProfileData, profileActions, updateProfileData } from 'entities/Prof
 import { getUserAuthData } from 'entities/User';
 
 interface ProfilePageHeaderProps {
-    className?: string
+    className?: string;
 }
 
 const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
@@ -41,39 +41,35 @@ const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
             <div className={cls.btns}>
                 {canEdit && (
                     <>
-                        {readonly
-                            ? (
+                        {readonly ? (
+                            <Button
+                                theme={ButtonTheme.OUTLINE}
+                                className={cls.editBtn}
+                                onClick={onEdit}
+                            >
+                                {t('Edit')}
+                            </Button>
+                        ) : (
+                            <>
+                                <Button
+                                    theme={ButtonTheme.OUTLINE_RED}
+                                    className={cls.cancelBtn}
+                                    onClick={onCancelEdit}
+                                >
+                                    {t('Cancel')}
+                                </Button>
                                 <Button
                                     theme={ButtonTheme.OUTLINE}
-                                    className={cls.editBtn}
-                                    onClick={onEdit}
+                                    className={cls.saveBtn}
+                                    onClick={onSave}
                                 >
-                                    {t('Edit')}
+                                    {t('Save')}
                                 </Button>
-                            )
-                            : (
-                                <>
-                                    <Button
-                                        theme={ButtonTheme.OUTLINE_RED}
-                                        className={cls.cancelBtn}
-                                        onClick={onCancelEdit}
-                                    >
-                                        {t('Cancel')}
-                                    </Button>
-                                    <Button
-                                        theme={ButtonTheme.OUTLINE}
-                                        className={cls.saveBtn}
-                                        onClick={onSave}
-                                    >
-                                        {t('Save')}
-                                    </Button>
-                                </>
-                            )}
+                            </>
+                        )}
                     </>
-                )
-                }
+                )}
             </div>
-
         </div>
     );
 };

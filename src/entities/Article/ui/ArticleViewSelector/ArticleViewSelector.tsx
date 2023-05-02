@@ -8,9 +8,9 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
 
 interface ArticleViewSelectorProps {
-    className?: string
-    view: ArticleView
-    onViewClick?: (view: ArticleView) => void
+    className?: string;
+    view: ArticleView;
+    onViewClick?: (view: ArticleView) => void;
 }
 
 const viewTypes = [

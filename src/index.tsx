@@ -22,6 +22,6 @@ root.render(
                 <App />
             </ThemeProvider>
         </ErrorBoundary>
-    </StoreProvider>
+    </StoreProvider>,
     // </BrowserRouter>
 );

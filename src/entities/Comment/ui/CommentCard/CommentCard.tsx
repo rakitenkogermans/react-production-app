@@ -9,9 +9,9 @@ import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 interface CommentCardProps {
-    className?: string
-    comment?: Comment
-    isLoading?: boolean
+    className?: string;
+    comment?: Comment;
+    isLoading?: boolean;
 }
 
 const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
@@ -44,10 +44,12 @@ const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) =
                 to={`${RoutePath.profile}${comment.user.id}`}
                 className={cls.header}
             >
-                {comment.user.avatar && <Avatar
-                    size={30}
-                    src={comment.user.avatar}
-                />}
+                {comment.user.avatar && (
+                    <Avatar
+                        size={30}
+                        src={comment.user.avatar}
+                    />
+                )}
                 <Text title={comment.user.username} />
             </AppLink>
             <Text text={comment.text} />

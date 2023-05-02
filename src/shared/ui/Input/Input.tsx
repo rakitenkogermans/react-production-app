@@ -1,7 +1,8 @@
 import {
     type ChangeEvent,
     type InputHTMLAttributes,
-    memo, useCallback,
+    memo,
+    useCallback,
     useEffect,
     useRef,
     useState,
@@ -9,15 +10,18 @@ import {
 import { classNames, type Mods } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly'>;
+type HTMLInputProps = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'onChange' | 'readonly'
+>;
 
 interface InputProps extends HTMLInputProps {
-    className?: string
-    value?: string | number
-    onChange?: (value: string) => void
-    label?: string
-    autoFocus?: boolean
-    readonly?: boolean
+    className?: string;
+    value?: string | number;
+    onChange?: (value: string) => void;
+    label?: string;
+    autoFocus?: boolean;
+    readonly?: boolean;
 }
 
 const Input = memo((props: InputProps) => {
@@ -67,14 +71,12 @@ const Input = memo((props: InputProps) => {
         const selectionStart = e?.target?.selectionStart;
         if (selectionStart && inputWidth) {
             caretPos =
-                (selectionStart * 9) <= inputWidth
-                    ? selectionStart
-                    : Math.round(inputWidth / 9);
+                selectionStart * 9 <= inputWidth ? selectionStart : Math.round(inputWidth / 9);
         }
         setCaretPosition(caretPos);
     }, []);
 
-    let template =
+    let template = (
         <div className={cls.caretWrapper}>
             <input
                 ref={inputRef}
@@ -90,32 +92,30 @@ const Input = memo((props: InputProps) => {
                 readOnly={readonly}
                 {...otherProps}
             />
-            {isCaretVisible && <span
-                className={cls.caret}
-                style={{ left: `${caretPosition * 9}px` }}
-            />}
-        </div>;
+            {isCaretVisible && (
+                <span
+                    className={cls.caret}
+                    style={{ left: `${caretPosition * 9}px` }}
+                />
+            )}
+        </div>
+    );
 
     if (label) {
-        template =
+        template = (
             <>
                 <div className={cls.labelWrapper}>
-                    <label htmlFor={id}>
-                        {`${label}>`}
-                    </label>
+                    <label htmlFor={id}>{`${label}>`}</label>
                 </div>
                 {template}
-            </>;
+            </>
+        );
     }
 
     const mods: Mods = {
         [cls.readonly]: readonly,
     };
-    return (
-        <div className={classNames(cls.InputWrapper, mods, [className])}>
-            {template}
-        </div>
-    );
+    return <div className={classNames(cls.InputWrapper, mods, [className])}>{template}</div>;
 });
 
 export { Input };

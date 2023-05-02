@@ -5,8 +5,8 @@ import { type ArticleCodeBlock } from 'entities/Article/model/types/article';
 import { Code } from 'shared/ui/Code/Code';
 
 interface ArticleCodeBlockComponentProps {
-    className?: string
-    block: ArticleCodeBlock
+    className?: string;
+    block: ArticleCodeBlock;
 }
 
 const ArticleCodeBlockComponent = memo(({ className, block }: ArticleCodeBlockComponentProps) => {

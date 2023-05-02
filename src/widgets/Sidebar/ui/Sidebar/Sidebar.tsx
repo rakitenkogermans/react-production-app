@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { getSidebarItems } from 'widgets/Sidebar/model/selectors/getSidebarItems';
 
 interface SidebarProps {
-    className?: string
+    className?: string;
 }
 
 const Sidebar = memo(({ className = '' }: SidebarProps) => {
@@ -17,7 +17,7 @@ const Sidebar = memo(({ className = '' }: SidebarProps) => {
     const sidebarItemsList = useSelector(getSidebarItems);
 
     const onToggle = () => {
-        setCollapsed(prevState => !prevState);
+        setCollapsed((prevState) => !prevState);
     };
 
     return (

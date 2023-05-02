@@ -4,17 +4,19 @@ import { getUserAuthData } from 'entities/User';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 interface RequireAuthProps {
-    children: JSX.Element
+    children: JSX.Element;
 }
 
 const RequireAuth = ({ children }: RequireAuthProps) => {
     const isAuth = useSelector(getUserAuthData);
 
     if (!isAuth) {
-        return <Navigate
-            to={RoutePath.main}
-            replace={true}
-        />;
+        return (
+            <Navigate
+                to={RoutePath.main}
+                replace={true}
+            />
+        );
     }
 
     return children;

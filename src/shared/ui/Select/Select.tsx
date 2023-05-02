@@ -3,19 +3,19 @@ import cls from './Select.module.scss';
 import { type ChangeEvent, memo, useMemo } from 'react';
 
 export interface SelectOption<T extends string> {
-    value: T
-    content: string
+    value: T;
+    content: string;
 }
 
 interface SelectProps<T extends string> {
-    className?: string
-    label?: string
-    id?: string
-    name?: string
-    value?: T
-    options?: Array<SelectOption<T>>
-    onChange?: (value: T) => void
-    readonly?: boolean
+    className?: string;
+    label?: string;
+    id?: string;
+    name?: string;
+    value?: T;
+    options?: Array<SelectOption<T>>;
+    onChange?: (value: T) => void;
+    readonly?: boolean;
 }
 
 const Select = <T extends string>(props: SelectProps<T>) => {

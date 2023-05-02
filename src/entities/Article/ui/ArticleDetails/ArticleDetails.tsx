@@ -1,6 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleDetails.module.scss';
-import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { memo, useCallback, useEffect } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -26,8 +29,8 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
 
 interface ArticleDetailsProps {
-    className?: string
-    id: string
+    className?: string;
+    id: string;
 }
 
 const reducers: ReducersList = {
@@ -149,9 +152,7 @@ const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
             reducers={reducers}
             removeAfterUnmount={false}
         >
-            <div className={classNames(cls.ArticleDetails, {}, [className])}>
-                {content}
-            </div>
+            <div className={classNames(cls.ArticleDetails, {}, [className])}>{content}</div>
         </DynamicModuleLoader>
     );
 });

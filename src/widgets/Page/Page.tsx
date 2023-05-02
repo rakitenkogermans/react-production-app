@@ -11,9 +11,9 @@ import { type StateSchema } from 'app/providers/StoreProvider';
 import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
 
 interface PageProps {
-    className?: string
-    children: ReactNode
-    onScrollEnd?: () => void
+    className?: string;
+    children: ReactNode;
+    onScrollEnd?: () => void;
 }
 
 const Page = (props: PageProps) => {
@@ -37,10 +37,12 @@ const Page = (props: PageProps) => {
     });
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        dispatch(uiActions.setScrollPosition({
-            position: e.currentTarget.scrollTop,
-            path: pathname,
-        }));
+        dispatch(
+            uiActions.setScrollPosition({
+                position: e.currentTarget.scrollTop,
+                path: pathname,
+            }),
+        );
     }, 500);
 
     return (
@@ -51,14 +53,12 @@ const Page = (props: PageProps) => {
         >
             <div className={cls.container}>
                 {children}
-                {onScrollEnd
-                    ? (
-                        <div
-                            className={cls.trigger}
-                            ref={triggerRef}
-                        />
-                    )
-                    : null}
+                {onScrollEnd ? (
+                    <div
+                        className={cls.trigger}
+                        ref={triggerRef}
+                    />
+                ) : null}
             </div>
         </section>
     );

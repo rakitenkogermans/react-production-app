@@ -3,35 +3,35 @@ import { type User } from 'entities/User';
 export enum ArticleSortField {
     VIEWS = 'views',
     TITLE = 'title',
-    CREATED = 'createdAt'
+    CREATED = 'createdAt',
 }
 
 export enum ArticleBlockType {
     CODE = 'CODE',
     IMAGE = 'IMAGE',
-    TEXT = 'TEXT'
+    TEXT = 'TEXT',
 }
 
 export interface ArticleBlockBase {
-    id: string
-    type: ArticleBlockType
+    id: string;
+    type: ArticleBlockType;
 }
 
 export interface ArticleCodeBlock extends ArticleBlockBase {
-    type: ArticleBlockType.CODE
-    code: string
+    type: ArticleBlockType.CODE;
+    code: string;
 }
 
 export interface ArticleImageBlock extends ArticleBlockBase {
-    type: ArticleBlockType.IMAGE
-    src: string
-    title: string
+    type: ArticleBlockType.IMAGE;
+    src: string;
+    title: string;
 }
 
 export interface ArticleTextBlock extends ArticleBlockBase {
-    type: ArticleBlockType.TEXT
-    paragraphs: string[]
-    title?: string
+    type: ArticleBlockType.TEXT;
+    paragraphs: string[];
+    title?: string;
 }
 
 export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
@@ -40,22 +40,22 @@ export enum ArticleType {
     ALL = 'ALL',
     IT = 'IT',
     SCIENCE = 'SCIENCE',
-    ECONOMICS = 'ECONOMICS'
+    ECONOMICS = 'ECONOMICS',
 }
 
 export interface Article {
-    user: User
-    id: string
-    title: string
-    subtitle: string
-    img: string
-    views: number
-    createdAt: string
-    type: ArticleType[]
-    blocks: ArticleBlock[]
+    user: User;
+    id: string;
+    title: string;
+    subtitle: string;
+    img: string;
+    views: number;
+    createdAt: string;
+    type: ArticleType[];
+    blocks: ArticleBlock[];
 }
 
 export enum ArticleView {
     GRID = 'GRID',
-    LIST = 'LIST'
+    LIST = 'LIST',
 }

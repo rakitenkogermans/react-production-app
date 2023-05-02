@@ -3,8 +3,8 @@ import { THEME, ThemeContext } from 'app/providers/ThemeProvider/lib/ThemeContex
 import { LOCAL_STORAGE_THEME_KEY } from 'shared/const/localstorage';
 
 interface UseThemeReturn {
-    theme: THEME
-    toggleTheme: () => void
+    theme: THEME;
+    toggleTheme: () => void;
 }
 
 export const useTheme = (): UseThemeReturn => {

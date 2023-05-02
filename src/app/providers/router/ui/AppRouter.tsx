@@ -14,28 +14,22 @@ const router = createBrowserRouter(
     createRoutesFromElements(
         <Route element={<Layout />}>
             {Object.values(routeConfig).map(({ element, path, authOnly }) => {
-                const el = (
-                    <Suspense fallback={<PageLoader />}>
-                        {element}
-                    </Suspense>
-                );
+                const el = <Suspense fallback={<PageLoader />}>{element}</Suspense>;
 
-                return <Route
-                    key={path}
-                    path={path}
-                    element={
-                        authOnly ? <RequireAuth>{el}</RequireAuth> : el
-                    }
-                />;
+                return (
+                    <Route
+                        key={path}
+                        path={path}
+                        element={authOnly ? <RequireAuth>{el}</RequireAuth> : el}
+                    />
+                );
             })}
-        </Route>
-    )
+        </Route>,
+    ),
 );
 
 const AppRouter = () => {
-    return (
-        <RouterProvider router={router} />
-    );
+    return <RouterProvider router={router} />;
 };
 
 export { AppRouter };

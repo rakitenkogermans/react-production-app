@@ -1,12 +1,18 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback, useEffect } from 'react';
-import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
     fetchProfileData,
     getProfileError,
-    getProfileIsLoading, getProfileValidateErrors, profileActions,
+    getProfileIsLoading,
+    getProfileValidateErrors,
+    profileActions,
     ProfileCard,
-    profileReducer, ValidateProfileError,
+    profileReducer,
+    ValidateProfileError,
 } from 'entities/Profile';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -26,7 +32,7 @@ const reducers: ReducersList = {
 };
 
 interface ProfilePageProps {
-    className?: string
+    className?: string;
 }
 
 const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
@@ -54,61 +60,84 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
         }
     });
 
-    const onChangeFirstname = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ firstname: value ?? '' }));
-    }, [dispatch]);
+    const onChangeFirstname = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ firstname: value ?? '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeLastname = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ lastname: value ?? '' }));
-    }, [dispatch]);
+    const onChangeLastname = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ lastname: value ?? '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeAge = useCallback((value: string = '') => {
-        const maxCharLen = 2;
-        const regexp = /^\d+$/gs;
+    const onChangeAge = useCallback(
+        (value: string = '') => {
+            const maxCharLen = 2;
+            const regexp = /^\d+$/gs;
 
-        if (value.length > maxCharLen) {
-            value = value.slice(0, maxCharLen);
-        }
-        if (!regexp.test(value) && value !== '') {
-            return;
-        }
+            if (value.length > maxCharLen) {
+                value = value.slice(0, maxCharLen);
+            }
+            if (!regexp.test(value) && value !== '') {
+                return;
+            }
 
-        dispatch(profileActions.updateProfile({ age: +value }));
-    }, [dispatch]);
+            dispatch(profileActions.updateProfile({ age: +value }));
+        },
+        [dispatch],
+    );
 
-    const onChangeCity = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ city: value ?? '' }));
-    }, [dispatch]);
+    const onChangeCity = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ city: value ?? '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeUsername = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ username: value ?? '' }));
-    }, [dispatch]);
+    const onChangeUsername = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ username: value ?? '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeAvatar = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ avatar: value ?? '' }));
-    }, [dispatch]);
+    const onChangeAvatar = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ avatar: value ?? '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeCurrency = useCallback((currency: Currency) => {
-        dispatch(profileActions.updateProfile({ currency }));
-    }, [dispatch]);
+    const onChangeCurrency = useCallback(
+        (currency: Currency) => {
+            dispatch(profileActions.updateProfile({ currency }));
+        },
+        [dispatch],
+    );
 
-    const onChangeCountry = useCallback((country: Country) => {
-        dispatch(profileActions.updateProfile({ country }));
-    }, [dispatch]);
+    const onChangeCountry = useCallback(
+        (country: Country) => {
+            dispatch(profileActions.updateProfile({ country }));
+        },
+        [dispatch],
+    );
 
     return (
-        <DynamicModuleLoader
-            reducers={reducers}
-        >
+        <DynamicModuleLoader reducers={reducers}>
             <Page className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
-                {validateErrors?.length && validateErrors.map((err) => (
-                    <Text
-                        key={err}
-                        theme={TextTheme.ERROR}
-                        text={validateErrorTranslates[err]}
-                    />
-                ))}
+                {validateErrors?.length &&
+                    validateErrors.map((err) => (
+                        <Text
+                            key={err}
+                            theme={TextTheme.ERROR}
+                            text={validateErrorTranslates[err]}
+                        />
+                    ))}
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}

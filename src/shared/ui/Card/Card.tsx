@@ -4,13 +4,13 @@ import cls from './Card.module.scss';
 
 export enum CardTheme {
     NORMAL = 'normal',
-    OUTLINED = 'outlined'
+    OUTLINED = 'outlined',
 }
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
-    className?: string
-    children: ReactNode
-    theme?: CardTheme
+    className?: string;
+    children: ReactNode;
+    theme?: CardTheme;
 }
 
 const Card = memo((props: CardProps) => {

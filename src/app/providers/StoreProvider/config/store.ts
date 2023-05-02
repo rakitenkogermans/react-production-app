@@ -1,4 +1,9 @@
-import { type CombinedState, configureStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit';
+import {
+    type CombinedState,
+    configureStore,
+    type Reducer,
+    type ReducersMapObject,
+} from '@reduxjs/toolkit';
 import { type StateSchema, type ThunkExtraArg } from './StateSchema';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
@@ -10,7 +15,7 @@ import { uiReducer } from 'features/UI';
 
 export const createReduxStore = (
     initialState?: StateSchema,
-    asyncReducers?: ReducersMapObject<StateSchema>
+    asyncReducers?: ReducersMapObject<StateSchema>,
 ) => {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
@@ -29,11 +34,12 @@ export const createReduxStore = (
         reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
-        middleware: getDefaultMiddleware => getDefaultMiddleware({
-            thunk: {
-                extraArgument: extraArg,
-            },
-        }),
+        middleware: (getDefaultMiddleware) =>
+            getDefaultMiddleware({
+                thunk: {
+                    extraArgument: extraArg,
+                },
+            }),
     });
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

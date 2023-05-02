@@ -1,19 +1,16 @@
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { type StateSchema } from 'app/providers/StoreProvider';
-import {
-    type ArticleDetailsRecommendationsSchema,
-} from 'pages/ArticleDetailsPage/model/types/ArticleDetailsRecommendationsSchema';
+import { type ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage/model/types/ArticleDetailsRecommendationsSchema';
 import { type Article } from 'entities/Article';
-import {
-    fetchArticleRecommendations,
-} from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { fetchArticleRecommendations } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 
 const recommendationsAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
 });
 
 export const getArticleRecommendations = recommendationsAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDetailsPage?.recommendations ?? recommendationsAdapter.getInitialState()
+    (state) =>
+        state.articleDetailsPage?.recommendations ?? recommendationsAdapter.getInitialState(),
 );
 
 const articleDetailsPageRecommendationsSlice = createSlice({
@@ -31,10 +28,7 @@ const articleDetailsPageRecommendationsSlice = createSlice({
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(fetchArticleRecommendations.fulfilled, (
-                state,
-                action
-            ) => {
+            .addCase(fetchArticleRecommendations.fulfilled, (state, action) => {
                 state.isLoading = false;
                 recommendationsAdapter.setAll(state, action.payload);
             })
@@ -45,6 +39,5 @@ const articleDetailsPageRecommendationsSlice = createSlice({
     },
 });
 
-export const {
-    reducer: articleDetailsPageRecommendationsReducer,
-} = articleDetailsPageRecommendationsSlice;
+export const { reducer: articleDetailsPageRecommendationsReducer } =
+    articleDetailsPageRecommendationsSlice;

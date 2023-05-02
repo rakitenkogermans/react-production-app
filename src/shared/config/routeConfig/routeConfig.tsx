@@ -8,7 +8,7 @@ import { ArticleDetailsPage } from 'pages/ArticleDetailsPage';
 import { ArticleEditPage } from 'pages/ArticleEditPage';
 
 type AppRoutesProps = RouteProps & {
-    authOnly?: boolean
+    authOnly?: boolean;
 };
 
 export enum AppRoutes {
@@ -21,7 +21,7 @@ export enum AppRoutes {
     ARTICLE_EDIT = 'article_edit',
 
     // last
-    NOT_FOUND = 'not_found'
+    NOT_FOUND = 'not_found',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {

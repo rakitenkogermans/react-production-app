@@ -7,21 +7,21 @@ export enum ButtonTheme {
     OUTLINE = 'outline',
     OUTLINE_RED = 'outline_red',
     BACKGROUND = 'background',
-    BACKGROUND_INVERTED = 'backgroundInverted'
+    BACKGROUND_INVERTED = 'backgroundInverted',
 }
 
 export enum ButtonSize {
     M = 'size_m',
     L = 'size_l',
-    XL = 'size_xl'
+    XL = 'size_xl',
 }
 
 type ButtonProps = {
-    className?: string
-    theme?: ButtonTheme
-    square?: boolean
-    size?: ButtonSize
-    disabled?: boolean
+    className?: string;
+    theme?: ButtonTheme;
+    square?: boolean;
+    size?: ButtonSize;
+    disabled?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = memo((props: PropsWithChildren<ButtonProps>) => {

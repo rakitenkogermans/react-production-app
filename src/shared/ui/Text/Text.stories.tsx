@@ -43,9 +43,7 @@ PrimaryDark.args = {
     title: 'Title lorem ipsum',
     text: 'Description lorem ipsum lorem ipsum',
 };
-PrimaryDark.decorators = [
-    ThemeDecorator(THEME.DARK),
-];
+PrimaryDark.decorators = [ThemeDecorator(THEME.DARK)];
 
 export const PrimaryDarkError = Template.bind({});
 PrimaryDarkError.args = {
@@ -53,25 +51,19 @@ PrimaryDarkError.args = {
     text: 'Description lorem ipsum lorem ipsum',
     theme: TextTheme.ERROR,
 };
-PrimaryDarkError.decorators = [
-    ThemeDecorator(THEME.DARK),
-];
+PrimaryDarkError.decorators = [ThemeDecorator(THEME.DARK)];
 
 export const onlyTitleDark = Template.bind({});
 onlyTitleDark.args = {
     title: 'Title lorem ipsum',
 };
-onlyTitleDark.decorators = [
-    ThemeDecorator(THEME.DARK),
-];
+onlyTitleDark.decorators = [ThemeDecorator(THEME.DARK)];
 
 export const onlyTextDark = Template.bind({});
 onlyTextDark.args = {
     text: 'Description lorem ipsum lorem ipsum',
 };
-onlyTextDark.decorators = [
-    ThemeDecorator(THEME.DARK),
-];
+onlyTextDark.decorators = [ThemeDecorator(THEME.DARK)];
 
 export const SizeL = Template.bind({});
 SizeL.args = {

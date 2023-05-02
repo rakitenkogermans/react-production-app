@@ -6,8 +6,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comment';
-import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentSlice';
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    articleDetailsCommentsReducer,
+    getArticleComments,
+} from '../../model/slices/articleDetailsCommentSlice';
 import { useSelector } from 'react-redux';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
@@ -23,16 +29,12 @@ import {
     getArticleRecommendations,
 } from 'pages/ArticleDetailsPage/model/slices/articleDetailsPageRecommendationsSlice';
 import { getArticleRecommendationsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recommendations';
-import {
-    fetchArticleRecommendations,
-} from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { fetchArticleRecommendations } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
-import {
-    ArticleDetailsPageHeader,
-} from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { ArticleDetailsPageHeader } from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
-    className?: string
+    className?: string;
 }
 
 const reducers: ReducersList = {
@@ -53,22 +55,19 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
         dispatch(fetchArticleRecommendations());
     });
 
-    const onSendComment = useCallback((text: string) => {
-        dispatch(addCommentForArticle(text));
-    }, [dispatch]);
+    const onSendComment = useCallback(
+        (text: string) => {
+            dispatch(addCommentForArticle(text));
+        },
+        [dispatch],
+    );
 
     if (!id) {
-        return (
-            <Page className={classNames('', {}, [className])}>
-                {t('Article not found')}
-            </Page>
-        );
+        return <Page className={classNames('', {}, [className])}>{t('Article not found')}</Page>;
     }
 
     return (
-        <DynamicModuleLoader
-            reducers={reducers}
-        >
+        <DynamicModuleLoader reducers={reducers}>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />

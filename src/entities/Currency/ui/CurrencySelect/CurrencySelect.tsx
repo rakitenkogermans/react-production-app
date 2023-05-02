@@ -5,11 +5,11 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 
 interface CurrencySelectProps {
-    className?: string
-    value?: Currency
-    onChange?: (value: Currency) => void
-    readonly?: boolean
-    id?: string
+    className?: string;
+    value?: Currency;
+    onChange?: (value: Currency) => void;
+    readonly?: boolean;
+    id?: string;
 }
 
 const options = [
@@ -21,9 +21,12 @@ const options = [
 const CurrencySelect = memo(({ className, value, onChange, readonly, id }: CurrencySelectProps) => {
     const { t } = useTranslation();
 
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Currency);
-    }, [onChange]);
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            onChange?.(value as Currency);
+        },
+        [onChange],
+    );
 
     return (
         <Select

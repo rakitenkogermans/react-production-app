@@ -19,4 +19,4 @@ Light.args = {};
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = ([ThemeDecorator(THEME.DARK)]);
+Dark.decorators = [ThemeDecorator(THEME.DARK)];

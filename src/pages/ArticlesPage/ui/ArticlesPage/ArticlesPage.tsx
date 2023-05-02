@@ -2,8 +2,14 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticlesPage.module.scss';
 import { memo, useCallback } from 'react';
 import { ArticleList } from 'entities/Article';
-import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articlesPageReducer, getArticles } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    articlesPageReducer,
+    getArticles,
+} from 'pages/ArticlesPage/model/slices/articlesPageSlice';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
@@ -20,7 +26,7 @@ import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlesPageFilters/A
 import { useSearchParams } from 'react-router-dom';
 
 interface ArticlesPageProps {
-    className?: string
+    className?: string;
 }
 
 const reducers: ReducersList = {

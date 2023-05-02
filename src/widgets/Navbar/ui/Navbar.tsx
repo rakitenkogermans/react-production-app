@@ -12,7 +12,7 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 interface NavbarProps {
-    className?: string
+    className?: string;
 }
 
 const Navbar = memo(({ className = '' }: NavbarProps) => {
@@ -68,10 +68,12 @@ const Navbar = memo(({ className = '' }: NavbarProps) => {
             >
                 {t('Login')}
             </Button>
-            {isAuthModal && <LoginModal
-                isOpen={isAuthModal}
-                onClose={onCloseModal}
-            />}
+            {isAuthModal && (
+                <LoginModal
+                    isOpen={isAuthModal}
+                    onClose={onCloseModal}
+                />
+            )}
         </header>
     );
 });

@@ -5,22 +5,16 @@ import { Link, type LinkProps } from 'react-router-dom';
 
 export enum AppLinkTheme {
     PRIMARY = 'primary',
-    SECONDARY = 'secondary'
+    SECONDARY = 'secondary',
 }
 
 interface AppLinkProps extends LinkProps {
-    className?: string
-    theme?: AppLinkTheme
+    className?: string;
+    theme?: AppLinkTheme;
 }
 
 const AppLink = memo((props: PropsWithChildren<AppLinkProps>) => {
-    const {
-        to,
-        className = '',
-        children,
-        theme = AppLinkTheme.PRIMARY,
-        ...otherProps
-    } = props;
+    const { to, className = '', children, theme = AppLinkTheme.PRIMARY, ...otherProps } = props;
 
     return (
         <Link

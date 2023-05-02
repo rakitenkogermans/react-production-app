@@ -2,7 +2,11 @@ import { type HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
 import { type Article } from 'entities/Article';
-import { ArticleBlockType, type ArticleTextBlock, ArticleView } from 'entities/Article/model/types/article';
+import {
+    ArticleBlockType,
+    type ArticleTextBlock,
+    ArticleView,
+} from 'entities/Article/model/types/article';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -16,19 +20,21 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 
 interface ArticleListItemProps {
-    className?: string
-    article: Article
-    view: ArticleView
-    target?: HTMLAttributeAnchorTarget
+    className?: string;
+    article: Article;
+    view: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 const ArticleListItem = memo(({ className, article, view, target }: ArticleListItemProps) => {
     const { t } = useTranslation();
 
-    const types = <Text
-        text={article.type.join(', ')}
-        className={cls.types}
-    />;
+    const types = (
+        <Text
+            text={article.type.join(', ')}
+            className={cls.types}
+        />
+    );
 
     const views = (
         <>
@@ -42,7 +48,7 @@ const ArticleListItem = memo(({ className, article, view, target }: ArticleListI
 
     if (view === ArticleView.LIST) {
         const textBlock = article.blocks.find(
-            (block) => block.type === ArticleBlockType.TEXT
+            (block) => block.type === ArticleBlockType.TEXT,
         ) as ArticleTextBlock;
 
         return (
@@ -83,11 +89,7 @@ const ArticleListItem = memo(({ className, article, view, target }: ArticleListI
                             target={target}
                             to={RoutePath.article_details + article.id}
                         >
-                            <Button
-                                theme={ButtonTheme.BACKGROUND}
-                            >
-                                {t('Read more...')}
-                            </Button>
+                            <Button theme={ButtonTheme.BACKGROUND}>{t('Read more...')}</Button>
                         </AppLink>
                         {views}
                     </div>

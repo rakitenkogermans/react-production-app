@@ -10,7 +10,7 @@ import { getArticleDetailsData } from 'entities/Article';
 import { getCanEditArticle } from 'pages/ArticleDetailsPage/model/selectors/article';
 
 interface ArticleDetailsPageHeaderProps {
-    className?: string
+    className?: string;
 }
 
 const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageHeaderProps) => {
@@ -29,9 +29,7 @@ const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageHeaderPr
     }, [article?.id, navigate]);
 
     return (
-        <div
-            className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}
-        >
+        <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
             <Button
                 theme={ButtonTheme.OUTLINE}
                 onClick={onBackToList}

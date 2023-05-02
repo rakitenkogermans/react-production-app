@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 
 interface LangSwitcherProps {
-    className?: string
-    short?: boolean
+    className?: string;
+    short?: boolean;
 }
 
 const LangSwitcher = memo(({ className = '', short = false }: LangSwitcherProps) => {

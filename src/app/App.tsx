@@ -18,9 +18,7 @@ const App: FC = () => {
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback="">
-                {initialized && <AppRouter />}
-            </Suspense>
+            <Suspense fallback="">{initialized && <AppRouter />}</Suspense>
         </div>
     );
 };

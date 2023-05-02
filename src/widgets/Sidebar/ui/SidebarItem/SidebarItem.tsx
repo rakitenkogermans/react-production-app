@@ -8,9 +8,9 @@ import { getUserAuthData } from 'entities/User';
 import { type SidebarItemType } from 'widgets/Sidebar/model/types/sidebar';
 
 interface SidebarItemProps {
-    item: SidebarItemType
-    collapsed: boolean
-    authOnly?: boolean
+    item: SidebarItemType;
+    collapsed: boolean;
+    authOnly?: boolean;
 }
 
 const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
@@ -27,9 +27,7 @@ const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
             className={classNames(cls.item, { [cls.collapsed]: collapsed })}
         >
             <item.Icon className={cls.icon} />
-            <span className={cls.link}>
-                {t(item.text)}
-            </span>
+            <span className={cls.link}>{t(item.text)}</span>
         </AppLink>
     );
 });

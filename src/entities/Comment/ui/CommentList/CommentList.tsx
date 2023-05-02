@@ -7,9 +7,9 @@ import { CommentCard } from '../CommentCard/CommentCard';
 import { Text } from 'shared/ui/Text/Text';
 
 interface CommentListProps {
-    className?: string
-    comments?: Comment[]
-    isLoading?: boolean
+    className?: string;
+    comments?: Comment[];
+    isLoading?: boolean;
 }
 
 const CommentList = memo(({ className, comments, isLoading }: CommentListProps) => {
@@ -27,8 +27,8 @@ const CommentList = memo(({ className, comments, isLoading }: CommentListProps) 
 
     return (
         <div className={classNames(cls.CommentList, {}, [className])}>
-            {comments?.length
-                ? comments.map((comment) => (
+            {comments?.length ? (
+                comments.map((comment) => (
                     <CommentCard
                         key={comment.id}
                         comment={comment}
@@ -36,8 +36,9 @@ const CommentList = memo(({ className, comments, isLoading }: CommentListProps) 
                         isLoading={isLoading}
                     />
                 ))
-                : <Text text={t('No comments') ?? ''} />
-            }
+            ) : (
+                <Text text={t('No comments') ?? ''} />
+            )}
         </div>
     );
 });

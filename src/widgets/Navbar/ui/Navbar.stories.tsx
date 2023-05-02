@@ -17,24 +17,34 @@ const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
 
 export const LoggedInLight = Template.bind({});
 LoggedInLight.args = {};
-LoggedInLight.decorators = [StoreDecorator({
-    user: { authData: { username: 'qwerty', id: '1' } },
-})];
+LoggedInLight.decorators = [
+    StoreDecorator({
+        user: { authData: { username: 'qwerty', id: '1' } },
+    }),
+];
 
 export const LoggedInDark = Template.bind({});
 LoggedInDark.args = {};
-LoggedInDark.decorators = [ThemeDecorator(THEME.DARK), StoreDecorator({
-    user: { authData: { username: 'qwerty', id: '1' } },
-})];
+LoggedInDark.decorators = [
+    ThemeDecorator(THEME.DARK),
+    StoreDecorator({
+        user: { authData: { username: 'qwerty', id: '1' } },
+    }),
+];
 
 export const LoggedOutLight = Template.bind({});
 LoggedOutLight.args = {};
-LoggedOutLight.decorators = [StoreDecorator({
-    user: { authData: undefined },
-})];
+LoggedOutLight.decorators = [
+    StoreDecorator({
+        user: { authData: undefined },
+    }),
+];
 
 export const LoggedOutDark = Template.bind({});
 LoggedOutDark.args = {};
-LoggedOutDark.decorators = [ThemeDecorator(THEME.DARK), StoreDecorator({
-    user: { authData: undefined },
-})];
+LoggedOutDark.decorators = [
+    ThemeDecorator(THEME.DARK),
+    StoreDecorator({
+        user: { authData: undefined },
+    }),
+];

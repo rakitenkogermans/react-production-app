@@ -6,8 +6,8 @@ import CopyIcon from 'shared/assets/icons/copy-20-20.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
 
 interface CodeProps {
-    className?: string
-    text: string
+    className?: string;
+    text: string;
 }
 
 const Code = memo(({ className, text }: CodeProps) => {
@@ -29,9 +29,7 @@ const Code = memo(({ className, text }: CodeProps) => {
                 <Icon Svg={CopyIcon} />
             </Button>
             <pre className={classNames(cls.Code, {}, [className])}>
-                <code>
-                    {text}
-                </code>
+                <code>{text}</code>
             </pre>
         </>
     );

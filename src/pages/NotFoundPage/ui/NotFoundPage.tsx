@@ -5,15 +5,13 @@ import { useTranslation } from 'react-i18next';
 import { Page } from 'widgets/Page/Page';
 
 interface NotFoundPageProps {
-    className?: string
+    className?: string;
 }
 
 const NotFoundPage = memo(({ className = '' }: NotFoundPageProps) => {
     const { t } = useTranslation();
     return (
-        <Page className={classNames(cls.NotFoundPage, {}, [className])}>
-            {t('Page not found')}
-        </Page>
+        <Page className={classNames(cls.NotFoundPage, {}, [className])}>{t('Page not found')}</Page>
     );
 });
 

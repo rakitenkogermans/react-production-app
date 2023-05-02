@@ -1,6 +1,7 @@
 import {
     type FC,
-    type MouseEvent, type MutableRefObject,
+    type MouseEvent,
+    type MutableRefObject,
     type ReactNode,
     useCallback,
     useEffect,
@@ -15,11 +16,11 @@ import { useTheme } from 'app/providers/ThemeProvider';
 const ANIMATION_DELAY = 300;
 
 interface ModalProps {
-    className?: string
-    children?: ReactNode
-    isOpen?: boolean
-    onClose?: () => void
-    lazy?: boolean
+    className?: string;
+    children?: ReactNode;
+    isOpen?: boolean;
+    onClose?: () => void;
+    lazy?: boolean;
 }
 
 const Modal: FC<ModalProps> = (props) => {
@@ -46,11 +47,14 @@ const Modal: FC<ModalProps> = (props) => {
         }
     }, [onClose]);
 
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-            closeHandler();
-        }
-    }, [closeHandler]);
+    const onKeyDown = useCallback(
+        (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                closeHandler();
+            }
+        },
+        [closeHandler],
+    );
 
     const onContentClick = useCallback((e: MouseEvent) => {
         e.stopPropagation();

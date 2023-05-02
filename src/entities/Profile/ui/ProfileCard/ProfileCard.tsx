@@ -11,19 +11,19 @@ import { type Country } from 'entities/Country/model/types/country';
 import { CountrySelect } from 'entities/Country';
 
 interface ProfileCardProps {
-    className?: string
-    data?: Profile
-    error?: string
-    isLoading?: boolean
-    readonly?: boolean
-    onChangeFirstname?: (value?: string) => void
-    onChangeLastname?: (value?: string) => void
-    onChangeAge?: (value?: string) => void
-    onChangeCity?: (value?: string) => void
-    onChangeUsername?: (value?: string) => void
-    onChangeAvatar?: (value?: string) => void
-    onChangeCurrency?: (currency: Currency) => void
-    onChangeCountry?: (value: Country) => void
+    className?: string;
+    data?: Profile;
+    error?: string;
+    isLoading?: boolean;
+    readonly?: boolean;
+    onChangeFirstname?: (value?: string) => void;
+    onChangeLastname?: (value?: string) => void;
+    onChangeAge?: (value?: string) => void;
+    onChangeCity?: (value?: string) => void;
+    onChangeUsername?: (value?: string) => void;
+    onChangeAvatar?: (value?: string) => void;
+    onChangeCurrency?: (currency: Currency) => void;
+    onChangeCountry?: (value: Country) => void;
 }
 
 const ProfileCard = (props: ProfileCardProps) => {
@@ -74,9 +74,7 @@ const ProfileCard = (props: ProfileCardProps) => {
             <div className={cls.data}>
                 {data?.avatar && (
                     <div className={cls.avatarWrapper}>
-                        <Avatar
-                            src={data?.avatar}
-                        />
+                        <Avatar src={data?.avatar} />
                     </div>
                 )}
                 <Input

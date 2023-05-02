@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
 
 interface PageErrorProps {
-    className?: string
+    className?: string;
 }
 
 const PageError: FC<PageErrorProps> = ({ className = '' }) => {

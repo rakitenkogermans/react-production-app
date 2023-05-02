@@ -5,8 +5,8 @@ import { type ArticleImageBlock } from 'entities/Article/model/types/article';
 import { Text, TextAlign } from 'shared/ui/Text/Text';
 
 interface ArticleImageBlockComponentProps {
-    className?: string
-    block: ArticleImageBlock
+    className?: string;
+    block: ArticleImageBlock;
 }
 
 const ArticleImageBlockComponent = memo(({ className, block }: ArticleImageBlockComponentProps) => {
@@ -17,10 +17,12 @@ const ArticleImageBlockComponent = memo(({ className, block }: ArticleImageBlock
                 className={cls.img}
                 alt={block.title}
             />
-            {block.title && <Text
-                text={block.title}
-                align={TextAlign.CENTER}
-            /> }
+            {block.title && (
+                <Text
+                    text={block.title}
+                    align={TextAlign.CENTER}
+                />
+            )}
         </div>
     );
 });

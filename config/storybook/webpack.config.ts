@@ -8,7 +8,7 @@ import { type Configuration as WebpackConfiguration } from 'webpack';
 import { type Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
 
 interface Configuration extends WebpackConfiguration {
-    devServer?: WebpackDevServerConfiguration
+    devServer?: WebpackDevServerConfiguration;
 }
 
 export default ({ config }: { config: Configuration }) => {
@@ -38,11 +38,13 @@ export default ({ config }: { config: Configuration }) => {
 
     config.module?.rules?.push(buildSvgLoader());
     config.module?.rules?.push(buildCssLoader(true));
-    config.plugins?.push(new webpack.DefinePlugin({
-        __IS_DEV__: JSON.stringify(true),
-        __API__: JSON.stringify(''),
-        __PROJECT__: JSON.stringify('storybook'),
-    }));
+    config.plugins?.push(
+        new webpack.DefinePlugin({
+            __IS_DEV__: JSON.stringify(true),
+            __API__: JSON.stringify(''),
+            __PROJECT__: JSON.stringify('storybook'),
+        }),
+    );
 
     return config;
 };

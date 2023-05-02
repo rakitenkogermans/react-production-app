@@ -5,11 +5,11 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 
 interface CountrySelectProps {
-    className?: string
-    value?: Country
-    onChange?: (value: Country) => void
-    readonly?: boolean
-    id?: string
+    className?: string;
+    value?: Country;
+    onChange?: (value: Country) => void;
+    readonly?: boolean;
+    id?: string;
 }
 
 const options = [
@@ -23,9 +23,12 @@ const options = [
 const CountrySelect = memo(({ className, value, onChange, readonly, id }: CountrySelectProps) => {
     const { t } = useTranslation();
 
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Country);
-    }, [onChange]);
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            onChange?.(value as Country);
+        },
+        [onChange],
+    );
 
     return (
         <Select

@@ -9,24 +9,21 @@ import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 
 interface ArticleListProps {
-    className?: string
-    articles: Article[]
-    isLoading?: boolean
-    view?: ArticleView
-    target?: HTMLAttributeAnchorTarget
+    className?: string;
+    articles: Article[];
+    isLoading?: boolean;
+    view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
-const getSkeletons = (view: ArticleView) => (
-    new Array(view === ArticleView.GRID ? 9 : 3)
-        .fill(0)
-        .map((item, index) => (
-            <ArticleListItemSkeleton
-                view={view}
-                key={index}
-                className={cls.card}
-            />
-        ))
-);
+const getSkeletons = (view: ArticleView) =>
+    new Array(view === ArticleView.GRID ? 9 : 3).fill(0).map((item, index) => (
+        <ArticleListItemSkeleton
+            view={view}
+            key={index}
+            className={cls.card}
+        />
+    ));
 
 const ArticleList = memo((props: ArticleListProps) => {
     const { className, articles, view = ArticleView.GRID, isLoading, target } = props;
@@ -62,10 +59,7 @@ const ArticleList = memo((props: ArticleListProps) => {
 
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-            {articles.length > 0
-                ? articles.map(renderArticle)
-                : null
-            }
+            {articles.length > 0 ? articles.map(renderArticle) : null}
             {isLoading && getSkeletons(view)}
         </div>
     );
