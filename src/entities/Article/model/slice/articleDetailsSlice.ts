@@ -1,8 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import { type ArticleDetailsSchema } from '../types/articleDetailsSchema';
-import { fetchProfileData, type Profile, updateProfileData } from 'entities/Profile';
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
-import { type Article } from 'entities/Article';
+import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
+import { type Article } from '../types/article';
 
 const initialState: ArticleDetailsSchema = {
     isLoading: false,

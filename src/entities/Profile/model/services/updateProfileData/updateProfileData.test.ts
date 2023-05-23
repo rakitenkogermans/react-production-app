@@ -2,7 +2,7 @@ import { updateProfileData } from './updateProfileData';
 import { TestAsynkThunk } from 'shared/lib/tests/TestAsynkThunk/TestAsynkThunk';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ValidateProfileError } from 'entities/Profile';
+import { ValidateProfileError } from '../../types/profile';
 
 const data = {
     username: 'admin',
@@ -49,7 +49,10 @@ describe('updateProfileData.test', () => {
     test('validate error', async () => {
         const thunk = new TestAsynkThunk(updateProfileData, {
             profile: {
-                form: { ...data, firstname: '' },
+                form: {
+                    ...data,
+                    firstname: '',
+                },
             },
         });
 

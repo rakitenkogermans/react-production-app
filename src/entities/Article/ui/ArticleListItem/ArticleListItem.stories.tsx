@@ -7,7 +7,7 @@ import {
     ArticleBlockType,
     ArticleType,
     ArticleView,
-} from 'entities/Article/model/types/article';
+} from '../../model/types/article';
 
 export default {
     title: 'entities/Article/ArticleListItem',

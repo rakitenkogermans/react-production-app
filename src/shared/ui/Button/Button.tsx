@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes, type FC, memo, type PropsWithChildren } from 'react';
+import { type ButtonHTMLAttributes, memo, type PropsWithChildren } from 'react';
 import { classNames, type Mods } from '../../lib/classNames/classNames';
 import cls from './Button.module.scss';
 

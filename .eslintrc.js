@@ -4,7 +4,12 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18next/recommended', 'prettier'],
+    extends: [
+        'plugin:react/recommended',
+        'standard-with-typescript',
+        'plugin:i18next/recommended',
+        'prettier',
+    ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -15,7 +20,7 @@ module.exports = {
         tsconfigRootDir: __dirname,
         project: ['./tsconfig.json'],
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'fsd-architecture-check'],
     rules: {
         'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
         // 'react/jsx-indent': [2, 4],
@@ -73,6 +78,7 @@ module.exports = {
         //     functions: 'never',
         // }],
         // 'array-bracket-spacing': 'off',
+        'fsd-architecture-check/fsd-architecture-check': 'error',
     },
     overrides: [
         {

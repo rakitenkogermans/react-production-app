@@ -1,14 +1,13 @@
-import { type HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
+import { type HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
-import { type Article } from 'entities/Article';
 import {
+    type Article,
     ArticleBlockType,
     type ArticleTextBlock,
     ArticleView,
-} from 'entities/Article/model/types/article';
+} from '../../model/types/article';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Text } from 'shared/ui/Text/Text';
 import { Icon } from 'shared/ui/Icon/Icon';

@@ -31,8 +31,6 @@ const Page = (props: PageProps) => {
     });
 
     useInitialEffect(() => {
-        console.log('useInitialEffect');
-        console.log(pathname);
         wrapperRef.current.scrollTop = scrollPosition;
     });
 
