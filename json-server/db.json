@@ -2083,6 +2083,12 @@
       "userId": "2",
       "text": "Scala",
       "id": "nTM7TI2"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "hello, Python DEVS!",
+      "id": "OyeKdpu"
     }
   ],
   "users": [
@@ -2105,7 +2111,7 @@
     {
       "id": "1",
       "firstname": "Germans",
-      "lastname": "Rk",
+      "lastname": "R",
       "age": 24,
       "currency": "USD",
       "country": "Latvia",

@@ -61,6 +61,11 @@ const Navbar = memo(({ className = '' }: NavbarProps) => {
 
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
+            <Text
+                className={cls.appName}
+                title={'The Daily Read'}
+                theme={TextTheme.PRIMARY}
+            />
             <Button
                 theme={ButtonTheme.OUTLINE}
                 className={cls.links}

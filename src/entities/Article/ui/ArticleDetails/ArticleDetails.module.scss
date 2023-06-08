@@ -1,23 +1,7 @@
-.skeleton {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.ArticleDetails {
+    min-height: 100%;
 }
 
 .avatar {
     margin: 0 auto;
-}
-
-.avatarWrapper {
-    margin-bottom: 4rem;
-}
-
-.articleInfo {
-    display: flex;
-    gap: 1.6rem;
-    align-items: center;
-}
-
-.block {
-    margin-top: 1.6rem;
 }

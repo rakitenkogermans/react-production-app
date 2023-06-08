@@ -7,6 +7,7 @@ import { Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { HStack, VStack } from 'shared/Stack';
 
 interface CommentCardProps {
     className?: string;
@@ -17,8 +18,16 @@ interface CommentCardProps {
 const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
     if (isLoading) {
         return (
-            <div className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
-                <div className={cls.header}>
+            <VStack
+                align={'start'}
+                gap={'8'}
+                max
+                className={classNames(cls.CommentCard, {}, [className, cls.loading])}
+            >
+                <HStack
+                    gap={'8'}
+                    max
+                >
                     <Skeleton
                         width={30}
                         height={30}
@@ -28,9 +37,9 @@ const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) =
                         width={100}
                         height={16}
                     />
-                </div>
+                </HStack>
                 <Skeleton width={'100%'} />
-            </div>
+            </VStack>
         );
     }
 
@@ -39,21 +48,28 @@ const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) =
     }
 
     return (
-        <div className={classNames(cls.CommentCard, {}, [className])}>
-            <AppLink
-                to={`${RoutePath.profile}${comment.user.id}`}
-                className={cls.header}
-            >
-                {comment.user.avatar && (
-                    <Avatar
-                        size={30}
-                        src={comment.user.avatar}
-                    />
-                )}
-                <Text title={comment.user.username} />
+        <VStack
+            align={'start'}
+            gap={'8'}
+            max
+            className={classNames(cls.CommentCard, {}, [className])}
+        >
+            <AppLink to={`${RoutePath.profile}${comment.user.id}`}>
+                <HStack
+                    gap={'8'}
+                    max
+                >
+                    {comment.user.avatar && (
+                        <Avatar
+                            size={30}
+                            src={comment.user.avatar}
+                        />
+                    )}
+                    <Text title={comment.user.username} />
+                </HStack>
             </AppLink>
             <Text text={comment.text} />
-        </div>
+        </VStack>
     );
 });
 

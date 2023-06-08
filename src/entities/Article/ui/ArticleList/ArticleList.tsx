@@ -7,6 +7,7 @@ import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { HStack } from 'shared/Stack';
 
 interface ArticleListProps {
     className?: string;
@@ -58,10 +59,14 @@ const ArticleList = memo((props: ArticleListProps) => {
     }
 
     return (
-        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+        <HStack
+            gap={'16'}
+            max
+            className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+        >
             {articles.length > 0 ? articles.map(renderArticle) : null}
             {isLoading && getSkeletons(view)}
-        </div>
+        </HStack>
     );
 });
 
