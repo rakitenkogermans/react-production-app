@@ -8,7 +8,7 @@ import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getProfileData, profileActions, updateProfileData } from 'entities/Profile';
 import { getUserAuthData } from 'entities/User';
-import { HStack } from 'shared/Stack/HStack/HStack';
+import { HStack } from 'shared/ui/Stack/HStack/HStack';
 
 interface ProfilePageHeaderProps {
     className?: string;

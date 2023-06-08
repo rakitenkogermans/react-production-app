@@ -26,7 +26,7 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { HStack, VStack } from 'shared/Stack';
+import { HStack, VStack } from 'shared/ui/Stack';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -49,7 +49,6 @@ const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
             return (
                 <ArticleCodeBlockComponent
                     key={block.id}
-                    className={cls.block}
                     block={block}
                 />
             );
@@ -59,7 +58,7 @@ const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
             return (
                 <ArticleImageBlockComponent
                     key={block.id}
-                    className={cls.block}
+                    className={cls.image}
                     block={block}
                 />
             );
@@ -70,7 +69,6 @@ const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
                 <ArticleTextBlockComponent
                     key={block.id}
                     block={block}
-                    className={cls.block}
                 />
             );
         }

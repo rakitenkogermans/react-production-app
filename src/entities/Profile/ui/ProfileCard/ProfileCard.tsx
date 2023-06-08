@@ -9,7 +9,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { type Currency, CurrencySelect } from '../../../Currency';
 import { type Country } from 'entities/Country/model/types/country';
 import { CountrySelect } from 'entities/Country';
-import { HStack, VStack } from 'shared/Stack';
+import { HStack, VStack } from 'shared/ui/Stack';
 
 interface ProfileCardProps {
     className?: string;

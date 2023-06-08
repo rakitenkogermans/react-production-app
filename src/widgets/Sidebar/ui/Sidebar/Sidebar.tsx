@@ -7,7 +7,7 @@ import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
-import { VStack } from 'shared/Stack/VStack/VStack';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 
 interface SidebarProps {
     className?: string;
@@ -38,6 +38,7 @@ const Sidebar = memo(({ className = '' }: SidebarProps) => {
                 {collapsed ? '>' : '<'}
             </Button>
             <VStack
+                role={'navigation'}
                 align={'start'}
                 gap={'8'}
                 className={cls.items}

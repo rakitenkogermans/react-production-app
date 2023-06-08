@@ -7,7 +7,7 @@ import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
-import { HStack } from 'shared/Stack';
+import { HStack } from 'shared/ui/Stack';
 
 interface ArticleListProps {
     className?: string;
