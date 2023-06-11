@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Select } from 'shared/ui/Select/Select';
 import { Country } from '../../model/types/country';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
+import { ListBox } from 'shared/ui/ListBox/ListBox';
 
 interface CountrySelectProps {
     className?: string;
@@ -13,11 +13,26 @@ interface CountrySelectProps {
 }
 
 const options = [
-    { value: Country.Austria, content: Country.Austria },
-    { value: Country.Belgium, content: Country.Belgium },
-    { value: Country.Estonia, content: Country.Estonia },
-    { value: Country.Latvia, content: Country.Latvia },
-    { value: Country.Lithuania, content: Country.Lithuania },
+    {
+        value: Country.Austria,
+        content: Country.Austria,
+    },
+    {
+        value: Country.Belgium,
+        content: Country.Belgium,
+    },
+    {
+        value: Country.Estonia,
+        content: Country.Estonia,
+    },
+    {
+        value: Country.Latvia,
+        content: Country.Latvia,
+    },
+    {
+        value: Country.Lithuania,
+        content: Country.Lithuania,
+    },
 ];
 
 const CountrySelect = memo(({ className, value, onChange, readonly, id }: CountrySelectProps) => {
@@ -31,16 +46,28 @@ const CountrySelect = memo(({ className, value, onChange, readonly, id }: Countr
     );
 
     return (
-        <Select
-            label={t('Select country') ?? ''}
-            options={options}
-            value={value}
-            onChange={onChangeHandler}
+        <ListBox
             className={classNames('', {}, [className])}
+            label={t('Select country') ?? ''}
+            defaultValue={t('Select country') ?? ''}
+            onChange={onChangeHandler}
+            value={value}
+            items={options}
             readonly={readonly}
-            id={id}
         />
     );
+
+    // return (
+    //     <Select
+    //         label={t('Select country') ?? ''}
+    //         options={options}
+    //         value={value}
+    //         onChange={onChangeHandler}
+    //         className={classNames('', {}, [className])}
+    //         readonly={readonly}
+    //         id={id}
+    //     />
+    // );
 });
 
 export { CountrySelect };
