@@ -47,6 +47,7 @@ const CurrencySelect = memo(({ className, value, onChange, readonly, id }: Curre
             value={value}
             items={options}
             readonly={readonly}
+            direction={'top right'}
         />
     );
 
