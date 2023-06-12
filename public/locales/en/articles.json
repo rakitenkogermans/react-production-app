@@ -1,11 +1,12 @@
 {
-    "Sort BY": "Sort BY",
-    "Search": "Search",
-    "ALL": "ALL",
-    "IT": "IT",
-    "ECONOMICS": "ECONOMICS",
-    "SCIENCE": "SCIENCE",
-    "Articles not found": "Articles not found",
-    "Editing article with ID = ": "Editing article with ID = ",
-    "Create new article": "Create new article"
+  "Sort BY": "Sort BY",
+  "Search": "Search",
+  "ALL": "ALL",
+  "IT": "IT",
+  "ECONOMICS": "ECONOMICS",
+  "SCIENCE": "SCIENCE",
+  "Articles not found": "Articles not found",
+  "Editing article with ID = ": "Editing article with ID = ",
+  "Create new article": "Create new article",
+  "Loadin articles failed": "Loadin articles failed"
 }

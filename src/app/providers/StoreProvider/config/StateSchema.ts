@@ -8,7 +8,6 @@ import {
     type Reducer,
     type ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { type ProfileSchema } from 'entities/Profile';
 import { type AxiosInstance } from 'axios';
 import { type ArticleDetailsSchema } from 'entities/Article';
 import {
@@ -19,11 +18,14 @@ import {
 import { type AddCommentFormSchema } from 'features/addCommentForm';
 import { type ArticlesPageSchema } from 'pages/ArticlesPage';
 import { type UISchema } from 'features/UI';
+import { rtkApi } from 'shared/api/rtkApi';
+import { ProfileSchema } from 'features/editableProfileCard';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
     ui: UISchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // Lazy reducers
     loginForm?: LoginSchema;

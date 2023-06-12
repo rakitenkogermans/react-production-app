@@ -12,6 +12,7 @@ import { $api } from 'shared/api/api';
 import { type NavigateOptions } from 'react-router';
 import { type To } from '@remix-run/router';
 import { uiReducer } from 'features/UI';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export const createReduxStore = (
     initialState?: StateSchema,
@@ -22,6 +23,7 @@ export const createReduxStore = (
         counter: counterReducer,
         user: userReducer,
         ui: uiReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);
@@ -39,7 +41,7 @@ export const createReduxStore = (
                 thunk: {
                     extraArgument: extraArg,
                 },
-            }),
+            }).concat(rtkApi.middleware),
     });
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
