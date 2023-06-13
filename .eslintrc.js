@@ -79,6 +79,9 @@ module.exports = {
         // }],
         // 'array-bracket-spacing': 'off',
         'fsd-architecture-check/fsd-architecture-check': 'error',
+        '@typescript-eslint/prefer-nullish-coalescing': ['error', {
+            ignoreConditionalTests: true
+        }],
     },
     overrides: [
         {
