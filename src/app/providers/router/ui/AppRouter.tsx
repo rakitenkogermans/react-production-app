@@ -13,14 +13,14 @@ import { RequireAuth } from './RequireAuth';
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route element={<Layout />}>
-            {Object.values(routeConfig).map(({ element, path, authOnly }) => {
+            {Object.values(routeConfig).map(({ element, path, authOnly, roles }) => {
                 const el = <Suspense fallback={<PageLoader />}>{element}</Suspense>;
 
                 return (
                     <Route
                         key={path}
                         path={path}
-                        element={authOnly ? <RequireAuth>{el}</RequireAuth> : el}
+                        element={authOnly ? <RequireAuth roles={roles}>{el}</RequireAuth> : el}
                     />
                 );
             })}
