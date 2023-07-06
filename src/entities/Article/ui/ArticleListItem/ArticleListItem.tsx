@@ -1,12 +1,7 @@
 import { type HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
-import {
-    type Article,
-    ArticleBlockType,
-    type ArticleTextBlock,
-    ArticleView,
-} from '../../model/types/article';
+import { type Article, type ArticleTextBlock } from '../../model/types/article';
 import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Text } from 'shared/ui/Text/Text';
@@ -17,6 +12,7 @@ import { Card } from 'shared/ui/Card/Card';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 
 interface ArticleListItemProps {
     className?: string;

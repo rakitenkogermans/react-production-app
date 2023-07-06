@@ -6,9 +6,9 @@ import {
     ArticleSortSelector,
     type ArticleType,
     ArticleTypeTabs,
+    type ArticleView,
     ArticleViewSelector,
 } from 'entities/Article';
-import { type ArticleView } from 'entities/Article/model/types/article';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
