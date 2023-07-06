@@ -7,10 +7,17 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import AvatarImg from 'shared/assets/tests/storybook.jpg';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 export default {
     title: 'pages/ProfilePage',
     component: ProfilePage,
+    decorators: [
+        RouterDecorator({
+            route: '/profile/1',
+            path: '/profile/:id',
+        }),
+    ],
     argTypes: {
         backgroundColor: { control: 'color' },
     },

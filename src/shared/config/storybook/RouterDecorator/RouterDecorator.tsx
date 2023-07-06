@@ -1,8 +1,30 @@
 import { type Story } from '@storybook/react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, MemoryRouter, Route, Routes } from 'react-router-dom';
+import React from 'react';
 
-export const RouterDecorator = (StoryComponent: Story) => (
-    <BrowserRouter>
-        <StoryComponent />
-    </BrowserRouter>
-);
+export interface RouterDecoratorOptions {
+    route?: string;
+    path?: string;
+}
+
+export const RouterDecorator = (options: RouterDecoratorOptions) => (StoryComponent: Story) => {
+    const { route, path } = options;
+
+    if (!route || !path) {
+        return (
+            <BrowserRouter>
+                <StoryComponent />
+            </BrowserRouter>
+        );
+    }
+    return (
+        <MemoryRouter initialEntries={[route]}>
+            <Routes>
+                <Route
+                    path={path}
+                    element={<StoryComponent />}
+                />
+            </Routes>
+        </MemoryRouter>
+    );
+};

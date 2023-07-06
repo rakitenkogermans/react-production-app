@@ -23,7 +23,7 @@ const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
     const view = useSelector(getArticlesPageView);
 
     if (error) {
-        return <Text text={t('Loadin articles failed') ?? ''}></Text>;
+        return <Text text={t('Loading articles failed') ?? ''}></Text>;
     }
 
     return (

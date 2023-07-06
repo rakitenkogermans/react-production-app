@@ -5,10 +5,28 @@ import ArticleDetailsPage from './ArticleDetailsPage';
 import { type Article } from 'entities/Article';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 export default {
     title: 'pages/ArticleDetailsPage',
     component: ArticleDetailsPage,
+    decorators: [
+        RouterDecorator({
+            route: '/articles/1',
+            path: '/articles/:id',
+        }),
+        // (Story) => (
+        //     <MemoryRouter initialEntries={['/articles/1']}>
+        //         <Routes>
+        //             <Route
+        //                 path="/articles/:id"
+        //                 element={<Story />}
+        //             />
+        //         </Routes>
+        //     </MemoryRouter>
+        // ),
+    ],
     argTypes: {
         backgroundColor: { control: 'color' },
     },
@@ -93,9 +111,9 @@ const article: Article = {
     ],
 };
 
-export const Primary = Template.bind({});
-Primary.args = {};
-Primary.decorators = [
+export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [
     StoreDecorator({
         articleDetails: {
             data: article,

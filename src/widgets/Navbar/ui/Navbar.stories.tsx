@@ -4,10 +4,12 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { THEME } from 'app/providers/ThemeProvider';
 import { Navbar } from './Navbar';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 export default {
     title: 'widgets/Navbar',
     component: Navbar,
+    decorators: [RouterDecorator({})],
     argTypes: {
         backgroundColor: { control: 'color' },
     },
@@ -19,7 +21,12 @@ export const LoggedInLight = Template.bind({});
 LoggedInLight.args = {};
 LoggedInLight.decorators = [
     StoreDecorator({
-        user: { authData: { username: 'qwerty', id: '1' } },
+        user: {
+            authData: {
+                username: 'qwerty',
+                id: '1',
+            },
+        },
     }),
 ];
 
@@ -28,7 +35,12 @@ LoggedInDark.args = {};
 LoggedInDark.decorators = [
     ThemeDecorator(THEME.DARK),
     StoreDecorator({
-        user: { authData: { username: 'qwerty', id: '1' } },
+        user: {
+            authData: {
+                username: 'qwerty',
+                id: '1',
+            },
+        },
     }),
 ];
 

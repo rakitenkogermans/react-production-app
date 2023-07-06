@@ -9,6 +9,10 @@ import { StoreProvider } from 'app/providers/StoreProvider';
 
 const container = document.getElementById('root') as HTMLDivElement;
 
+if (!container) {
+    throw new Error('root container is not found. Cant mount react application!');
+}
+
 // create a root
 const root = createRoot(container);
 

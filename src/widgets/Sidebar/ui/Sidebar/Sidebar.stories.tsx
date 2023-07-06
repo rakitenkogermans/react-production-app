@@ -4,10 +4,12 @@ import { Sidebar } from './Sidebar';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { THEME } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 export default {
     title: 'widgets/Sidebar',
     component: Sidebar,
+    decorators: [RouterDecorator({}), StoreDecorator({})],
     argTypes: {
         backgroundColor: { control: 'color' },
     },

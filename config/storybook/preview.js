@@ -10,9 +10,9 @@ export const parameters = {
     controls: {
         matchers: {
             color: /(background|color)$/i,
-            date: /Date$/
-        }
-    }
+            date: /Date$/,
+        },
+    },
 };
 
 let globalTypes;
@@ -24,12 +24,18 @@ if (!!process.env.STORYBOOK_LOCALES) {
             toolbar: {
                 icon: 'globe',
                 items: [
-                    { value: 'en', title: 'English' },
-                    { value: 'lv', title: 'Latviski' }
+                    {
+                        value: 'en',
+                        title: 'English',
+                    },
+                    {
+                        value: 'lv',
+                        title: 'Latviski',
+                    },
                 ],
-                showName: true
-            }
-        }
+                showName: true,
+            },
+        },
     };
 
     // import('../../src/shared/config/storybook/I18nDecorator/I18nDecorator').then(({ I18nDecorator }) => {
@@ -37,15 +43,14 @@ if (!!process.env.STORYBOOK_LOCALES) {
     // });
 
     addDecorator(I18nDecorator);
-
 }
 
 export { globalTypes };
 
 console.log('===============================================================================');
-console.log(!!(process.env.STORYBOOK_LOCALES));
+console.log(!!process.env.STORYBOOK_LOCALES);
 console.log('===============================================================================');
 addDecorator(I18nDecorator);
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(THEME.LIGHT));
-addDecorator(RouterDecorator);
+// addDecorator(RouterDecorator);

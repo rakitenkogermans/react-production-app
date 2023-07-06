@@ -29,7 +29,10 @@ export default ({ config }: { config: Configuration }) => {
         // @ts-ignore
         config.module.rules = config.module.rules?.map((rule: webpack.RuleSetRule) => {
             if (String(rule.test).includes('svg')) {
-                return { ...rule, exclude: /\.svg$/i };
+                return {
+                    ...rule,
+                    exclude: /\.svg$/i,
+                };
             }
 
             return rule;
@@ -41,7 +44,7 @@ export default ({ config }: { config: Configuration }) => {
     config.plugins?.push(
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(true),
-            __API__: JSON.stringify(''),
+            __API__: JSON.stringify('https://testapisb.com'),
             __PROJECT__: JSON.stringify('storybook'),
         }),
     );

@@ -8,10 +8,12 @@ import {
     ArticleType,
     ArticleView,
 } from '../../model/types/article';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 export default {
     title: 'entities/Article/ArticleListItem',
     component: ArticleListItem,
+    decorators: [RouterDecorator({})],
     argTypes: {
         backgroundColor: { control: 'color' },
     },

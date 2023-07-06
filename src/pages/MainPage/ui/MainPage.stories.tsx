@@ -3,10 +3,13 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { THEME } from 'app/providers/ThemeProvider';
 import MainPage from './MainPage';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
     title: 'pages/MainPage',
     component: MainPage,
+    decorators: [RouterDecorator({}), StoreDecorator({})],
     argTypes: {
         backgroundColor: { control: 'color' },
     },

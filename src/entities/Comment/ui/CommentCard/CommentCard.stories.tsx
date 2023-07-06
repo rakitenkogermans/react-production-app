@@ -2,10 +2,12 @@ import React from 'react';
 import { type ComponentStory, type ComponentMeta } from '@storybook/react';
 
 import { CommentCard } from './CommentCard';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 export default {
     title: 'entities/Comment/CommentCard',
     component: CommentCard,
+    decorators: [RouterDecorator({})],
     argTypes: {
         backgroundColor: { control: 'color' },
     },
@@ -18,7 +20,10 @@ Normal.args = {
     comment: {
         id: '1',
         text: 'hello world',
-        user: { id: '1', username: 'Vasya' },
+        user: {
+            id: '1',
+            username: 'Vasya',
+        },
     },
 };
 
@@ -27,7 +32,10 @@ Loading.args = {
     comment: {
         id: '1',
         text: 'hello world',
-        user: { id: '1', username: 'Vasya' },
+        user: {
+            id: '1',
+            username: 'Vasya',
+        },
     },
     isLoading: true,
 };

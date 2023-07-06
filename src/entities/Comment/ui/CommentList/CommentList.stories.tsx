@@ -2,10 +2,12 @@ import React from 'react';
 import { type ComponentStory, type ComponentMeta } from '@storybook/react';
 
 import { CommentList } from './CommentList';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 export default {
     title: 'entities/Comment/CommentList',
     component: CommentList,
+    decorators: [RouterDecorator({})],
     argTypes: {
         backgroundColor: { control: 'color' },
     },
@@ -19,12 +21,18 @@ Normal.args = {
         {
             id: '1',
             text: 'hello world',
-            user: { id: '1', username: 'John' },
+            user: {
+                id: '1',
+                username: 'John',
+            },
         },
         {
             id: '2',
             text: 'Comment 2',
-            user: { id: '1', username: 'Jason' },
+            user: {
+                id: '1',
+                username: 'Jason',
+            },
         },
     ],
 };
