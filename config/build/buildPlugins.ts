@@ -5,8 +5,14 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import CopyPlugin from 'copy-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 
-export const buildPlugins = ({ paths, isDev, apiUrl, project }: BuildOptions): webpack.WebpackPluginInstance[] => {
+export const buildPlugins = ({
+    paths,
+    isDev,
+    apiUrl,
+    project,
+}: BuildOptions): webpack.WebpackPluginInstance[] => {
     const plugins = [
         new webpack.ProgressPlugin(),
         new HtmlWebpackPlugin({ template: paths.html }),
@@ -22,19 +28,27 @@ export const buildPlugins = ({ paths, isDev, apiUrl, project }: BuildOptions): w
         new CopyPlugin({
             patterns: [
                 {
-                    from: paths.publicLocales, to: paths.buildLocales,
+                    from: paths.publicLocales,
+                    to: paths.buildLocales,
                 },
             ],
+        }),
+        new CircularDependencyPlugin({
+            exclude: /node_modules/,
+            failOnError: true,
         }),
     ];
 
     if (isDev) {
         plugins.push(new ReactRefreshWebpackPlugin());
         plugins.push(new webpack.HotModuleReplacementPlugin());
-        plugins.push(new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-        }));
+        plugins.push(
+            new BundleAnalyzerPlugin({
+                openAnalyzer: false,
+            }),
+        );
     }
 
+    // @ts-ignore
     return plugins;
 };
