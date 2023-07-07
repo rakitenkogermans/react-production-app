@@ -1,6 +1,5 @@
 import {
     type FC,
-    type MouseEvent,
     type MutableRefObject,
     type ReactNode,
     useCallback,
@@ -12,6 +11,7 @@ import { classNames, type Mods } from '../../lib/classNames/classNames';
 import cls from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { Overlay } from '../Overlay/Overlay';
 
 const ANIMATION_DELAY = 300;
 
@@ -65,10 +65,6 @@ const Modal: FC<ModalProps> = (props) => {
         [closeHandler],
     );
 
-    const onContentClick = useCallback((e: MouseEvent) => {
-        e.stopPropagation();
-    }, []);
-
     useEffect(() => {
         if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
@@ -91,17 +87,8 @@ const Modal: FC<ModalProps> = (props) => {
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className, theme])}>
-                <div
-                    className={cls.overlay}
-                    onClick={closeHandler}
-                >
-                    <div
-                        className={cls.content}
-                        onClick={onContentClick}
-                    >
-                        {children}
-                    </div>
-                </div>
+                <Overlay onClick={closeHandler} />
+                <div className={cls.content}>{children}</div>
             </div>
         </Portal>
     );
