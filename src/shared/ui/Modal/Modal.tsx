@@ -28,13 +28,22 @@ const Modal: FC<ModalProps> = (props) => {
 
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
+    const [isRenderModal, setIsRenderModal] = useState(false);
     const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
     const { theme } = useTheme();
 
     useEffect(() => {
         if (isOpen) {
             setIsMounted(true);
+            timerRef.current = setTimeout(() => {
+                setIsRenderModal(true);
+            }, 0);
         }
+
+        return () => {
+            clearInterval(timerRef.current);
+            setIsRenderModal(false);
+        };
     }, [isOpen]);
 
     const closeHandler = useCallback(() => {
@@ -71,7 +80,7 @@ const Modal: FC<ModalProps> = (props) => {
     }, [isOpen, onKeyDown]);
 
     const mods: Mods = {
-        [cls.opened]: isOpen,
+        [cls.opened]: isRenderModal,
         [cls.isClosing]: isClosing,
     };
 
