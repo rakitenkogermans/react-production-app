@@ -1,0 +1,20 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    background: var(--list-box);
+    box-shadow: 0 4px 8px var(--list-box);
+    position: absolute;
+    z-index: 10000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.item {
+    padding: 10px 25px;
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--button-text-color);
+    cursor: pointer;
+}
