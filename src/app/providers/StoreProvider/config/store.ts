@@ -5,14 +5,14 @@ import {
     type ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { type StateSchema, type ThunkExtraArg } from './StateSchema';
-import { counterReducer } from 'entities/Counter';
-import { userReducer } from 'entities/User';
+import { counterReducer } from '@/entities/Counter';
+import { userReducer } from '@/entities/User';
 import { createReducerManager } from './reducerManager';
-import { $api } from 'shared/api/api';
+import { $api } from '@/shared/api/api';
 import { type NavigateOptions } from 'react-router';
 import { type To } from '@remix-run/router';
-import { uiReducer } from 'features/UI';
-import { rtkApi } from 'shared/api/rtkApi';
+import { uiReducer } from '@/features/UI';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export const createReduxStore = (
     initialState?: StateSchema,

@@ -1,10 +1,10 @@
 import { Fragment, memo, type ReactNode } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ListBox.module.scss';
 import { Listbox as HListBox } from '@headlessui/react';
 import { Button, ButtonTheme } from '../../../Button/Button';
 import { HStack } from '../../../Stack';
-import { type DropDownDirection } from 'shared/types/ui';
+import { type DropDownDirection } from '@/shared/types/ui';
 import { mapDirectionClass } from '../../styles/consts';
 import pCls from '../../styles/popup.module.scss';
 

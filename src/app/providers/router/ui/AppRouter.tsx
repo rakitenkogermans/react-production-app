@@ -5,9 +5,9 @@ import {
     Route,
     RouterProvider,
 } from 'react-router-dom';
-import { Layout } from 'app/Layout';
-import { routeConfig } from 'shared/config/routeConfig/routeConfig';
-import { PageLoader } from 'widgets/PageLoader';
+import { Layout } from '@/app/Layout';
+import { routeConfig } from '@/shared/config/routeConfig/routeConfig';
+import { PageLoader } from '@/widgets/PageLoader';
 import { RequireAuth } from './RequireAuth';
 
 const router = createBrowserRouter(

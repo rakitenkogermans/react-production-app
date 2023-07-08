@@ -1,13 +1,13 @@
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './CommentCard.module.scss';
 import { type Comment } from '../../model/types/comment';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Text } from 'shared/ui/Text/Text';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Text } from '@/shared/ui/Text/Text';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 interface CommentCardProps {
     className?: string;
@@ -54,7 +54,7 @@ const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) =
             max
             className={classNames(cls.CommentCard, {}, [className])}
         >
-            <AppLink to={`${RoutePath.profile}${comment.user.id}`}>
+            <AppLink to={RoutePath.profile + comment.user.id}>
                 <HStack
                     gap={'8'}
                     max

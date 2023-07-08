@@ -82,6 +82,8 @@ module.exports = {
         '@typescript-eslint/prefer-nullish-coalescing': ['error', {
             ignoreConditionalTests: true
         }],
+        '@typescript-eslint/restrict-plus-operands': 'off',
+        '@typescript-eslint/no-unnecessary-type-assertion': 'off'
     },
     overrides: [
         {

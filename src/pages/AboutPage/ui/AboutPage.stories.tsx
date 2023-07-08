@@ -1,11 +1,11 @@
 import React from 'react';
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { THEME } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { THEME } from '@/app/providers/ThemeProvider';
 import AboutPage from './AboutPage';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Normal } from 'features/editableProfileCard/ui/EditableProfileCardHeader/EditableProfileCardHeader.stories';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Normal } from '@/features/editableProfileCard/ui/EditableProfileCardHeader/EditableProfileCardHeader.stories';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 
 export default {
     title: 'pages/AboutPage',

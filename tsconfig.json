@@ -11,7 +11,7 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "*": [
+      "@/*": [
         "./src/*"
       ]
     },
@@ -28,6 +28,8 @@
     "./config/jest/setupTests.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx"
+    //    "src",
+    //    "./scripts/updateImports.ts"
     //    "./config/**/*.ts",
     //    "./config/**/*.tsx",
     //    "./webpack.config.ts",

@@ -2,7 +2,7 @@ import React from 'react';
 import { type ComponentStory, type ComponentMeta } from '@storybook/react';
 
 import { CommentList } from './CommentList';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 
 export default {
     title: 'entities/Comment/CommentList',

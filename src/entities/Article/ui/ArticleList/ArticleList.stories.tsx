@@ -3,7 +3,7 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
 import { ArticleList } from './ArticleList';
 import { type Article } from '../../model/types/article';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { ArticleType, ArticleView } from '../../model/consts/articleConsts';
 
 export default {
