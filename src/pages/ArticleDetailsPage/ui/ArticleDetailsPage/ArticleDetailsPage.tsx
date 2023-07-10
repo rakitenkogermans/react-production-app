@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
-import { memo } from 'react';
+import { memo, Suspense } from 'react';
 import { ArticleDetails } from '@/entities/Article';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -14,6 +14,7 @@ import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDet
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
+import { ArticleRating } from '@/features/articleRating';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -41,6 +42,9 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
                 >
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
+                    <Suspense>
+                        <ArticleRating articleId={id} />
+                    </Suspense>
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>

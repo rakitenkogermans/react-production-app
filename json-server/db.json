@@ -2447,5 +2447,56 @@
       "username": "user",
       "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "20",
+      "rate": 3,
+      "id": "1oO53ND"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 4,
+      "id": "kRXGyyw"
+    },
+    {
+      "userId": "1",
+      "articleId": "8",
+      "rate": 5,
+      "feedback": "Amazing",
+      "id": "inQPOtr"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good profile",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Good profile",
+      "userId": "1",
+      "profileId": "2"
+    }
   ]
 }
