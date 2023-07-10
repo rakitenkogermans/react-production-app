@@ -3,6 +3,7 @@
   "Admin": "Admin",
   "Ascending": "Ascending",
   "Authorization form": "Authorization form",
+  "Close": "Close",
   "Create article": "Create article",
   "Date created": "Date created",
   "Descending": "Descending",
@@ -32,5 +33,6 @@
   "Type Password": "Type Password",
   "Type Username": "Type Username",
   "Views": "Views",
-  "You don't have access to this page!": "You don't have access to this page!"
+  "You don't have access to this page!": "You don't have access to this page!",
+  "Your review": "Your review"
 }

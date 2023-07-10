@@ -38,3 +38,4 @@ jobs:
       - name: screenshot testing
         run: yarn run test:ui:ci
         if: always()
+Please, rate this article!: Please, rate this article!

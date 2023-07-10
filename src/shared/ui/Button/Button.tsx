@@ -22,6 +22,7 @@ type ButtonProps = {
     square?: boolean;
     size?: ButtonSize;
     disabled?: boolean;
+    fullWidth?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = memo((props: PropsWithChildren<ButtonProps>) => {
@@ -32,12 +33,14 @@ const Button = memo((props: PropsWithChildren<ButtonProps>) => {
         square,
         size = ButtonSize.M,
         disabled,
+        fullWidth,
         ...otherProps
     } = props;
 
     const mods: Mods = {
         [cls.square]: square,
         [cls.disabled]: disabled,
+        [cls.fullWidth]: fullWidth,
     };
 
     return (
