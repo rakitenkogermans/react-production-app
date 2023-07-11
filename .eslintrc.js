@@ -79,7 +79,13 @@ module.exports = {
         // }],
         // 'array-bracket-spacing': 'off',
         'fsd-architecture-check/path-check': ['error', { alias: '@' }],
-        'fsd-architecture-check/public-api-imports': ['error', { alias: '@' }],
+        'fsd-architecture-check/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFiles: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+            },
+        ],
         '@typescript-eslint/prefer-nullish-coalescing': [
             'error',
             {
