@@ -7551,10 +7551,10 @@ eslint-plugin-es@^4.1.0:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
 
-eslint-plugin-fsd-architecture-check@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-fsd-architecture-check/-/eslint-plugin-fsd-architecture-check-0.0.1.tgz#49cfdc1ae1aa20a7e09390997ae7ae7b706a147e"
-  integrity sha512-KLMW6RpmrmXhLVHZvWL2WZS+1G4R4k5xd2F0JSJJWRSbD/QOSGfJ572JdHxXtZRfzA+krDSS/ML6OI1gw0oIFA==
+eslint-plugin-fsd-architecture-check@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-fsd-architecture-check/-/eslint-plugin-fsd-architecture-check-0.0.2.tgz#428f90918476cbd9d7c09f548daacee4418a907f"
+  integrity sha512-nZHr7UaZQypSksF1mvDtrnO1sufU9UlpT4/cpiKJbPEYWcqdqnVP5XzK8QR92WoucoQLffxP10Yyg+cdBMEeGg==
   dependencies:
     requireindex "^1.2.0"
 
