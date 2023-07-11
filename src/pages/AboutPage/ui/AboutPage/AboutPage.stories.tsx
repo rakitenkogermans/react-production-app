@@ -4,7 +4,6 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { THEME } from '@/app/providers/ThemeProvider';
 import AboutPage from './AboutPage';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Normal } from '@/features/editableProfileCard/ui/EditableProfileCardHeader/EditableProfileCardHeader.stories';
 import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 
 export default {

@@ -79,6 +79,7 @@ module.exports = {
         // }],
         // 'array-bracket-spacing': 'off',
         'fsd-architecture-check/path-check': ['error', { alias: '@' }],
+        'fsd-architecture-check/public-api-imports': ['error', { alias: '@' }],
         '@typescript-eslint/prefer-nullish-coalescing': [
             'error',
             {

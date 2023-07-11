@@ -2,11 +2,9 @@ import React from 'react';
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
 import ArticleDetailsPage from './ArticleDetailsPage';
-import { type Article } from '@/entities/Article';
+import { type Article, ArticleBlockType, ArticleType } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
-import { ArticleBlockType, ArticleType } from '@/entities/Article/model/consts/articleConsts';
 
 export default {
     title: 'pages/ArticleDetailsPage',
