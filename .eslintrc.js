@@ -79,6 +79,13 @@ module.exports = {
         // }],
         // 'array-bracket-spacing': 'off',
         'fsd-architecture-check/path-check': ['error', { alias: '@' }],
+        'fsd-architecture-check/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider'],
+            },
+        ],
         'fsd-architecture-check/public-api-imports': [
             'error',
             {
