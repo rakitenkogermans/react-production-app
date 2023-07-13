@@ -1,6 +1,7 @@
-import { loginByUsername } from './loginByUsername';
 import { userActions } from '@/entities/User';
 import { TestAsynkThunk } from '@/shared/lib/tests/TestAsynkThunk/TestAsynkThunk';
+
+import { loginByUsername } from './loginByUsername';
 
 describe('loginByUsername.test', () => {
     // let dispatch: Dispatch;

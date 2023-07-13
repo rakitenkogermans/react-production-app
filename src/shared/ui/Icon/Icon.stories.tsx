@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
+
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 
 import { Icon } from './Icon';

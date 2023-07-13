@@ -1,9 +1,11 @@
 import React from 'react';
+
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import { ArticleInfiniteList } from './ArticleInfiniteList';
 import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import { ArticleInfiniteList } from './ArticleInfiniteList';
 
 export default {
     title: 'pages/ArticlesPage/ArticleInfiniteList',

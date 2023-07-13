@@ -1,10 +1,13 @@
 import React from 'react';
+
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
-import { Sidebar } from './Sidebar';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
 import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { THEME } from '@/shared/const/theme';
+
+import { Sidebar } from './Sidebar';
 
 export default {
     title: 'widgets/Sidebar',

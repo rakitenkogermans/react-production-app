@@ -1,10 +1,12 @@
 import React from 'react';
+
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import { ArticleList } from './ArticleList';
-import { type Article } from '../../model/types/article';
 import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
+
+import { ArticleList } from './ArticleList';
 import { ArticleType, ArticleView } from '../../model/consts/articleConsts';
+import { type Article } from '../../model/types/article';
 
 export default {
     title: 'entities/Article/ArticleList',

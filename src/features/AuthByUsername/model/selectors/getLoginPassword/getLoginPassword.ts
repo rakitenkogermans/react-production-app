@@ -1,6 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { getLoginState } from '../getLoginState/getLoginState';
+
 import { type LoginSchema } from '../../types/loginSchema';
+import { getLoginState } from '../getLoginState/getLoginState';
 
 export const getLoginPassword = createSelector(
     getLoginState,

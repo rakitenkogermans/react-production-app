@@ -1,5 +1,5 @@
-import { type Currency } from '../../../Currency/model/types/currency';
 import { type Country } from '../../../Country/model/types/country';
+import { type Currency } from '../../../Currency/model/types/currency';
 
 export interface Profile {
     id?: string;

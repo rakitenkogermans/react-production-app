@@ -1,9 +1,11 @@
 import React from 'react';
+
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import ArticleEditPage from './ArticleEditPage';
 import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import ArticleEditPage from './ArticleEditPage';
 
 export default {
     title: 'pages/ArticleEditPage',

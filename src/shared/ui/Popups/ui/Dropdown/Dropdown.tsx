@@ -1,8 +1,11 @@
 import { Fragment, memo, type ReactNode } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './Dropdown.module.scss';
+
 import { Menu } from '@headlessui/react';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { type DropDownDirection } from '@/shared/types/ui';
+
+import cls from './Dropdown.module.scss';
 import { AppLink } from '../../../AppLink/AppLink';
 import { mapDirectionClass } from '../../styles/consts';
 import pCls from '../../styles/popup.module.scss';

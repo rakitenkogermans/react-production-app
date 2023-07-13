@@ -27,6 +27,7 @@ module.exports = {
         'react-hooks',
         'fsd-architecture-check',
         'unused-imports',
+        'import',
     ],
     rules: {
         'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
@@ -107,6 +108,30 @@ module.exports = {
             {
                 alias: '@',
                 testFiles: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+            },
+        ],
+        'import/order': [
+            'error',
+            {
+                groups: ['builtin', 'external', 'internal'],
+                pathGroups: [
+                    {
+                        pattern: 'react',
+                        group: 'external',
+                        position: 'before',
+                    },
+                    {
+                        pattern: '@/**',
+                        group: 'external',
+                        position: 'after',
+                    },
+                ],
+                pathGroupsExcludedImportTypes: ['react'],
+                'newlines-between': 'always',
+                alphabetize: {
+                    order: 'asc',
+                    caseInsensitive: true,
+                },
             },
         ],
     },

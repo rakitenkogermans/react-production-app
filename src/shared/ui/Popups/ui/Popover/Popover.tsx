@@ -1,10 +1,13 @@
 import { type ReactNode } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './Popover.module.scss';
+
 import { Popover as HPopover } from '@headlessui/react';
-import pCls from '../../styles/popup.module.scss';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+
+import cls from './Popover.module.scss';
 import { type DropDownDirection } from '../../../../types/ui';
 import { mapDirectionClass } from '../../styles/consts';
+import pCls from '../../styles/popup.module.scss';
 
 interface PopoverProps {
     className?: string;

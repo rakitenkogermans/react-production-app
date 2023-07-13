@@ -1,13 +1,16 @@
 import { Suspense } from 'react';
+
 import {
     createBrowserRouter,
     createRoutesFromElements,
     Route,
     RouterProvider,
 } from 'react-router-dom';
-import { Layout } from '../../../Layout';
+
 import { PageLoader } from '@/widgets/PageLoader';
+
 import { RequireAuth } from './RequireAuth';
+import { Layout } from '../../../Layout';
 import { routeConfig } from '../config/routeConfig';
 
 const router = createBrowserRouter(
