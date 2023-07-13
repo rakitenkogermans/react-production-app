@@ -3,7 +3,7 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
 import { Button, ButtonSize, ButtonTheme } from './Button';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { THEME } from '@/app/providers/ThemeProvider';
+import { THEME } from '@/shared/const/theme';
 
 export default {
     title: 'shared/Button',

@@ -1,11 +1,11 @@
 import { type FC, Suspense, useEffect } from 'react';
 import './styles/index.scss';
-import { useTheme } from '@/app/providers/ThemeProvider';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppRouter } from '@/app/providers/router';
+import { AppRouter } from './providers/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserInitialized, userActions } from '@/entities/User';
 import { useSelector } from 'react-redux';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 const App: FC = () => {
     const { theme } = useTheme();

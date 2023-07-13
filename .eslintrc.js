@@ -78,6 +78,14 @@ module.exports = {
         //     functions: 'never',
         // }],
         // 'array-bracket-spacing': 'off',
+        '@typescript-eslint/prefer-nullish-coalescing': [
+            'error',
+            {
+                ignoreConditionalTests: true,
+            },
+        ],
+        '@typescript-eslint/restrict-plus-operands': 'off',
+        '@typescript-eslint/no-unnecessary-type-assertion': 'off',
         'fsd-architecture-check/path-check': ['error', { alias: '@' }],
         'fsd-architecture-check/layer-imports': [
             'error',
@@ -93,14 +101,6 @@ module.exports = {
                 testFiles: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
             },
         ],
-        '@typescript-eslint/prefer-nullish-coalescing': [
-            'error',
-            {
-                ignoreConditionalTests: true,
-            },
-        ],
-        '@typescript-eslint/restrict-plus-operands': 'off',
-        '@typescript-eslint/no-unnecessary-type-assertion': 'off',
     },
     overrides: [
         {

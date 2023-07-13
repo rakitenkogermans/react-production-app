@@ -5,10 +5,10 @@ import {
     Route,
     RouterProvider,
 } from 'react-router-dom';
-import { Layout } from '@/app/Layout';
+import { Layout } from '../../../Layout';
 import { PageLoader } from '@/widgets/PageLoader';
 import { RequireAuth } from './RequireAuth';
-import { routeConfig } from '@/app/providers/router/config/routeConfig';
+import { routeConfig } from '../config/routeConfig';
 
 const router = createBrowserRouter(
     createRoutesFromElements(

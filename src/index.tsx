@@ -26,3 +26,4 @@ root.render(
         </ErrorBoundary>
     </StoreProvider>,
 );
+export { THEME } from '@/shared/const/theme';
