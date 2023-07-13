@@ -20,7 +20,14 @@ module.exports = {
         tsconfigRootDir: __dirname,
         project: ['./tsconfig.json'],
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'fsd-architecture-check'],
+    plugins: [
+        'react',
+        '@typescript-eslint',
+        'i18next',
+        'react-hooks',
+        'fsd-architecture-check',
+        'unused-imports',
+    ],
     rules: {
         'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
         // 'react/jsx-indent': [2, 4],
@@ -31,6 +38,7 @@ module.exports = {
         'react/jsx-uses-react': 'off',
         'react/react-in-jsx-scope': 'off',
         'no-unused-vars': 'warn',
+        'unused-imports/no-unused-imports': 'error',
         '@typescript-eslint/no-unused-vars': 'warn',
         '@typescript-eslint/explicit-function-return-type': 'off',
         'react/button-has-type': 'error',
