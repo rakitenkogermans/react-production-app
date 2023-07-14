@@ -13,6 +13,26 @@ export const parameters = {
         },
     },
     layout: 'fullscreen',
+    themes: {
+        default: 'light',
+        list: [
+            {
+                name: 'light',
+                class: ['app', THEME.LIGHT],
+                color: '#f9f4ef',
+            },
+            {
+                name: 'dark',
+                class: ['app', THEME.DARK],
+                color: '#16161a',
+            },
+            {
+                name: 'yellow',
+                class: ['app', THEME.YELLOW],
+                color: '#ffd803',
+            },
+        ],
+    },
 };
 
 let globalTypes;
