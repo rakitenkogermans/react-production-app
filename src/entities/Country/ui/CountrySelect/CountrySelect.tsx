@@ -7,7 +7,6 @@ import { ListBox } from '@/shared/ui/Popups';
 
 import { Country } from '../../model/types/country';
 
-
 interface CountrySelectProps {
     className?: string;
     value?: Country;
