@@ -8,7 +8,7 @@ import { type BuildOptions } from './types/config';
 import { buildDevServer } from './buildDevServer';
 
 interface Configuration extends WebpackConfiguration {
-    devServer?: WebpackDevServerConfiguration
+    devServer?: WebpackDevServerConfiguration;
 }
 
 export const buildWebpackConfig = (options: BuildOptions): Configuration => {
@@ -27,7 +27,7 @@ export const buildWebpackConfig = (options: BuildOptions): Configuration => {
             rules: buildLoaders(options),
         },
         resolve: buildResolvers(options),
-        devtool: isDev ? 'inline-source-map' : false,
+        devtool: isDev ? 'eval-cheap-module-source-map' : false,
         devServer: isDev ? buildDevServer(options) : undefined,
     };
 };

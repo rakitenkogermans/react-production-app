@@ -26,7 +26,8 @@
     "storybook:build": "STORYBOOK_LOCALES=true build-storybook -c ./config/storybook -s public",
     "storybook:build:ci": "build-storybook -c ./config/storybook -s ./public",
     "prepare": "husky install",
-    "generate:slice": "node ./scripts/createSlice/index.js"
+    "generate:slice": "node ./scripts/createSlice/index.js",
+    "postinstall": "rm -rf ./node_modules/.cache"
   },
   "license": "MIT",
   "devDependencies": {
