@@ -1,11 +1,6 @@
-import { Suspense } from 'react';
+import { Suspense, useMemo } from 'react';
 
-import {
-    createBrowserRouter,
-    createRoutesFromElements,
-    Route,
-    RouterProvider,
-} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import { PageLoader } from '@/widgets/PageLoader';
 
@@ -13,26 +8,26 @@ import { RequireAuth } from './RequireAuth';
 import { Layout } from '../../../Layout';
 import { routeConfig } from '../config/routeConfig';
 
-const router = createBrowserRouter(
-    createRoutesFromElements(
-        <Route element={<Layout />}>
-            {Object.values(routeConfig).map(({ element, path, authOnly, roles }) => {
-                const el = <Suspense fallback={<PageLoader />}>{element}</Suspense>;
-
-                return (
-                    <Route
-                        key={path}
-                        path={path}
-                        element={authOnly ? <RequireAuth roles={roles}>{el}</RequireAuth> : el}
-                    />
-                );
-            })}
-        </Route>,
-    ),
-);
-
 const AppRouter = () => {
-    return <RouterProvider router={router} />;
+    const router = useMemo(() => {
+        return Object.values(routeConfig).map(({ element, path, authOnly, roles }) => {
+            const el = <Suspense fallback={<PageLoader />}>{element}</Suspense>;
+
+            return (
+                <Route
+                    key={path}
+                    path={path}
+                    element={authOnly ? <RequireAuth roles={roles}>{el}</RequireAuth> : el}
+                />
+            );
+        });
+    }, []);
+
+    return (
+        <Routes>
+            <Route element={<Layout />}>{router}</Route>
+        </Routes>
+    );
 };
 
 export { AppRouter };

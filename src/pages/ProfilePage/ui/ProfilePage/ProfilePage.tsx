@@ -8,7 +8,6 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
 
-
 interface ProfilePageProps {
     className?: string;
 }
@@ -18,11 +17,21 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
     const { t } = useTranslation('profile');
 
     if (!id) {
-        return <Page className={classNames('', {}, [className])}>{t('Profile not found')}</Page>;
+        return (
+            <Page
+                data-testid={'ProfilePage'}
+                className={classNames('', {}, [className])}
+            >
+                {t('Profile not found')}
+            </Page>
+        );
     }
 
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page
+            data-testid={'ProfilePage'}
+            className={classNames('', {}, [className])}
+        >
             <VStack
                 max={true}
                 gap={'16'}
