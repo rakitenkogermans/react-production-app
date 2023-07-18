@@ -4,7 +4,6 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import AvatarImg from '@/shared/assets/tests/storybook.jpg';
 
 import { ProfileCard } from './ProfileCard';
 
@@ -28,7 +27,7 @@ Primary.args = {
         firstname: 'qwerty',
         lastname: 'qwerty',
         city: 'Riga',
-        avatar: AvatarImg,
+        avatar: 'assets/storybook.jpg',
     },
 };
 

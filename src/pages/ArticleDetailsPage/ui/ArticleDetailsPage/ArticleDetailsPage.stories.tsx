@@ -108,5 +108,31 @@ Normal.decorators = [
         articleDetails: {
             data: article,
         },
+        user: {
+            authData: {
+                id: '1',
+            },
+        },
     }),
 ];
+Normal.parameters = {
+    mockData: [
+        {
+            url: `${__API__}/article-ratings?userId=1&articleId=1`,
+            method: 'GET',
+            status: 200,
+            response: [{ rate: 4 }],
+        },
+        {
+            url: `${__API__}/articles?_limit=6`,
+            method: 'GET',
+            status: 200,
+            response: [
+                ...new Array(6).fill(0).map((item, index) => ({
+                    ...article,
+                    id: String(index),
+                })),
+            ],
+        },
+    ],
+};
