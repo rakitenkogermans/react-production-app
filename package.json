@@ -18,13 +18,13 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "yarn loki test",
     "test:ui:ok": "yarn loki approve",
-    "test:ui:ci": "yarn loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:ci": "concurrently -s first -k \"yarn run storybook:ci\" \"yarn run test:ui\"",
     "visual:report": "yarn run visual:report:json && yarn run visual:report:html",
     "visual:report:json": "node scripts/generate-visual-json-report.js",
     "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
-    "storybook": "STORYBOOK_LOCALES=true sb dev -p 6006 -c ./config/storybook -s ../../public",
-    "storybook:build": "STORYBOOK_LOCALES=true sb build -c ./config/storybook -s public",
-    "storybook:build:ci": "sb build -c ./config/storybook -s public",
+    "storybook": "sb dev -p 6006 -c ./config/storybook",
+    "storybook:build": "sb build -c ./config/storybook",
+    "storybook:ci": "sb dev --no-open -p 6006 -c ./config/storybook",
     "prepare": "husky install",
     "generate:slice": "node ./scripts/createSlice/index.js",
     "postinstall": "rm -rf ./node_modules/.cache"
@@ -37,6 +37,8 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
+    "@loki/create-async-callback": "^0.31.1",
+    "@loki/is-loki-running": "0.31.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
     "@storybook/addon-actions": "^7.0.27",
     "@storybook/addon-essentials": "^7.0.27",
@@ -66,7 +68,7 @@
     "@vitejs/plugin-react": "^4.0.3",
     "babel-loader": "^9.1.2",
     "circular-dependency-plugin": "^5.2.2",
-    "concurrently": "^7.6.0",
+    "concurrently": "^8.2.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
     "eslint": "^8.44.0",
@@ -145,6 +147,7 @@
         "target": "chrome.docker",
         "preset": "iPhone 7"
       }
-    }
+    },
+    "chromeConcurrency": 3
   }
 }

@@ -2,6 +2,7 @@ import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { I18nDecorator } from '../../src/shared/config/storybook/I18nDecorator/I18nDecorator';
 import { THEME } from '../../src/shared/const/theme';
+import { LokiDecorator } from '../../src/shared/config/storybook/LokiDecorator/LokiDecorator';
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -64,7 +65,26 @@ export const parameters = {
 //     // addDecorator(I18nDecorator);
 // }
 //
-// export { globalTypes };
+export const globalTypes = {
+    locale: {
+        name: 'Locale',
+        description: 'Internationalization locale',
+        toolbar: {
+            icon: 'globe',
+            items: [
+                {
+                    value: 'en',
+                    title: 'English',
+                },
+                {
+                    value: 'lv',
+                    title: 'Latviski',
+                },
+            ],
+            showName: true,
+        },
+    },
+};
 //
 // console.log('===============================================================================');
 // console.log(!!process.env.STORYBOOK_LOCALES);
@@ -74,7 +94,7 @@ export const parameters = {
 // addDecorator(ThemeDecorator(THEME.LIGHT));
 // addDecorator(RouterDecorator);
 const preview = {
-    decorators: [I18nDecorator, StyleDecorator, ThemeDecorator(THEME.LIGHT)],
+    decorators: [LokiDecorator, I18nDecorator, StyleDecorator, ThemeDecorator(THEME.LIGHT)],
 };
 
 export default preview;

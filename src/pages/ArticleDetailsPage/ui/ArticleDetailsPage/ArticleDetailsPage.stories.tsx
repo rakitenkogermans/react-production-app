@@ -16,16 +16,6 @@ export default {
             route: '/articles/1',
             path: '/articles/:id',
         }),
-        // (Story) => (
-        //     <MemoryRouter initialEntries={['/articles/1']}>
-        //         <Routes>
-        //             <Route
-        //                 path="/articles/:id"
-        //                 element={<Story />}
-        //             />
-        //         </Routes>
-        //     </MemoryRouter>
-        // ),
     ],
     argTypes: {
         backgroundColor: { control: 'color' },
