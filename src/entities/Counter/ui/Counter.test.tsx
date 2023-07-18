@@ -20,6 +20,14 @@ describe('Counter', function () {
         expect(screen.getByTestId('value-title')).toHaveTextContent('11');
     });
 
+    test('increment by 5', () => {
+        componentRender(<Counter />, {
+            initialState: { counter: { value: 10 } },
+        });
+        fireEvent.click(screen.getByTestId('increment-btn-5'));
+        expect(screen.getByTestId('value-title')).toHaveTextContent('15');
+    });
+
     test('decrement', () => {
         componentRender(<Counter />, {
             initialState: { counter: { value: 10 } },

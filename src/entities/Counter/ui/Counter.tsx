@@ -1,4 +1,3 @@
-
 import { Button } from '@/shared/ui/Button';
 
 import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
@@ -30,7 +29,7 @@ const Counter = () => {
             </Button>
             <Button
                 onClick={addHandler}
-                data-testid="increment-btn"
+                data-testid="increment-btn-5"
             >
                 {'add 5'}
             </Button>
