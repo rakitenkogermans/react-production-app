@@ -1,9 +1,9 @@
-import { type Story, type StoryContext } from '@storybook/react';
+import { type StoryContext, StoryFn } from '@storybook/react';
 import i18n from '../../i18n/i18n';
 import { I18nextProvider } from 'react-i18next';
 import { Suspense, useEffect } from 'react';
 
-export const I18nDecorator = (StoryComponent: Story, context: StoryContext) => {
+export const I18nDecorator = (StoryComponent: StoryFn, context: StoryContext) => {
     const { locale } = context.globals;
 
     useEffect(() => {

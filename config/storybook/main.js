@@ -10,8 +10,8 @@ module.exports = {
         'storybook-addon-mock',
         'storybook-addon-themes',
     ],
-    framework: '@storybook/react',
+    framework: '@storybook/react-webpack5',
     core: {
-        builder: 'webpack5',
+        builder: '@storybook/builder-webpack5',
     },
 };

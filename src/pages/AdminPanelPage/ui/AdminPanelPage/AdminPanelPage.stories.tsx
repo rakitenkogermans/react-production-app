@@ -1,18 +1,19 @@
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { type ComponentStory, type ComponentMeta } from '@storybook/react';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 import AdminPanelPage from './AdminPanelPage';
 
-export default {
-    title: 'pages/ForbiddenPage',
+const meta: Meta<typeof AdminPanelPage> = {
     component: AdminPanelPage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof AdminPanelPage>;
+    decorators: [RouterDecorator({})],
+};
+export default meta;
 
-const Template: ComponentStory<typeof AdminPanelPage> = (args) => <AdminPanelPage {...args} />;
+type Story = StoryObj<typeof AdminPanelPage>;
 
-export const Normal = Template.bind({});
-Normal.args = {};
+export const Primary: Story = {
+    args: {},
+    decorators: [StoreDecorator({})],
+};
