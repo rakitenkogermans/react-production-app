@@ -19,7 +19,7 @@
     "test:ui": "yarn loki test",
     "test:ui:ok": "yarn loki approve",
     "test:ui:ci": "yarn loki --requireReference --reactUri file:./storybook-static",
-    "visual:report": "yarn run visual:report:json && yarn run visual:report:html && open-cli ./.loki/report.html",
+    "visual:report": "yarn run visual:report:json && yarn run visual:report:html",
     "visual:report:json": "node scripts/generate-visual-json-report.js",
     "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "storybook": "STORYBOOK_LOCALES=true sb dev -p 6006 -c ./config/storybook -s ../../public",
