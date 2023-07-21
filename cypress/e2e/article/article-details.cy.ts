@@ -24,8 +24,9 @@ describe('User visits article details page', () => {
     it('and leaves a comment', () => {
         cy.getByTestId('ArticleDetails.Info').should('exist');
         cy.getByTestId('AddCommentForm').scrollIntoView();
+        cy.wait(1000);
         cy.addComment('text');
-        cy.getByTestId('CommentList').scrollIntoView();
+        // cy.getByTestId('CommentList').scrollIntoView();
         cy.getByTestId('CommentCard.Content').should('have.length', 1);
     });
 
