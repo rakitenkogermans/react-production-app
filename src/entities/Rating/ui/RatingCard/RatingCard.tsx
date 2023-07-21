@@ -67,6 +67,7 @@ const RatingCard = memo((props: RatingCardProps) => {
         <>
             <Text title={feedbackTitle} />
             <Input
+                data-testid={'RatingCard.Input'}
                 value={feedback}
                 onChange={setFeedback}
                 label={t('Your review') ?? ''}
@@ -76,6 +77,7 @@ const RatingCard = memo((props: RatingCardProps) => {
 
     return (
         <Card
+            data-testid={'RatingCard'}
             fullWidth
             className={classNames('', {}, [className])}
         >
@@ -126,12 +128,14 @@ const RatingCard = memo((props: RatingCardProps) => {
                             gap={'16'}
                         >
                             <Button
+                                data-testid={'RatingCard.Close'}
                                 onClick={cancelHandle}
                                 theme={ButtonTheme.OUTLINE_RED}
                             >
                                 {t('Close')}
                             </Button>
                             <Button
+                                data-testid={'RatingCard.Send'}
                                 onClick={acceptHandle}
                                 theme={ButtonTheme.BACKGROUND}
                             >

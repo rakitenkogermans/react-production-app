@@ -2393,6 +2393,12 @@
       "userId": "1",
       "text": "Hello",
       "id": "6Zz_oXH"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "jijjiji",
+      "id": "F-CRQVu"
     }
   ],
   "users": [
@@ -2455,6 +2461,17 @@
       "city": "Riga",
       "username": "user",
       "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
+    },
+    {
+      "id": "4",
+      "firstname": "test",
+      "lastname": "user",
+      "age": 23,
+      "currency": "USD",
+      "country": "Lithuania",
+      "city": "Riga",
+      "username": "testuser",
+      "avatar": "https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg"
     }
   ],
   "article-ratings": [

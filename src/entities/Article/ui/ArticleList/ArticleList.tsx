@@ -12,7 +12,6 @@ import { type Article } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 
-
 interface ArticleListProps {
     className?: string;
     articles: Article[];
@@ -64,6 +63,7 @@ const ArticleList = memo((props: ArticleListProps) => {
 
     return (
         <HStack
+            data-testid={'ArticleList'}
             gap={'16'}
             max
             className={classNames(cls.ArticleList, {}, [className, cls[view]])}

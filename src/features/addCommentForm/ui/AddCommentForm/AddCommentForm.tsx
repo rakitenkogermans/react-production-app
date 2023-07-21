@@ -23,7 +23,6 @@ import {
     addCommentFormReducer,
 } from '../../model/slices/addCommentFormSlice';
 
-
 interface AddCommentFormProps {
     className?: string;
     onSendComment: (text: string) => void;
@@ -54,16 +53,19 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
     return (
         <DynamicModuleLoader reducers={reducers}>
             <HStack
+                data-testid={'AddCommentForm'}
                 max
                 className={classNames(cls.AddCommentForm, {}, [className])}
             >
                 <Input
+                    data-testid={'AddCommentForm.Input'}
                     label={t('Add a comment') ?? ''}
                     value={text}
                     onChange={onCommentTextChange}
                     className={cls.input}
                 />
                 <Button
+                    data-testid={'AddCommentForm.Button'}
                     theme={ButtonTheme.OUTLINE}
                     onClick={onSendHandler}
                 >

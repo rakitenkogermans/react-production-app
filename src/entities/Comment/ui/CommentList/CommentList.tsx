@@ -9,7 +9,6 @@ import { Text } from '@/shared/ui/Text';
 import { type Comment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
 
-
 interface CommentListProps {
     className?: string;
     comments?: Comment[];
@@ -35,6 +34,7 @@ const CommentList = memo(({ className, comments, isLoading }: CommentListProps) 
 
     return (
         <VStack
+            data-testid={'CommentList'}
             align={'start'}
             gap={'16'}
             max

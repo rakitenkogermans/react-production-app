@@ -46,6 +46,8 @@ const StarRating = memo((props: StarRatingProps) => {
                 const isHovered = currentStarsCount >= starNumber;
                 return (
                     <Icon
+                        data-testid={`StarRating.${starNumber}`}
+                        data-selected={currentStarsCount >= starNumber}
                         className={classNames(
                             cls.starIcon,
                             {

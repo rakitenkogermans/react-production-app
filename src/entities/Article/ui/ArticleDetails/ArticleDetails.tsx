@@ -172,6 +172,7 @@ const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
             removeAfterUnmount={false}
         >
             <VStack
+                data-testid={'ArticleDetails.Info'}
                 align={'start'}
                 gap={'16'}
                 max

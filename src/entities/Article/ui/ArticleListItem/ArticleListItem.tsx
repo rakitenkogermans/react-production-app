@@ -52,7 +52,10 @@ const ArticleListItem = memo(({ className, article, view, target }: ArticleListI
         ) as ArticleTextBlock;
 
         return (
-            <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+            <div
+                data-testid={'ArticleListItem'}
+                className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+            >
                 <Card className={cls.card}>
                     <div className={cls.header}>
                         <Avatar
@@ -105,7 +108,10 @@ const ArticleListItem = memo(({ className, article, view, target }: ArticleListI
     }
 
     return (
-        <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+        <div
+            data-testid={'ArticleListItem'}
+            className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+        >
             <AppLink
                 target={target}
                 to={getRouteArticleDetails(article.id)}

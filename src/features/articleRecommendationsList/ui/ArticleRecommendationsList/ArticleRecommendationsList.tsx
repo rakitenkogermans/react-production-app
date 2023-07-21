@@ -25,6 +25,7 @@ const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps)
 
     return (
         <VStack
+            data-testid={'ArticleRecommendationsList'}
             gap={'8'}
             max
             className={classNames('', {}, [className])}

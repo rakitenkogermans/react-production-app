@@ -55,6 +55,7 @@ const Flex = (props: FlexProps) => {
         gap,
         children,
         max,
+        ...otherProps
     } = props;
 
     const classes = [
@@ -69,7 +70,14 @@ const Flex = (props: FlexProps) => {
         [cls.max]: max,
     };
 
-    return <div className={classNames(cls.Flex, mods, classes)}>{children}</div>;
+    return (
+        <div
+            className={classNames(cls.Flex, mods, classes)}
+            {...otherProps}
+        >
+            {children}
+        </div>
+    );
 };
 
 export { Flex };
