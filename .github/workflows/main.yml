@@ -127,19 +127,14 @@ jobs:
         node-version: [ 18.x ]
     steps:
       - uses: actions/checkout@v2
-      - name: Run E2E tests
-        uses: cypress-io/github-action@v5
-        with:
-          start: yarn run start:dev
-          browser: chrome
-          wait-on: 'http://localhost:3000'
-
       - name: Run Component Testing
         uses: cypress-io/github-action@v5
         with:
+          browser: chrome
+          component: true
+      - name: Run E2E tests
+        uses: cypress-io/github-action@v5
+        with:
+          install: false
           start: yarn run start:dev
           browser: chrome
-          wait-on: 'http://localhost:3000'
-          # we have already installed everything
-          install: false
-          component: true
