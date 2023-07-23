@@ -130,15 +130,13 @@ jobs:
       - name: Run E2E tests
         uses: cypress-io/github-action@v5
         with:
-          build: yarn run build:prod
-          start: yarn run start:dev:server
+          start: yarn run start:dev
           browser: chrome
 
       - name: Run Component Testing
         uses: cypress-io/github-action@v5
         with:
-          build: yarn run build:prod
-          start: yarn run start:dev:server
+          start: yarn run start:dev
           browser: chrome
           # we have already installed everything
           install: false
