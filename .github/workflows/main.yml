@@ -136,7 +136,6 @@ jobs:
       - name: Run Component Testing
         uses: cypress-io/github-action@v5
         with:
-          start: yarn run start:dev
           browser: chrome
           # we have already installed everything
           install: false
