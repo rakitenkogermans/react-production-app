@@ -8,7 +8,7 @@ export const updateProfile = (newFirstname: string, newLastname: string) => {
 export const resetProfile = (profileId: string) => {
     return cy.request({
         method: 'PUT',
-        url: `http://localhost:8000/profile/${profileId}`,
+        url: `http://localhost:8880/profile/${profileId}`,
         headers: { Authorization: 'asads' },
         body: {
             id: '4',
