@@ -119,3 +119,27 @@ jobs:
       - name: unit testing
         if: always()
         run: yarn run test:unit
+
+  e2e-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run E2E tests
+        uses: cypress-io/github-action@v5
+        with:
+          build: yarn run build:prod
+          start: yarn run start:dev:server
+          browser: chrome
+
+      - name: Run Component Testing
+        uses: cypress-io/github-action@v5
+        with:
+          build: yarn run build:prod
+          start: yarn run start:dev:server
+          browser: chrome
+          # we have already installed everything
+          install: false
+          component: true
