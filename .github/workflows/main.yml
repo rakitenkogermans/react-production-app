@@ -127,10 +127,19 @@ jobs:
         node-version: [ 18.x ]
     steps:
       - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: yarn
+      - name: start project
+        run: yarn run start:dev
+        if: always()
       - name: Run E2E tests
         uses: cypress-io/github-action@v5
         with:
-          start: yarn run start:dev
+          install: false
           browser: chrome
 
       - name: Run Component Testing
