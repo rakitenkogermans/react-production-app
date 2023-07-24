@@ -6,6 +6,7 @@ describe('User visits article details page', () => {
         cy.createArticle().then((article) => {
             currentArticleId = article.id;
             cy.visit(`articles/${article.id}`, { timeout: 30000 });
+            cy.wait(5000);
         });
     });
 
