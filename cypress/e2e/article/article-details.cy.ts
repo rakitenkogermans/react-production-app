@@ -15,6 +15,7 @@ describe('User visits article details page', () => {
     });
 
     it('and sees content of it', () => {
+        cy.wait(1000);
         cy.getByTestId('ArticleDetails.Info').should('exist');
     });
 
