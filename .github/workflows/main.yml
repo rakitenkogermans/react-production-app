@@ -139,3 +139,29 @@ jobs:
           start: yarn run start:dev
           browser: chrome
           wait-on: 'http://localhost:8880'
+
+  deploy:
+    needs: [ e2e-tests, checks, build-and-ui-testing ]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: yarn
+      - name: build production project
+        run: yarn run build:prod
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          source: "./dist/*"
+          target: ${{ secrets.REMOTE_FOLDER_LOCATION }}
