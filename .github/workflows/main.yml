@@ -164,13 +164,22 @@ jobs:
         run: yarn run build:prod
       - name: rename dist to html
         run: mv dist html
-      - name: copy file via ssh password
-        uses: appleboy/scp-action@v0.1.4
+      - name: Copy folder content recursively to remote
+        uses: garygrossgarten/github-action-scp@release
         with:
+          local: html
+          remote: ${{ secrets.REMOTE_FOLDER_LOCATION }}
+          rmRemote: true
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          rm: true
-          source: "./html/*"
-          target: ${{ secrets.REMOTE_FOLDER_LOCATION }}
+
+#      - name: copy file via ssh password
+#        uses: appleboy/scp-action@v0.1.4
+#        with:
+#          host: ${{ secrets.HOST }}
+#          username: ${{ secrets.USERNAME }}
+#          password: ${{ secrets.PASSWORD }}
+#          port: ${{ secrets.PORT }}
+#          source: "./html/*"
+#          target: ${{ secrets.REMOTE_FOLDER_LOCATION }}
