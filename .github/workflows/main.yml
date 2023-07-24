@@ -138,3 +138,4 @@ jobs:
           install: false
           start: yarn run start:dev
           browser: chrome
+          wait-on: 'http://localhost:8880'
