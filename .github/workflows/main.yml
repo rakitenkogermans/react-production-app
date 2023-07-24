@@ -172,5 +172,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           rm: true
-          source: "html"
+          source: "./html/*"
           target: ${{ secrets.REMOTE_FOLDER_LOCATION }}
