@@ -2409,7 +2409,11 @@
       "roles": [
         "ADMIN"
       ],
-      "avatar": "https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg"
+      "avatar": "https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg",
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      }
     },
     {
       "id": "2",
@@ -2418,7 +2422,11 @@
       "roles": [
         "USER"
       ],
-      "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
+      "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg",
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": true
+      }
     },
     {
       "id": "3",
@@ -2427,7 +2435,11 @@
       "roles": [
         "MANAGER"
       ],
-      "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
+      "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg",
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      }
     },
     {
       "id": "4",
@@ -2436,7 +2448,11 @@
       "roles": [
         "ADMIN"
       ],
-      "avatar": "https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg"
+      "avatar": "https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg",
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": false
+      }
     }
   ],
   "profile": [

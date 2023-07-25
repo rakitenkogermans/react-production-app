@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
 import { ArticleDetails } from '@/entities/Article';
+import { Counter } from '@/entities/Counter';
 import { ArticleRating } from '@/features/articleRating';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -11,6 +12,7 @@ import {
     DynamicModuleLoader,
     type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { getFeatureFlag } from '@/shared/lib/features';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
 
@@ -30,6 +32,8 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article-details');
     const { id } = useParams<{ id: string }>();
+    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
+    const isCounterEnabled = getFeatureFlag('isCounterEnabled');
 
     if (!id) {
         return <Page className={classNames('', {}, [className])}>{t('Article not found')}</Page>;
@@ -45,8 +49,9 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
                 >
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
+                    {isCounterEnabled && <Counter />}
                     <Suspense>
-                        <ArticleRating articleId={id} />
+                        {isArticleRatingEnabled && <ArticleRating articleId={id} />}
                     </Suspense>
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
