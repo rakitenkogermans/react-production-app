@@ -57,6 +57,7 @@ const ListBox = memo((props: ListBoxProps) => {
                     className={cls.trigger}
                 >
                     <Button
+                        asDiv
                         disabled={readonly}
                         theme={ButtonTheme.OUTLINE}
                     >

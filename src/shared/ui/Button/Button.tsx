@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes, memo, type PropsWithChildren } from 'react';
+import { type ButtonHTMLAttributes, type HTMLAttributes, memo } from 'react';
 
 import cls from './Button.module.scss';
 import { classNames, type Mods } from '../../lib/classNames/classNames';
@@ -17,16 +17,19 @@ export enum ButtonSize {
     XL = 'size_xl',
 }
 
-type ButtonProps = {
+type HTMLTag = ButtonHTMLAttributes<HTMLButtonElement> & HTMLAttributes<HTMLDivElement>;
+
+interface ButtonProps extends HTMLTag {
     className?: string;
     theme?: ButtonTheme;
     square?: boolean;
     size?: ButtonSize;
     disabled?: boolean;
+    asDiv?: boolean;
     fullWidth?: boolean;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+}
 
-const Button = memo((props: PropsWithChildren<ButtonProps>) => {
+const Button = memo((props: ButtonProps) => {
     const {
         className = '',
         children,
@@ -35,6 +38,7 @@ const Button = memo((props: PropsWithChildren<ButtonProps>) => {
         size = ButtonSize.M,
         disabled,
         fullWidth,
+        asDiv,
         ...otherProps
     } = props;
 
@@ -44,15 +48,17 @@ const Button = memo((props: PropsWithChildren<ButtonProps>) => {
         [cls.fullWidth]: fullWidth,
     };
 
+    const Tag = asDiv ? 'div' : 'button';
+
     return (
-        <button
+        <Tag
             type="button"
             className={classNames(cls.Button, mods, [className, cls[theme], cls[size]])}
             disabled={disabled}
             {...otherProps}
         >
             {children}
-        </button>
+        </Tag>
     );
 });
 
