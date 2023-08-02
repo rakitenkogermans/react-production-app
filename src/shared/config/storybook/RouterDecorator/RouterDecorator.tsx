@@ -1,6 +1,7 @@
+import React from 'react';
+
 import { type Story } from '@storybook/react';
 import { BrowserRouter, MemoryRouter, Route, Routes } from 'react-router-dom';
-import React from 'react';
 
 export interface RouterDecoratorOptions {
     route?: string;

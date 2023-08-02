@@ -131,5 +131,15 @@ module.exports = {
                 'max-len': 'off',
             },
         },
+        {
+            files: [
+                '**/StoreDecorator/**/*.{ts,tsx}',
+                '**/StyleDecorator/**/*.{ts,tsx}',
+                '**/ThemeDecorator/**/*.{ts,tsx}',
+            ],
+            rules: {
+                'fsd-architecture-check/layer-imports': 'off',
+            },
+        },
     ],
 };
