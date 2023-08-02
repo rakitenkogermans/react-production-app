@@ -1,6 +1,6 @@
-// @ts-ignore
 import { useEffect } from 'react';
 
+// @ts-ignore
 import createAsyncCallback from '@loki/create-async-callback';
 // @ts-ignore
 import isLokiRunning from '@loki/is-loki-running';
