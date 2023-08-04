@@ -2,6 +2,7 @@ import { memo, useCallback } from 'react';
 
 import { useSearchParams } from 'react-router-dom';
 
+import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     DynamicModuleLoader,
@@ -50,6 +51,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
             >
                 <ArticlesPageFilters />
                 <ArticleInfiniteList />
+                <ArticlePageGreeting />
             </Page>
         </DynamicModuleLoader>
     );
