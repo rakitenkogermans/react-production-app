@@ -2415,7 +2415,7 @@
         "isCounterEnabled": true
       },
       "jsonSettings": {
-        "theme": "app_yellow_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false
       }
