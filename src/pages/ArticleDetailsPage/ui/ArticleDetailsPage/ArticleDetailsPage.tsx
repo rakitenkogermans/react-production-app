@@ -11,7 +11,7 @@ import {
     DynamicModuleLoader,
     type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/Card';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
@@ -37,12 +37,6 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
         return <Page className={classNames('', {}, [className])}>{t('Article not found')}</Page>;
     }
 
-    const articleRatingCard = toggleFeatures({
-        name: 'isArticleRatingEnabled',
-        on: () => <ArticleRating articleId={id} />,
-        off: () => <Card>{t('Article rating will be developed soon!')}</Card>,
-    });
-
     return (
         <DynamicModuleLoader reducers={reducers}>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
@@ -53,7 +47,13 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
                 >
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    <Suspense>{articleRatingCard}</Suspense>
+                    <Suspense>
+                        <ToggleFeatures
+                            feature={'isArticleRatingEnabled'}
+                            on={<ArticleRating articleId={id} />}
+                            off={<Card>{t('Article rating will be developed soon!')}</Card>}
+                        />
+                    </Suspense>
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>

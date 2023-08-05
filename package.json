@@ -28,6 +28,7 @@
     "storybook:ci": "sb dev --no-open -p 6006 -c ./config/storybook",
     "prepare": "husky install",
     "generate:slice": "node ./scripts/createSlice/index.js",
+    "remove:feature": "ts-node ./scripts/remove-feature.ts",
     "postinstall": "rm -rf ./node_modules/.cache"
   },
   "license": "MIT",
